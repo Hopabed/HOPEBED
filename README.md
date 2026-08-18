@@ -3,7 +3,7 @@
 <img
   src="assets/favicon.png"
   alt="Hopabed"
-  width="320"
+  width="180"
 >
 
 # Hopabed
@@ -13,7 +13,6 @@
 **Something Smart is Coming Soon.**
 
 </div>
-
 ---
 
 ## 🚀 Live Website
