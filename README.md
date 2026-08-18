@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="assets/favicon.png" alt="Hopabed Logo" width="120" height="120">
+  <img src="assets/hopabed logo.png" alt="Hopabed Logo" width="120" height="120">
 
   # Hopabed
 
