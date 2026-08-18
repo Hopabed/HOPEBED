@@ -1,7 +1,7 @@
 <div align="center">
 
 <img
-  src="assets/hopabed%20logo.png"
+  src="assets/favicon.png"
   alt="Hopabed"
   width="320"
 >
