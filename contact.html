@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact Hopabed — Stay Smart. Stay Verified."
+    >
+
+    <title>Contact Us — Hopabed</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .contact-page {
+            min-height: calc(100vh - 88px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 20px;
+        }
+
+        .contact-wrapper {
+            width: min(1050px, 100%);
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-intro {
+            max-width: 480px;
+        }
+
+        .contact-eyebrow {
+            margin: 0 0 16px;
+            color: var(--green-dark);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+        .contact-intro h1 {
+            margin: 0 0 20px;
+            font-size: clamp(48px, 5vw, 68px);
+            line-height: 1.05;
+            letter-spacing: -.04em;
+        }
+
+        .contact-intro h1 span {
+            color: var(--green);
+        }
+
+        .contact-intro p {
+            margin: 0;
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.65;
+        }
+
+        .contact-card {
+            padding: 36px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(20, 50, 30, .08);
+        }
+
+        .contact-card h2 {
+            margin: 0 0 8px;
+            font-size: 28px;
+        }
+
+        .contact-card-subtitle {
+            margin: 0 0 26px;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 17px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 7px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #ccd9d0;
+            border-radius: 10px;
+            background: #fbfdfb;
+            color: var(--ink);
+            font: inherit;
+            outline: none;
+            transition: .2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(22, 131, 58, .10);
+        }
+
+        .form-group textarea {
+            min-height: 135px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            min-height: 48px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--green);
+            color: #ffffff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .submit-button:hover {
+            background: var(--green-dark);
+            transform: translateY(-1px);
+        }
+
+        .direct-contact {
+            margin-top: 24px;
+            padding-top: 22px;
+            border-top: 1px solid var(--border);
+        }
+
+        .direct-contact p {
+            margin: 0 0 8px;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .direct-contact a {
+            color: var(--green-dark);
+            font-weight: 700;
+        }
+
+        .back-home {
+            display: inline-flex;
+            margin-top: 28px;
+            color: var(--green-dark);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 800px) {
+            .contact-page {
+                min-height: auto;
+                padding: 45px 16px 55px;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .contact-intro {
+                max-width: 650px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .contact-intro h1 {
+                font-size: clamp(42px, 10vw, 58px);
+            }
+
+            .contact-card {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .contact-page {
+                padding-top: 35px;
+            }
+
+            .contact-card {
+                padding: 22px 16px;
+                border-radius: 16px;
+            }
+
+            .contact-card h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-container">
+
+        <a
+            class="brand"
+            href="index.html"
+            aria-label="Hopabed home"
+        >
+            <img
+                class="hopabed-logo"
+                src="./assets/hopabed logo.png"
+                alt="Hopabed — Stay Smart. Stay Verified."
+            >
+        </a>
+
+        <a
+            class="contact-button"
+            href="index.html"
+        >
+            ← Back
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="contact-page">
+
+    <div class="contact-wrapper">
+
+        <section class="contact-intro">
+
+            <p class="contact-eyebrow">
+                GET IN TOUCH
+            </p>
+
+            <h1>
+                Let's talk<br>
+                <span>Hopabed.</span>
+            </h1>
+
+            <p>
+                Have a question, suggestion, partnership idea,
+                or simply want to know what we're building?
+                We'd love to hear from you.
+            </p>
+
+            <a
+                href="index.html"
+                class="back-home"
+            >
+                ← Back to Hopabed
+            </a>
+
+        </section>
+
+
+        <section class="contact-card">
+
+            <h2>
+                Contact Us
+            </h2>
+
+            <p class="contact-card-subtitle">
+                Send us a message and we'll get back to you.
+            </p>
+
+
+            <!--
+                This form is currently frontend-only.
+                Connect it to your email/form service later.
+            -->
+
+            <form
+                class="contact-form"
+                id="contactForm"
+            >
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us how we can help..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+
+            <div class="direct-contact">
+
+                <p>
+                    Prefer email?
+                </p>
+
+                <a href="mailto:hello@hopabed.com">
+                    hello@hopabed.com
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <strong>
+                Hopabed
+            </strong>
+
+            <span>
+                Stay Smart. Stay Verified.
+            </span>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Hopabed. All rights reserved.
+        </div>
+
+        <a
+            class="footer-contact"
+            href="contact.html"
+        >
+            Contact Us
+        </a>
+
+    </div>
+
+</footer>
+
+
+<script>
+    document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            alert(
+                "Thank you! Hopabed will connect with you soon."
+            );
+
+            this.reset();
+        });
+</script>
+
+</body>
+</html>
