@@ -181,46 +181,127 @@
             font-weight: 600;
         }
 
-        @media (max-width: 800px) {
-            .contact-page {
-                min-height: auto;
-                padding: 45px 16px 55px;
-            }
 
-            .contact-wrapper {
+        /* Reference-matched footer */
+        .footer {
+            background: #0d1410;
+            color: #fff;
+            border-top: 1px solid rgba(143, 209, 79, .16);
+        }
+
+        .footer-container {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 34px 0 30px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            gap: 80px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 430px;
+        }
+
+        .footer-brand strong {
+            color: #fff;
+            font-size: 20px;
+            line-height: 1.2;
+            letter-spacing: -.025em;
+        }
+
+        .footer-brand span {
+            margin-top: 5px;
+            color: #8fd14f;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            margin: 14px 0 0;
+            color: rgba(255,255,255,.70);
+            font-size: 11px;
+            line-height: 1.55;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: 90px 96px;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .footer-links > div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links h2 {
+            margin: 0 0 1px;
+            color: #fff;
+            font-size: 11px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,.72);
+            font-size: 11px;
+            line-height: 1.2;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus-visible {
+            color: #8fd14f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .footer-bottom {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 13px 0 18px;
+            border-top: 1px solid rgba(255,255,255,.12);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: rgba(255,255,255,.52);
+            font-size: 10px;
+            line-height: 1.45;
+        }
+
+        @media (max-width: 760px) {
+            .footer-container {
+                width: min(100% - 28px, 1120px);
+                padding: 30px 0 26px;
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 28px;
             }
 
-            .contact-intro {
-                max-width: 650px;
-                text-align: center;
-                margin: 0 auto;
+            .footer-links {
+                grid-template-columns: 110px 110px;
+                gap: 38px;
             }
 
-            .contact-intro h1 {
-                font-size: clamp(42px, 10vw, 58px);
-            }
-
-            .contact-card {
-                padding: 25px 20px;
+            .footer-bottom {
+                width: min(100% - 28px, 1120px);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 7px;
             }
         }
 
-        @media (max-width: 430px) {
-            .contact-page {
-                padding-top: 35px;
-            }
-
-            .contact-card {
-                padding: 22px 16px;
-                border-radius: 16px;
-            }
-
-            .contact-card h2 {
-                font-size: 24px;
-            }
-        }
     </style>
 </head>
 
@@ -295,18 +376,10 @@
                 Send us a message and we'll get back to you.
             </p>
 
-
-            <!--
-                This form is currently frontend-only.
-                Connect it to your email/form service later.
-            -->
-
             <form
                 class="contact-form"
                 id="contactForm"
             >
-
-                <!-- 🛡️ Sentinel: Add maxlength to inputs to prevent large payloads (DoS protection) -->
 
                 <div class="form-group">
 
@@ -320,6 +393,7 @@
                         name="name"
                         placeholder="Your name"
                         maxlength="100"
+                        autocomplete="name"
                         required
                     >
 
@@ -338,6 +412,7 @@
                         name="email"
                         placeholder="you@example.com"
                         maxlength="255"
+                        autocomplete="email"
                         required
                     >
 
@@ -395,28 +470,35 @@
     <div class="footer-container">
 
         <div class="footer-brand">
-
-            <strong>
-                Hopabed
-            </strong>
-
-            <span>
-                Stay Smart. Stay Verified.
-            </span>
-
+            <strong>Hopabed</strong>
+            <span>Stay Smart. Stay Verified.</span>
+            <p>A smarter way to discover, book and verify stays in India.</p>
         </div>
 
-        <div class="copyright">
-            © 2026 Hopabed. All rights reserved.
-        </div>
-
-        <a
-            class="footer-contact"
-            href="contact.html"
+        <nav
+            class="footer-links"
+            aria-label="Footer navigation"
         >
-            Contact Us
-        </a>
 
+            <div>
+                <h2>Explore</h2>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Hopabed</a>
+                <a href="vision.html">Our Vision</a>
+            </div>
+
+            <div>
+                <h2>Support</h2>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+        </nav>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Hopabed. All rights reserved.</p>
+        <p>Building a simpler, more confident stay experience in India.</p>
     </div>
 
 </footer>
