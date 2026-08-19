@@ -306,6 +306,8 @@
                 id="contactForm"
             >
 
+                <!-- 🛡️ Sentinel: Add maxlength to inputs to prevent large payloads (DoS protection) -->
+
                 <div class="form-group">
 
                     <label for="name">
@@ -317,6 +319,7 @@
                         id="name"
                         name="name"
                         placeholder="Your name"
+                        maxlength="100"
                         required
                     >
 
@@ -334,6 +337,7 @@
                         id="email"
                         name="email"
                         placeholder="you@example.com"
+                        maxlength="255"
                         required
                     >
 
@@ -350,6 +354,7 @@
                         id="message"
                         name="message"
                         placeholder="Tell us how we can help..."
+                        maxlength="2000"
                         required
                     ></textarea>
 
