@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Vision | Hopabed — Reimagining Stays in India</title>
+
+    <meta
+        name="description"
+        content="Explore the Hopabed vision for a future where finding accommodation in India is simpler, clearer and built around trust, transparency and better technology."
+    >
+
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hopabed.in/vision.html">
+
+    <meta name="theme-color" content="#101512">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hopabed.in/vision.html">
+    <meta property="og:title" content="Our Vision | Hopabed — Reimagining Stays in India">
+    <meta
+        property="og:description"
+        content="Discover the long-term vision behind Hopabed and our goal of creating a simpler, clearer and more trustworthy stay experience in India."
+    >
+    <meta property="og:site_name" content="Hopabed">
+    <meta
+        property="og:image"
+        content="https://hopabed.in/assets/hopabed%20logo.png"
+    >
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Our Vision | Hopabed">
+    <meta
+        name="twitter:description"
+        content="Discover the long-term vision behind Hopabed and our goal of creating a better stay experience in India."
+    >
+    <meta
+        name="twitter:image"
+        content="https://hopabed.in/assets/hopabed%20logo.png"
+    >
+
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --bg: #101512;
+            --surface: #ffffff;
+            --surface-soft: #f7f9f7;
+            --text: #101512;
+            --muted: #65706a;
+            --green: #8fd14f;
+            --green-dark: #557f2e;
+            --border: #e7ece8;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--surface-soft);
+            line-height: 1.7;
+        }
+
+        a { color: inherit; }
+
+        :focus-visible {
+            outline: 3px solid var(--green);
+            outline-offset: 4px;
+            border-radius: 6px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            z-index: 1000;
+            transform: translateY(-160%);
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: var(--green);
+            color: var(--bg);
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(0,0,0,.18);
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        .site-header {
+            background: var(--bg);
+            color: #fff;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .header-container {
+            width: min(1120px, calc(100% - 40px));
+            min-height: 82px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .hopabed-logo {
+            display: block;
+            width: 170px;
+            height: auto;
+        }
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .site-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: .9;
+        }
+
+        .site-nav a:hover,
+        .site-nav a:focus-visible {
+            opacity: 1;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 11px 16px;
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 999px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .contact-button:hover,
+        .contact-button:focus-visible {
+            background: rgba(255,255,255,.08);
+        }
+
+        .vision-hero {
+            padding: 96px 20px 82px;
+            background:
+                radial-gradient(circle at 18% 20%, rgba(143,209,79,.18), transparent 28%),
+                radial-gradient(circle at 82% 75%, rgba(143,209,79,.12), transparent 30%),
+                var(--surface-soft);
+        }
+
+        .vision-hero-inner {
+            width: min(960px, 100%);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .eyebrow {
+            margin: 0 0 14px;
+            color: var(--green-dark);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(44px, 7vw, 80px);
+            line-height: 1.02;
+            letter-spacing: -.055em;
+        }
+
+        .hero-lead {
+            max-width: 790px;
+            margin: 28px auto 0;
+            color: var(--muted);
+            font-size: clamp(17px, 2vw, 21px);
+        }
+
+        .vision-content {
+            width: min(1000px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 0 0 90px;
+        }
+
+        .content-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: clamp(28px, 5vw, 52px);
+            box-shadow: 0 18px 60px rgba(16,21,18,.06);
+        }
+
+        .content-card + .content-card { margin-top: 24px; }
+
+        h2 {
+            margin: 0 0 16px;
+            font-size: clamp(28px, 4vw, 38px);
+            line-height: 1.15;
+            letter-spacing: -.03em;
+        }
+
+        h3 {
+            margin: 0 0 8px;
+            font-size: 20px;
+            line-height: 1.3;
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .content-card p + p { margin-top: 18px; }
+
+        .vision-statement {
+            margin-top: 30px;
+            padding: 34px;
+            border-radius: 20px;
+            background: var(--bg);
+            color: #fff;
+        }
+
+        .vision-statement p {
+            color: #fff;
+            font-size: clamp(21px, 3vw, 30px);
+            font-weight: 700;
+            line-height: 1.4;
+            letter-spacing: -.025em;
+        }
+
+        .vision-statement span {
+            display: block;
+            margin-top: 12px;
+            color: rgba(255,255,255,.58);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .pillar {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: #fbfcfb;
+        }
+
+        .pillar-number {
+            display: inline-flex;
+            width: 36px;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background: var(--green);
+            color: var(--bg);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .pillar p { font-size: 15px; }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .future-card {
+            padding: 25px;
+            border-radius: 18px;
+            background: var(--bg);
+            color: #fff;
+        }
+
+        .future-card h3 { color: #fff; }
+
+        .future-card p {
+            color: rgba(255,255,255,.72);
+            font-size: 14px;
+        }
+
+        .roadmap {
+            display: grid;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .roadmap-item {
+            display: grid;
+            grid-template-columns: 72px 1fr;
+            gap: 18px;
+            align-items: start;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: #fbfcfb;
+        }
+
+        .roadmap-number {
+            display: inline-flex;
+            width: 52px;
+            height: 52px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: #eaf5df;
+            color: var(--green-dark);
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .roadmap-item p { font-size: 15px; }
+
+        .founder-vision {
+            position: relative;
+        }
+
+        .founder-vision .eyebrow {
+            margin-bottom: 10px;
+        }
+
+        .founder-quote {
+            margin: 24px 0 0;
+            padding: 20px 22px;
+            border-left: 4px solid var(--green);
+            border-radius: 0 14px 14px 0;
+            background: #f7faf5;
+        }
+
+        .founder-quote p {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .founder-signature {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .founder-signature strong {
+            font-size: 16px;
+            color: var(--text);
+        }
+
+        .founder-signature span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .cta { text-align: center; }
+
+        .cta a {
+            display: inline-flex;
+            margin-top: 22px;
+            padding: 13px 22px;
+            border-radius: 999px;
+            background: var(--bg);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .cta a:hover,
+        .cta a:focus-visible {
+            background: var(--green-dark);
+        }
+
+        .footer {
+            background: var(--bg);
+            color: #fff;
+        }
+
+        .footer-container {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .footer-brand strong { font-size: 18px; }
+
+        .footer-brand span,
+        .copyright {
+            color: rgba(255,255,255,.62);
+            font-size: 13px;
+        }
+
+        .footer-contact {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .footer-contact:hover,
+        .footer-contact:focus-visible {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        @media (max-width: 760px) {
+            .header-container {
+                min-height: 72px;
+                width: min(100% - 28px, 1120px);
+            }
+
+            .hopabed-logo { width: 145px; }
+
+            .site-nav { gap: 12px; }
+
+            .site-nav a:not(.contact-button) { display: none; }
+
+            .vision-hero { padding: 66px 16px 54px; }
+
+            .vision-content {
+                width: min(100% - 28px, 1000px);
+                padding-bottom: 60px;
+            }
+
+            .pillars,
+            .future-grid { grid-template-columns: 1fr; }
+
+            .vision-statement { padding: 25px; }
+
+            .roadmap-item { grid-template-columns: 1fr; }
+
+            .footer-container {
+                width: min(100% - 28px, 1120px);
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hopabed",
+        "url": "https://hopabed.in/",
+        "logo": "https://hopabed.in/assets/hopabed%20logo.png",
+        "description": "Hopabed is building a smarter way to find, book and verify stays in India."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Our Vision | Hopabed",
+        "url": "https://hopabed.in/vision.html",
+        "description": "The long-term Hopabed vision for a more transparent, trustworthy and connected stay experience in India.",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Hopabed",
+            "url": "https://hopabed.in/"
+        },
+        "about": {
+            "@type": "Organization",
+            "name": "Hopabed",
+            "url": "https://hopabed.in/",
+            "logo": "https://hopabed.in/assets/hopabed%20logo.png"
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+    <div class="header-container">
+
+        <a class="brand" href="index.html" aria-label="Hopabed Home">
+            <img
+                class="hopabed-logo"
+                src="./assets/hopabed logo.png"
+                alt="Hopabed — Stay Smart. Stay Verified."
+                width="170"
+                height="auto"
+            >
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="vision.html" aria-current="page">Our Vision</a>
+            <a
+                class="contact-button"
+                href="contact.html"
+                aria-label="Contact Hopabed"
+            >
+                Contact Us
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+
+    <section class="vision-hero">
+        <div class="vision-hero-inner">
+
+            <p class="eyebrow">OUR VISION</p>
+
+            <h1>Reimagining the Way India Stays</h1>
+
+            <p class="hero-lead">
+                We imagine a future where choosing accommodation is not
+                confusing or uncertain, but a clear and confident experience
+                built around transparency, trust and better technology.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="vision-content">
+
+        <article class="content-card">
+
+            <h2>A Future Built on Trust</h2>
+
+            <p>
+                Finding a place to stay is more than choosing a room.
+                It is choosing an experience, a location and a place where
+                you expect things to be as described.
+            </p>
+
+            <p>
+                Our vision for Hopabed is to help create a stay ecosystem
+                where people can make decisions with better information
+                and greater confidence.
+            </p>
+
+            <div class="vision-statement">
+                <p>
+                    “We want to make trust a visible part of the stay journey.”
+                </p>
+                <span>Hopabed Vision</span>
+            </div>
+
+        </article>
+
+        <article class="content-card">
+
+            <h2>What We Want to Change</h2>
+
+            <p>
+                The accommodation experience can involve uncertainty around
+                property information, expectations, booking details and what
+                happens after a reservation is made.
+            </p>
+
+            <div class="pillars">
+
+                <div class="pillar">
+                    <span class="pillar-number">01</span>
+                    <h3>More Transparency</h3>
+                    <p>
+                        Make important information about accommodation easier
+                        to understand before people make decisions.
+                    </p>
+                </div>
+
+                <div class="pillar">
+                    <span class="pillar-number">02</span>
+                    <h3>More Confidence</h3>
+                    <p>
+                        Build experiences that help travelers feel more
+                        confident about the stay they choose.
+                    </p>
+                </div>
+
+                <div class="pillar">
+                    <span class="pillar-number">03</span>
+                    <h3>Better Connections</h3>
+                    <p>
+                        Create a clearer connection between travelers,
+                        properties and booking information.
+                    </p>
+                </div>
+
+                <div class="pillar">
+                    <span class="pillar-number">04</span>
+                    <h3>Smarter Technology</h3>
+                    <p>
+                        Use digital tools to make discovery, booking and
+                        verification experiences simpler.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="content-card">
+
+            <h2>The Hopabed Ecosystem</h2>
+
+            <p>
+                Our long-term vision goes beyond a single booking page.
+                We want Hopabed to become a connected platform where
+                travelers and property partners can participate in a
+                clearer stay experience.
+            </p>
+
+            <div class="future-grid">
+
+                <div class="future-card">
+                    <h3>For Travelers</h3>
+                    <p>
+                        Make it easier to discover accommodation, understand
+                        stay information and make confident decisions.
+                    </p>
+                </div>
+
+                <div class="future-card">
+                    <h3>For Properties</h3>
+                    <p>
+                        Give property partners better digital tools to
+                        present their stays and connect with travelers.
+                    </p>
+                </div>
+
+                <div class="future-card">
+                    <h3>For the Stay Journey</h3>
+                    <p>
+                        Connect discovery, booking and verification into
+                        a more coherent digital experience.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="content-card">
+
+            <h2>Where We See Hopabed Going</h2>
+
+            <p>
+                Hopabed is starting with a focused idea, but our vision is
+                designed to grow with real traveler and property needs.
+            </p>
+
+            <div class="roadmap">
+
+                <div class="roadmap-item">
+                    <span class="roadmap-number">01</span>
+                    <div>
+                        <h3>Discover</h3>
+                        <p>
+                            Build a useful accommodation discovery experience
+                            with clearer information.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item">
+                    <span class="roadmap-number">02</span>
+                    <div>
+                        <h3>Connect</h3>
+                        <p>
+                            Create stronger digital connections between
+                            travelers and property partners.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item">
+                    <span class="roadmap-number">03</span>
+                    <div>
+                        <h3>Verify</h3>
+                        <p>
+                            Develop digital tools that can support a clearer
+                            verification experience around bookings and stays.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item">
+                    <span class="roadmap-number">04</span>
+                    <div>
+                        <h3>Grow Across India</h3>
+                        <p>
+                            Expand the platform carefully as more travelers,
+                            properties and local markets become part of the
+                            Hopabed ecosystem.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="content-card founder-vision">
+
+            <p class="eyebrow">A NOTE FROM OUR LEADERSHIP</p>
+
+            <h2>Our Founder &amp; CEO's Vision</h2>
+
+            <p>
+                We believe finding a place to stay should be more than simply
+                choosing a room. People deserve clarity about where they are
+                staying, what they are booking, and confidence that their stay
+                is what they expected.
+            </p>
+
+            <p>
+                Hopabed is being built with a simple ambition: to make the
+                journey from discovering a stay to booking and verifying it
+                smarter, clearer and more trustworthy.
+            </p>
+
+            <p>
+                We are starting with a focused idea, learning from real people
+                and real stays, and building toward a platform that can serve
+                travelers and property partners across India.
+            </p>
+
+            <blockquote class="founder-quote">
+                <p>
+                    This is not just about booking a room. It is about building
+                    trust into the stay experience.
+                </p>
+            </blockquote>
+
+            <div class="founder-signature">
+                <strong>Founder &amp; CEO</strong>
+                <span>Hopabed</span>
+            </div>
+
+        </article>
+
+
+        <article class="content-card cta">
+
+            <h2>Stay Smart. Stay Verified.</h2>
+
+            <p>
+                This is the future we are working toward with Hopabed.
+                The platform is currently in development.
+            </p>
+
+            <a href="about.html">Learn About Hopabed</a>
+
+        </article>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <strong>Hopabed</strong>
+            <span>Stay Smart. Stay Verified.</span>
+        </div>
+
+        <div class="copyright">
+            © 2026 Hopabed. All rights reserved.
+        </div>
+
+        <a class="footer-contact" href="contact.html">
+            Contact Hopabed
+        </a>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

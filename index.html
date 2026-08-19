@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 
 <head>
 
@@ -10,29 +10,69 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <title>Hopabed — Verified Stays in India | Stay Smart. Stay Verified.</title>
+
     <meta
         name="description"
-        content="Hopabed — Stay Smart. Stay Verified. Something Smart is Coming Soon."
+        content="Hopabed is building a smarter way to find, book and verify stays in India, including hotels, rooms, hostels, PGs and homes. Stay Smart. Stay Verified."
     >
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://hopabed.in/">
 
     <meta
         name="theme-color"
         content="#101512"
     >
 
-    <meta
-        property="og:title"
-        content="Hopabed — Stay Smart. Stay Verified."
-    >
-
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hopabed.in/">
+    <meta property="og:title" content="Hopabed — Verified Stays in India">
     <meta
         property="og:description"
-        content="Something Smart is Coming Soon."
+        content="Find, book and verify stays in India with Hopabed. Stay Smart. Stay Verified."
+    >
+    <meta property="og:site_name" content="Hopabed">
+    <meta
+        property="og:image"
+        content="https://hopabed.in/assets/hopabed%20logo.png"
     >
 
-    <title>
-        Hopabed — Stay Smart. Stay Verified.
-    </title>
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hopabed — Verified Stays in India">
+    <meta
+        name="twitter:description"
+        content="Find, book and verify stays in India with Hopabed."
+    >
+    <meta
+        name="twitter:image"
+        content="https://hopabed.in/assets/hopabed%20logo.png"
+    >
+
+    <!-- Organization structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hopabed",
+        "url": "https://hopabed.in/",
+        "logo": "https://hopabed.in/assets/hopabed%20logo.png",
+        "description": "Hopabed is building a smarter way to find, book and verify stays in India."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Hopabed",
+        "url": "https://hopabed.in/",
+        "description": "Hopabed is building a smarter way to find, book and verify stays in India."
+    }
+    </script>
 
     <link
         rel="icon"
@@ -67,10 +107,97 @@
         href="style.css"
     >
 
+    <style>
+        :focus-visible {
+            outline: 3px solid #8fd14f;
+            outline-offset: 4px;
+            border-radius: 6px;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            z-index: 9999;
+            transform: translateY(-160%);
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: #8fd14f;
+            color: #101512;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html, html * {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .homepage-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 22px;
+        }
+
+        .homepage-links a {
+            color: #557f2e;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .seo-section-spacer {
+            height: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .seo-section-spacer {
+                height: 32px;
+            }
+        }
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .site-nav > a:not(.contact-button) {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            opacity: .9;
+        }
+
+        .site-nav > a:not(.contact-button):hover,
+        .site-nav > a:not(.contact-button):focus-visible {
+            opacity: 1;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .site-nav > a:not(.contact-button) {
+                display: none;
+            }
+        }
+    </style>
+
 </head>
 
 
 <body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 
 <!-- =========================================
@@ -94,18 +221,26 @@
                 class="hopabed-logo"
                 src="./assets/hopabed logo.png"
                 alt="Hopabed — Stay Smart. Stay Verified."
+                width="180"
+                height="auto"
             >
 
         </a>
 
 
-        <!-- Contact Us -->
+        <!-- Main navigation -->
 
-        <a
-            class="contact-button"
-            href="contact.html"
-            aria-label="Contact Hopabed"
-        >
+        <nav class="site-nav" aria-label="Main navigation">
+
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="about.html">About</a>
+            <a href="vision.html">Our Vision</a>
+
+            <a
+                class="contact-button"
+                href="contact.html"
+                aria-label="Contact Hopabed"
+            >
 
             <span
                 class="whatsapp-icon"
@@ -131,7 +266,9 @@
 
             Contact Us
 
-        </a>
+            </a>
+
+        </nav>
 
     </div>
 
@@ -143,7 +280,7 @@
      MAIN
 ========================================= -->
 
-<main>
+<main id="main-content" tabindex="-1">
 
 
     <section class="hero">
@@ -166,14 +303,12 @@
 
                 <h1>
 
-                    Something Smart
+                    Find, Book &amp; Verify
 
                     <br>
 
-                    is
-
                     <span>
-                        Coming Soon.
+                        Verified Stays in India.
                     </span>
 
                 </h1>
@@ -184,7 +319,7 @@
 
                 <p class="hero-description">
 
-                    Hopabed is India's trusted platform to
+                    Hopabed is an upcoming stay platform designed to
 
                     <strong>
                         Find, Book &amp; Verify
@@ -192,7 +327,7 @@
 
                     <br class="desktop-break">
 
-                    verified stays — PGs, Hostels, Rooms &amp; Homes.
+                    stays in India — including hotels, PGs, hostels, rooms &amp; homes.
 
                 </p>
 
@@ -338,6 +473,42 @@
                 </div>
 
 
+                <div class="seo-section-spacer" aria-hidden="true"></div>
+
+
+                <!-- =================================
+                     ABOUT HOPABED
+                ================================== -->
+
+                <section
+                    class="about-hopabed"
+                    aria-labelledby="about-hopabed-title"
+                >
+
+                    <h2 id="about-hopabed-title">
+                        A Smarter Way to Find and Verify Stays
+                    </h2>
+
+                    <p>
+                        Hopabed is an upcoming stay platform designed to make
+                        it easier to discover accommodation in India with clear
+                        information and a simple verification experience.
+                    </p>
+
+                    <p>
+                        From hotels and rooms to PGs, hostels and homes, Hopabed
+                        is being built around a simple journey: find a suitable
+                        stay, book it easily and verify your stay with confidence.
+                    </p>
+
+                    <p class="homepage-links">
+                        <a href="about.html">Learn more about Hopabed</a>
+                        <a href="vision.html">Explore our vision</a>
+                    </p>
+
+                </section>
+
+
             </div>
 
 
@@ -348,7 +519,7 @@
 
             <div
                 class="city-scene"
-                aria-label="Hopabed city illustration"
+                aria-hidden="true"
             >
 
 
