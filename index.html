@@ -477,6 +477,85 @@
         }
 
 
+
+        /* Hopabed launch notification */
+        .launch-notification {
+            width: 100%;
+            background: #101512;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .launch-notification-inner {
+            width: min(1180px, calc(100% - 40px));
+            min-height: 46px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .launch-notification-label {
+            color: #8bd64c;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .launch-notification-title {
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .launch-notification-timer {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .launch-notification-timer span {
+            color: #8bd64c;
+        }
+
+        .launch-notification-dates {
+            color: #aeb8b2;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 760px) {
+            .launch-notification-inner {
+                width: calc(100% - 20px);
+                min-height: 42px;
+                gap: 8px;
+                overflow: hidden;
+            }
+
+            .launch-notification-label,
+            .launch-notification-dates {
+                display: none;
+            }
+
+            .launch-notification-title {
+                font-size: 11px;
+            }
+
+            .launch-notification-timer {
+                font-size: 12px;
+                gap: 3px;
+            }
+        }
+
         .site-footer {
             margin-top: 40px;
             background: #0d1410;
@@ -695,6 +774,24 @@
 <!-- =========================================
      MAIN
 ========================================= -->
+
+
+<!-- Hopabed launch notification -->
+<div class="launch-notification" role="status" aria-live="polite">
+    <div class="launch-notification-inner">
+        <span class="launch-notification-label">🚀 Hopabed Launch</span>
+        <span class="launch-notification-title" id="launch-notification-title">
+            Launch countdown
+        </span>
+        <span class="launch-notification-timer" aria-label="Launch countdown">
+            <span id="notification-days">00</span>d :
+            <span id="notification-hours">00</span>h :
+            <span id="notification-minutes">00</span>m :
+            <span id="notification-seconds">00</span>s
+        </span>
+        <span class="launch-notification-dates" id="launch-notification-dates">Starts when Hopabed goes live</span>
+    </div>
+</div>
 
 <main id="main-content" tabindex="-1">
 
@@ -1142,8 +1239,8 @@
             <div>
                 <h2>Explore</h2>
                 <a href="./index.html">Home</a>
-                <a href="./about.html">About Hopabed</a>
                 <a href="./vision.html">Our Vision</a>
+                <a href="./about.html">About Hopabed</a>
             </div>
             
             <div>
@@ -1166,6 +1263,163 @@
 
 <script src="script.js"></script>
 
+
+
+<script>
+(function () {
+    /*
+     * Hopabed production launch countdown
+     *
+     * The countdown DOES NOT start from a visitor's first visit.
+     * It starts from the single go-live timestamp returned by
+     * the Cloudflare Worker endpoint:
+     *
+     *   GET /api/go-live
+     *
+     * Expected response:
+     *   { "goLive": "2026-08-19T19:30:00.000Z" }
+     *
+     * The Worker should store the go-live timestamp once when
+     * the production deployment is activated.
+     *
+     * Localhost/development:
+     *   - If /api/go-live is unavailable, the notification is hidden.
+     *
+     * Production:
+     *   - All visitors receive the same go-live timestamp.
+     */
+
+    const COUNTDOWN_DAYS = 30;
+
+    const notification = document.querySelector(".launch-notification");
+    const days = document.getElementById("notification-days");
+    const hours = document.getElementById("notification-hours");
+    const minutes = document.getElementById("notification-minutes");
+    const seconds = document.getElementById("notification-seconds");
+    const title = document.getElementById("launch-notification-title");
+    const dates = document.getElementById("launch-notification-dates");
+
+    if (!notification || !days || !hours || !minutes || !seconds) {
+        return;
+    }
+
+    function pad(value) {
+        return String(value).padStart(2, "0");
+    }
+
+    function hideCountdown() {
+        notification.hidden = true;
+        notification.setAttribute("aria-hidden", "true");
+    }
+
+    function showCountdown() {
+        notification.hidden = false;
+        notification.removeAttribute("aria-hidden");
+    }
+
+    async function getGoLiveTimestamp() {
+        /*
+         * Only activate on the real production domain.
+         * This prevents the countdown from appearing on localhost.
+         */
+        const productionHosts = ["hopabed.in", "www.hopabed.in"];
+
+        if (!productionHosts.includes(window.location.hostname)) {
+            hideCountdown();
+            return null;
+        }
+
+        try {
+            const response = await fetch("/api/go-live", {
+                method: "GET",
+                cache: "no-store",
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("Go-live endpoint unavailable");
+            }
+
+            const data = await response.json();
+            const timestamp = new Date(data.goLive).getTime();
+
+            if (!Number.isFinite(timestamp)) {
+                throw new Error("Invalid go-live timestamp");
+            }
+
+            return timestamp;
+        } catch (error) {
+            /*
+             * Never invent a start time.
+             * Until Cloudflare provides the real production
+             * timestamp, keep the countdown hidden.
+             */
+            hideCountdown();
+            console.warn("Hopabed launch countdown unavailable:", error);
+            return null;
+        }
+    }
+
+    async function startCountdown() {
+        const goLiveTime = await getGoLiveTimestamp();
+
+        if (!goLiveTime) {
+            return;
+        }
+
+        showCountdown();
+
+        const deadline =
+            goLiveTime +
+            (COUNTDOWN_DAYS * 24 * 60 * 60 * 1000);
+
+        function updateCountdown() {
+            const remaining = deadline - Date.now();
+
+            if (remaining <= 0) {
+                days.textContent = "00";
+                hours.textContent = "00";
+                minutes.textContent = "00";
+                seconds.textContent = "00";
+
+                title.textContent = "Launch countdown complete";
+                dates.textContent = "Launch window reached";
+                return;
+            }
+
+            const totalSeconds = Math.floor(remaining / 1000);
+
+            days.textContent = pad(
+                Math.floor(totalSeconds / 86400)
+            );
+
+            hours.textContent = pad(
+                Math.floor((totalSeconds % 86400) / 3600)
+            );
+
+            minutes.textContent = pad(
+                Math.floor((totalSeconds % 3600) / 60)
+            );
+
+            seconds.textContent = pad(
+                totalSeconds % 60
+            );
+
+            title.textContent = "Launching soon";
+            dates.textContent =
+                COUNTDOWN_DAYS + "-day launch countdown";
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+
+    hideCountdown();
+    startCountdown();
+})();
+</script>
 
 </body>
 
