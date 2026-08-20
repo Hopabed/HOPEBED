@@ -1330,26 +1330,35 @@
         }
 
         try {
-            const response = await fetch("/api/go-live", {
-                method: "GET",
-                cache: "no-store",
-                headers: {
-                    "Accept": "application/json"
+            // 🛡️ Security Enhancement: Add timeout to prevent hanging API call
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+            try {
+                const response = await fetch("/api/go-live", {
+                    method: "GET",
+                    cache: "no-store",
+                    headers: {
+                        "Accept": "application/json"
+                    },
+                    signal: controller.signal
+                });
+
+                if (!response.ok) {
+                    throw new Error("Go-live endpoint unavailable");
                 }
-            });
 
-            if (!response.ok) {
-                throw new Error("Go-live endpoint unavailable");
+                const data = await response.json();
+                const timestamp = new Date(data.goLive).getTime();
+
+                if (!Number.isFinite(timestamp)) {
+                    throw new Error("Invalid go-live timestamp");
+                }
+
+                return timestamp;
+            } finally {
+                clearTimeout(timeoutId);
             }
-
-            const data = await response.json();
-            const timestamp = new Date(data.goLive).getTime();
-
-            if (!Number.isFinite(timestamp)) {
-                throw new Error("Invalid go-live timestamp");
-            }
-
-            return timestamp;
         } catch (error) {
             /*
              * Never invent a start time.
