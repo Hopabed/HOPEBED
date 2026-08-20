@@ -1,3 +1,56 @@
+export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+
+    // 1. API Endpoint: Handles incoming form data and forwards to Google Sheets
+    if (url.pathname === "/api/submit" && request.method === "POST") {
+      try {
+        // Change this string to your exact Google Web App link from the script window
+        const googleScriptUrl = "PASTE_YOUR_COPIED_WEB_APP_URL_HERE";
+
+        const formData = await request.formData();
+        const payload = {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message")
+        };
+
+        await fetch(googleScriptUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        // HTML Response indicating success before automatic redirect
+        return new Response(
+          `<html><head><meta http-equiv="refresh" content="3;url=/contact"></head><body style="font-family:sans-serif;text-align:center;padding-top:100px;background:#fbfdfb;color:#16833a;"><h2>✓ Message Sent Successfully!</h2><p>Thank you for reaching out. Returning to Hopabed...</p></body></html>`, 
+          { headers: { "Content-Type": "text/html" } }
+        );
+      } catch (err) {
+        return new Response("Submission failed: " + err.message, { status: 500 });
+      }
+    }
+
+    // 2. Page Router: Delivers your custom styled Contact page layout
+    if (url.pathname === "/contact") {
+      return new Response(contactPageHTML, {
+        headers: { "content-type": "text/html;charset=UTF-8" },
+      });
+    }
+
+    // 3. Fallback Route: Shows your main site template index
+    return new Response(homePageHTML, {
+      headers: { "content-type": "text/html;charset=UTF-8" },
+    });
+  }
+};
+
+// 4. YOUR NEW BEAUTIFUL CUSTOM CONTACT LAYOUT
+// Note: Form tags modified to point directly to action="/api/submit" method="POST"
+// Note: Paths like 'index.html' changed to '/' to avoid routing mismatch blocks
+const contactPageHTML = `
+
+
 <!DOCTYPE html>
 <html lang="en">
 
