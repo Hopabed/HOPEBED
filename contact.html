@@ -1,56 +1,4 @@
-export default {
-  async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-
-    // 1. API Endpoint: Handles incoming form data and forwards to Google Sheets
-    if (url.pathname === "/api/submit" && request.method === "POST") {
-      try {
-        // Change this string to your exact Google Web App link from the script window
-        const googleScriptUrl = "PASTE_YOUR_COPIED_WEB_APP_URL_HERE";
-
-        const formData = await request.formData();
-        const payload = {
-          name: formData.get("name"),
-          email: formData.get("email"),
-          message: formData.get("message")
-        };
-
-        await fetch(googleScriptUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        // HTML Response indicating success before automatic redirect
-        return new Response(
-          `<html><head><meta http-equiv="refresh" content="3;url=/contact"></head><body style="font-family:sans-serif;text-align:center;padding-top:100px;background:#fbfdfb;color:#16833a;"><h2>✓ Message Sent Successfully!</h2><p>Thank you for reaching out. Returning to Hopabed...</p></body></html>`, 
-          { headers: { "Content-Type": "text/html" } }
-        );
-      } catch (err) {
-        return new Response("Submission failed: " + err.message, { status: 500 });
-      }
-    }
-
-    // 2. Page Router: Delivers your custom styled Contact page layout
-    if (url.pathname === "/contact") {
-      return new Response(contactPageHTML, {
-        headers: { "content-type": "text/html;charset=UTF-8" },
-      });
-    }
-
-    // 3. Fallback Route: Shows your main site template index
-    return new Response(homePageHTML, {
-      headers: { "content-type": "text/html;charset=UTF-8" },
-    });
-  }
-};
-
-// 4. YOUR NEW BEAUTIFUL CUSTOM CONTACT LAYOUT
-// Note: Form tags modified to point directly to action="/api/submit" method="POST"
-// Note: Paths like 'index.html' changed to '/' to avoid routing mismatch blocks
-const contactPageHTML = `
-
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,6 +17,7 @@ const contactPageHTML = `
 
     <title>Contact Us — Hopabed</title>
 
+    <!-- Google Fonts -->
     <link
         rel="preconnect"
         href="https://fonts.googleapis.com"
@@ -85,9 +34,14 @@ const contactPageHTML = `
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Main stylesheet -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
     <style>
+
         .contact-page {
             min-height: calc(100vh - 88px);
             display: flex;
@@ -179,6 +133,7 @@ const contactPageHTML = `
             font: inherit;
             outline: none;
             transition: .2s ease;
+            box-sizing: border-box;
         }
 
         .form-group input:focus,
@@ -209,6 +164,35 @@ const contactPageHTML = `
             transform: translateY(-1px);
         }
 
+        .submit-button:disabled {
+            opacity: .65;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-status {
+            display: none;
+            margin-top: 4px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .form-status.success {
+            display: block;
+            background: #edf9f0;
+            color: #166534;
+            border: 1px solid #bbebc7;
+        }
+
+        .form-status.error {
+            display: block;
+            background: #fff1f1;
+            color: #b42318;
+            border: 1px solid #f3c1c1;
+        }
+
         .direct-contact {
             margin-top: 24px;
             padding-top: 22px;
@@ -234,131 +218,55 @@ const contactPageHTML = `
             font-weight: 600;
         }
 
+        @media (max-width: 800px) {
 
-        /* Reference-matched footer */
-        .footer {
-            background: #0d1410;
-            color: #fff;
-            border-top: 1px solid rgba(143, 209, 79, .16);
-        }
+            .contact-page {
+                min-height: auto;
+                padding: 45px 16px 55px;
+            }
 
-        .footer-container {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 34px 0 30px;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: start;
-            gap: 80px;
-        }
-
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            max-width: 430px;
-        }
-
-        .footer-brand strong {
-            color: #fff;
-            font-size: 20px;
-            line-height: 1.2;
-            letter-spacing: -.025em;
-        }
-
-        .footer-brand span {
-            margin-top: 5px;
-            color: #8fd14f;
-            font-size: 11px;
-            font-weight: 700;
-        }
-
-        .footer-brand p {
-            margin: 14px 0 0;
-            color: rgba(255,255,255,.70);
-            font-size: 11px;
-            line-height: 1.55;
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: 90px 96px;
-            gap: 50px;
-            align-items: start;
-        }
-
-        .footer-links > div {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer-links h2 {
-            margin: 0 0 1px;
-            color: #fff;
-            font-size: 11px;
-            line-height: 1.2;
-            font-weight: 800;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,.72);
-            font-size: 11px;
-            line-height: 1.2;
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover,
-        .footer-links a:focus-visible {
-            color: #8fd14f;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .footer-bottom {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 13px 0 18px;
-            border-top: 1px solid rgba(255,255,255,.12);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            color: rgba(255,255,255,.52);
-            font-size: 10px;
-            line-height: 1.45;
-        }
-
-        @media (max-width: 760px) {
-            .footer-container {
-                width: min(100% - 28px, 1120px);
-                padding: 30px 0 26px;
+            .contact-wrapper {
                 grid-template-columns: 1fr;
-                gap: 28px;
+                gap: 30px;
             }
 
-            .footer-links {
-                grid-template-columns: 110px 110px;
-                gap: 38px;
+            .contact-intro {
+                max-width: 650px;
+                text-align: center;
+                margin: 0 auto;
             }
 
-            .footer-bottom {
-                width: min(100% - 28px, 1120px);
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 7px;
+            .contact-intro h1 {
+                font-size: clamp(42px, 10vw, 58px);
+            }
+
+            .contact-card {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            .contact-page {
+                padding-top: 35px;
+            }
+
+            .contact-card {
+                padding: 22px 16px;
+                border-radius: 16px;
+            }
+
+            .contact-card h2 {
+                font-size: 24px;
             }
         }
 
     </style>
 </head>
 
+
 <body>
+
 
 <header class="site-header">
 
@@ -369,12 +277,15 @@ const contactPageHTML = `
             href="index.html"
             aria-label="Hopabed home"
         >
+
             <img
                 class="hopabed-logo"
                 src="./assets/hopabed logo.png"
                 alt="Hopabed — Stay Smart. Stay Verified."
             >
+
         </a>
+
 
         <a
             class="contact-button"
@@ -388,9 +299,13 @@ const contactPageHTML = `
 </header>
 
 
+
 <main class="contact-page">
 
     <div class="contact-wrapper">
+
+
+        <!-- LEFT SIDE -->
 
         <section class="contact-intro">
 
@@ -398,16 +313,19 @@ const contactPageHTML = `
                 GET IN TOUCH
             </p>
 
+
             <h1>
                 Let's talk<br>
                 <span>Hopabed.</span>
             </h1>
+
 
             <p>
                 Have a question, suggestion, partnership idea,
                 or simply want to know what we're building?
                 We'd love to hear from you.
             </p>
+
 
             <a
                 href="index.html"
@@ -419,20 +337,32 @@ const contactPageHTML = `
         </section>
 
 
+
+        <!-- RIGHT SIDE -->
+
         <section class="contact-card">
 
             <h2>
                 Contact Us
             </h2>
 
+
             <p class="contact-card-subtitle">
                 Send us a message and we'll get back to you.
             </p>
 
+
+
+            <!-- CONTACT FORM -->
+
             <form
                 class="contact-form"
                 id="contactForm"
+                novalidate
             >
+
+
+                <!-- NAME -->
 
                 <div class="form-group">
 
@@ -445,13 +375,16 @@ const contactPageHTML = `
                         id="name"
                         name="name"
                         placeholder="Your name"
-                        maxlength="100"
                         autocomplete="name"
+                        maxlength="100"
                         required
                     >
 
                 </div>
 
+
+
+                <!-- EMAIL -->
 
                 <div class="form-group">
 
@@ -464,13 +397,16 @@ const contactPageHTML = `
                         id="email"
                         name="email"
                         placeholder="you@example.com"
-                        maxlength="255"
                         autocomplete="email"
+                        maxlength="150"
                         required
                     >
 
                 </div>
 
+
+
+                <!-- MESSAGE -->
 
                 <div class="form-group">
 
@@ -489,15 +425,34 @@ const contactPageHTML = `
                 </div>
 
 
+
+                <!-- STATUS -->
+
+                <div
+                    id="formStatus"
+                    class="form-status"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+
+
+                <!-- SUBMIT -->
+
                 <button
                     type="submit"
                     class="submit-button"
+                    id="submitButton"
                 >
                     Send Message
                 </button>
 
+
             </form>
 
+
+
+            <!-- DIRECT EMAIL -->
 
             <div class="direct-contact">
 
@@ -511,6 +466,7 @@ const contactPageHTML = `
 
             </div>
 
+
         </section>
 
     </div>
@@ -518,59 +474,289 @@ const contactPageHTML = `
 </main>
 
 
+
 <footer class="footer">
 
     <div class="footer-container">
 
+
         <div class="footer-brand">
-            <strong>Hopabed</strong>
-            <span>Stay Smart. Stay Verified.</span>
-            <p>A smarter way to discover, book and verify stays in India.</p>
+
+            <strong>
+                Hopabed
+            </strong>
+
+            <span>
+                Stay Smart. Stay Verified.
+            </span>
+
         </div>
 
-        <nav
-            class="footer-links"
-            aria-label="Footer navigation"
+
+        <div class="copyright">
+            © 2026 Hopabed. All rights reserved.
+        </div>
+
+
+        <a
+            class="footer-contact"
+            href="contact.html"
         >
+            Contact Us
+        </a>
 
-            <div>
-                <h2>Explore</h2>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Hopabed</a>
-                <a href="vision.html">Our Vision</a>
-            </div>
 
-            <div>
-                <h2>Support</h2>
-                <a href="contact.html">Contact Us</a>
-            </div>
-
-        </nav>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 Hopabed. All rights reserved.</p>
-        <p>Building a simpler, more confident stay experience in India.</p>
     </div>
 
 </footer>
 
 
+
+<!-- ============================================
+     CONTACT FORM JAVASCRIPT
+     ============================================ -->
+
 <script>
-    document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (event) {
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+    const submitButton =
+        document.getElementById("submitButton");
+
+    const formStatus =
+        document.getElementById("formStatus");
+
+
+    contactForm.addEventListener(
+        "submit",
+        async function (event) {
 
             event.preventDefault();
 
-            alert(
-                "Thank you! Hopabed will connect with you soon."
-            );
 
-            this.reset();
-        });
+            // Clear previous status
+
+            formStatus.className =
+                "form-status";
+
+            formStatus.textContent =
+                "";
+
+
+            // Get values
+
+            const name =
+                document
+                    .getElementById("name")
+                    .value
+                    .trim();
+
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+            const message =
+                document
+                    .getElementById("message")
+                    .value
+                    .trim();
+
+
+            // Basic validation
+
+            if (!name) {
+
+                showError(
+                    "Please enter your name."
+                );
+
+                document
+                    .getElementById("name")
+                    .focus();
+
+                return;
+            }
+
+
+            if (!email) {
+
+                showError(
+                    "Please enter your email address."
+                );
+
+                document
+                    .getElementById("email")
+                    .focus();
+
+                return;
+            }
+
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            if (!emailPattern.test(email)) {
+
+                showError(
+                    "Please enter a valid email address."
+                );
+
+                document
+                    .getElementById("email")
+                    .focus();
+
+                return;
+            }
+
+
+            if (!message) {
+
+                showError(
+                    "Please enter your message."
+                );
+
+                document
+                    .getElementById("message")
+                    .focus();
+
+                return;
+            }
+
+
+
+            // Disable button
+
+            submitButton.disabled = true;
+
+            submitButton.textContent =
+                "Sending...";
+
+
+            try {
+
+                /*
+                 * Send the form to the Cloudflare Worker.
+                 *
+                 * The Worker handles the connection
+                 * to Google Apps Script / Google Sheet.
+                 */
+
+                const response =
+                    await fetch(
+                        "/api/submit",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify({
+                                    name: name,
+                                    email: email,
+                                    message: message
+                                })
+                        }
+                    );
+
+
+                let result;
+
+                try {
+
+                    result =
+                        await response.json();
+
+                } catch (jsonError) {
+
+                    throw new Error(
+                        "Invalid server response."
+                    );
+                }
+
+
+
+                // Check server response
+
+                if (
+                    !response.ok ||
+                    !result.success
+                ) {
+
+                    throw new Error(
+                        result.error ||
+                        "Unable to send your message."
+                    );
+                }
+
+
+
+                // SUCCESS
+
+                formStatus.className =
+                    "form-status success";
+
+                formStatus.textContent =
+                    "✓ Message sent successfully. Thank you for contacting Hopabed!";
+
+
+                // Clear form
+
+                contactForm.reset();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Hopabed contact form error:",
+                    error
+                );
+
+
+                // ERROR
+
+                showError(
+                    "Sorry, we couldn't send your message right now. Please try again."
+                );
+
+
+            } finally {
+
+                submitButton.disabled = false;
+
+                submitButton.textContent =
+                    "Send Message";
+
+            }
+
+        }
+    );
+
+
+
+    // ============================================
+    // ERROR HELPER
+    // ============================================
+
+    function showError(message) {
+
+        formStatus.className =
+            "form-status error";
+
+        formStatus.textContent =
+            "✕ " + message;
+
+    }
+
 </script>
+
 
 </body>
 </html>
+```
