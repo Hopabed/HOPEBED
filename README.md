@@ -1,8 +1,8 @@
 <div align="center">
 
   <img src="assets/favicon.png" alt="Hopabed Logo" width="120" height="120">
-
-  # Hopabed
+  
+  # hopabed.com
 
   <p align="center">
     <strong>Stay Smart. Stay Verified.</strong>
