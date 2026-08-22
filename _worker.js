@@ -1,6 +1,3 @@
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxZduJvfvHoNiXy4y__rQYPwHTFTaC0qFpQnz16WY8uISUyeyDbweI7QT6F3W3vvjijqQ/exec";
-
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -89,8 +86,14 @@ export default {
         // ============================================
         // SEND DATA TO GOOGLE APPS SCRIPT
         // ============================================
+        const googleScriptUrl = env.GOOGLE_SCRIPT_URL;
+
+        if (!googleScriptUrl) {
+          throw new Error("GOOGLE_SCRIPT_URL environment variable is not configured.");
+        }
+
         const googleResponse = await fetch(
-          GOOGLE_SCRIPT_URL,
+          googleScriptUrl,
           {
             method: "POST",
             headers: {
