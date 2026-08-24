@@ -1,6 +1,3 @@
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxZduJvfvHoNiXy4y__rQYPwHTFTaC0qFpQnz16WY8uISUyeyDbweI7QT6F3W3vvjijqQ/exec";
-
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -10,6 +7,17 @@ export default {
     // ============================================
     if (url.pathname === "/api/submit" && request.method === "POST") {
       try {
+        if (!env.GOOGLE_SCRIPT_URL) {
+          console.error("Missing GOOGLE_SCRIPT_URL environment binding.");
+          return jsonResponse(
+            {
+              success: false,
+              error: "Configuration error. Unable to process request."
+            },
+            500
+          );
+        }
+
         const contentType =
           request.headers.get("content-type") || "";
 
@@ -90,7 +98,7 @@ export default {
         // SEND DATA TO GOOGLE APPS SCRIPT
         // ============================================
         const googleResponse = await fetch(
-          GOOGLE_SCRIPT_URL,
+          env.GOOGLE_SCRIPT_URL,
           {
             method: "POST",
             headers: {
