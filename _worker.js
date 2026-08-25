@@ -157,7 +157,14 @@ export default {
     // 2. SERVE YOUR WEBSITE
     // ============================================
     if (env.ASSETS) {
-      return env.ASSETS.fetch(request);
+      const response = await env.ASSETS.fetch(request);
+      const newResponse = new Response(response.body, response);
+
+      newResponse.headers.set("X-Content-Type-Options", "nosniff");
+      newResponse.headers.set("X-Frame-Options", "DENY");
+      newResponse.headers.set("X-XSS-Protection", "1; mode=block");
+
+      return newResponse;
     }
 
     return new Response(
@@ -182,7 +189,10 @@ function jsonResponse(data, status = 200) {
     {
       status,
       headers: {
-        "content-type": "application/json;charset=UTF-8"
+        "content-type": "application/json;charset=UTF-8",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-XSS-Protection": "1; mode=block"
       }
     }
   );
