@@ -2,7 +2,7 @@
 
   <img src="assets/favicon.PNG" alt="Hopabed Logo" width="120" height="120">
   
-  # hopabed.com
+  # hopebed.in
 
   <p align="center">
     <strong>Stay Smart. Stay Verified.</strong>
@@ -13,7 +13,7 @@
   </p>
 
   <p align="center">
-    <a href="https://hopabed-phase1-full-code.mithagaris.workers.dev/">
+    <a href="https://hopebed.in">
       <img src="https://img.shields.io/badge/Live%20Website-Hopabed-16833a?style=for-the-badge" alt="Live Website">
     </a>
     <a href="https://github.com/imsharukh1994/hopabed_phase1_full_code">
