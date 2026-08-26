@@ -157,7 +157,18 @@ export default {
     // 2. SERVE YOUR WEBSITE
     // ============================================
     if (env.ASSETS) {
-      return env.ASSETS.fetch(request);
+      const response = await env.ASSETS.fetch(request);
+
+      // Cloudflare Worker responses from fetch() are immutable, so we must construct a new Response to modify headers
+      const newResponse = new Response(response.body, response);
+
+      // Add security headers
+      newResponse.headers.set("X-Content-Type-Options", "nosniff");
+      newResponse.headers.set("X-Frame-Options", "DENY");
+      newResponse.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+      newResponse.headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+
+      return newResponse;
     }
 
     return new Response(
@@ -182,7 +193,11 @@ function jsonResponse(data, status = 200) {
     {
       status,
       headers: {
-        "content-type": "application/json;charset=UTF-8"
+        "content-type": "application/json;charset=UTF-8",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
       }
     }
   );
