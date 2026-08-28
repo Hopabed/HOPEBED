@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+    <!-- Homepage -->
     <url>
-        <loc>https://hopabed.in/</loc>
+        <loc>https://hopebed.in/</loc>
+        <lastmod>2026-08-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
+    <!-- About Hopebed -->
     <url>
-        <loc>https://hopabed.in/about.html</loc>
+        <loc>https://hopebed.in/about.html</loc>
+        <lastmod>2026-08-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <!-- Our Vision -->
     <url>
-        <loc>https://hopabed.in/vision.html</loc>
+        <loc>https://hopebed.in/vision.html</loc>
+        <lastmod>2026-08-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
+    <!-- Contact Us -->
     <url>
-        <loc>https://hopabed.in/contact.html</loc>
+        <loc>https://hopebed.in/contact.html</loc>
+        <lastmod>2026-08-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
