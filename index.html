@@ -5,25 +5,35 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+  name="theme-color"
+  content="#0d6b36"
+>
 
 
 <!-- ========================================
      PRIMARY SEO
 ======================================== -->
 
-<title>Hopebed | Find Verified Hotels, PGs & Hostels in India</title>
+<title>
+Hopebed | Find Verified Hotels, PGs & Hostels in India
+</title>
 
 <meta
   name="description"
-  content="Hopebed helps you discover verified hotels, PGs, hostels, rooms and accommodation in India. Find, book and verify trusted stays. Launching in Taloja and Kharghar, Navi Mumbai."
+  content="Hopebed is building a trusted platform to discover, book and verify hotels, PGs, hostels, rooms and accommodation in India. Launching first in Taloja and Kharghar, Navi Mumbai."
 >
 
 <meta name="author" content="Hopebed">
 
 <meta
   name="robots"
-  content="index, follow, max-image-preview:large"
+  content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 >
 
 <meta
@@ -60,28 +70,17 @@
 <link
   rel="icon"
   type="image/png"
-  sizes="512x512"
-  href="/assets/favicon.png"
->
-
-<link
-  rel="icon"
-  type="image/png"
-  sizes="192x192"
   href="/assets/favicon.png"
 >
 
 <link
   rel="apple-touch-icon"
-  sizes="180x180"
   href="/assets/favicon.png"
 >
 
-<meta name="theme-color" content="#0d6b36">
-
 
 <!-- ========================================
-     OPEN GRAPH
+     OPEN GRAPH SEO
 ======================================== -->
 
 <meta property="og:type" content="website">
@@ -90,7 +89,7 @@
 
 <meta
   property="og:title"
-  content="Hopebed | Find Verified Stays in India"
+  content="Hopebed | Find & Book Verified Stays in India"
 >
 
 <meta
@@ -109,7 +108,7 @@
 
 
 <!-- ========================================
-     TWITTER
+     TWITTER / X SEO
 ======================================== -->
 
 <meta
@@ -148,7 +147,7 @@
     "@type": "ImageObject",
     "url": "https://hopebed.in/assets/favicon.png"
   },
-  "description": "Hopebed is a platform helping people discover, book and verify trusted accommodation including hotels, PGs, hostels, rooms and homes in India.",
+  "description": "Hopebed is building a trusted platform to help people discover, book and verify accommodation including hotels, PGs, hostels, rooms and stays in India.",
   "email": "hello@hopebed.in",
   "areaServed": {
     "@type": "Country",
@@ -188,8 +187,8 @@
   "@type": "WebPage",
   "@id": "https://hopebed.in/#webpage",
   "url": "https://hopebed.in/",
-  "name": "Hopebed | Verified Stays in India",
-  "description": "Find verified hotels, PGs, hostels, rooms and accommodation in India.",
+  "name": "Hopebed | Find Verified Hotels, PGs & Hostels in India",
+  "description": "Discover and book verified hotels, PGs, hostels, rooms and accommodation in India.",
   "isPartOf": {
     "@id": "https://hopebed.in/#website"
   },
@@ -211,11 +210,15 @@
   --green:#0d6b36;
   --green-dark:#084a25;
   --green-light:#159447;
+
   --dark:#030506;
+
   --text:#171b1d;
   --muted:#66706d;
+
   --line:#dce3df;
   --soft:#f4f7f4;
+
   --white:#ffffff;
 }
 
@@ -241,7 +244,9 @@ body{
     sans-serif;
 
   color:var(--text);
-  background:#fff;
+
+  background:#ffffff;
+
   line-height:1.55;
 }
 
@@ -272,13 +277,16 @@ select{
 
 .nav{
   height:84px;
+
   background:var(--dark);
-  color:#fff;
+
+  color:#ffffff;
 
   display:flex;
   align-items:center;
 
   position:sticky;
+
   top:0;
 
   z-index:1000;
@@ -291,7 +299,9 @@ select{
   width:100%;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 
   gap:30px;
@@ -304,6 +314,7 @@ select{
 
 .brand{
   display:flex;
+
   align-items:center;
 
   height:70px;
@@ -313,9 +324,11 @@ select{
 
 .brand-logo{
   width:205px;
+
   height:62px;
 
   object-fit:contain;
+
   object-position:left center;
 
   display:block;
@@ -328,6 +341,7 @@ select{
 
 .desktop-nav{
   display:flex;
+
   align-items:center;
 
   gap:26px;
@@ -339,6 +353,7 @@ select{
   color:#d9e1dc;
 
   font-size:14px;
+
   font-weight:600;
 
   transition:.2s ease;
@@ -355,6 +370,7 @@ select{
 
 .nav-actions{
   display:flex;
+
   align-items:center;
 
   gap:14px;
@@ -364,7 +380,9 @@ select{
   min-height:46px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   border:1px solid #2f8b57;
@@ -374,15 +392,17 @@ select{
   padding:0 20px;
 
   font-size:14px;
+
   font-weight:700;
 
-  color:#fff;
+  color:#ffffff;
 
   transition:.2s ease;
 }
 
 .contact:hover{
   background:var(--green);
+
   border-color:var(--green);
 }
 
@@ -395,19 +415,23 @@ select{
   display:none;
 
   width:48px;
+
   height:48px;
 
   border:0;
+
   background:transparent;
 
-  color:#fff;
+  color:#ffffff;
 
   align-items:center;
+
   justify-content:center;
 
   cursor:pointer;
 
   font-size:29px;
+
   line-height:1;
 }
 
@@ -421,9 +445,10 @@ select{
 
   inset:0;
 
-  background:rgba(0,0,0,.55);
+  background:rgba(0,0,0,.60);
 
   opacity:0;
+
   visibility:hidden;
 
   pointer-events:none;
@@ -437,6 +462,7 @@ select{
 
 .mobile-menu-overlay.active{
   opacity:1;
+
   visibility:visible;
 
   pointer-events:auto;
@@ -444,24 +470,28 @@ select{
 
 
 /* ========================================
-   MOBILE MENU PANEL
+   MOBILE MENU
 ======================================== */
 
 .mobile-menu{
   position:fixed;
 
   top:0;
+
   right:0;
 
   width:min(400px,88%);
+
   height:100dvh;
 
   background:#030506;
-  colour:#ffffff;
+
+  color:#ffffff;
 
   z-index:2000;
 
   display:flex;
+
   flex-direction:column;
 
   padding:0 24px 24px;
@@ -472,7 +502,7 @@ select{
     transform .35s cubic-bezier(.22,.61,.36,1);
 
   box-shadow:
-    -20px 0 50px rgba(0,0,0,.22);
+    -20px 0 50px rgba(0,0,0,.30);
 }
 
 .mobile-menu.active{
@@ -481,37 +511,38 @@ select{
 
 
 /* ========================================
-   MENU HEADER
+   MOBILE MENU HEADER
 ======================================== */
 
 .mobile-menu-header{
   min-height:84px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 
   gap:15px;
 
   border-bottom:1px solid #26332c;
-
-  flex-shrink:0;
 }
 
 .mobile-menu-brand{
   display:flex;
+
   align-items:center;
 
   min-height:60px;
-
-  overflow:hidden;
 }
 
 .mobile-menu-logo{
   width:175px;
+
   height:55px;
 
   object-fit:contain;
+
   object-position:left center;
 
   display:block;
@@ -524,6 +555,7 @@ select{
 
 .mobile-menu-close{
   width:46px;
+
   height:46px;
 
   border:none;
@@ -535,23 +567,18 @@ select{
   color:#ffffff;
 
   font-size:30px;
-  line-height:1;
 
   cursor:pointer;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   flex-shrink:0;
-
-  transition:.2s ease;
 }
 
-.mobile-menu-close:hover{
-  background:#26332c;
-  transform:rotate(90deg);
-}
 
 /* ========================================
    MOBILE NAVIGATION
@@ -559,96 +586,95 @@ select{
 
 .mobile-menu-nav{
   display:flex;
+
   flex-direction:column;
 
   padding:24px 0;
 
-  gap:5px;
+  gap:8px;
 }
 
 .mobile-menu-nav .menu-link{
-  min-height:52px;
+  min-height:58px;
 
   display:flex;
+
   align-items:center;
 
-  padding:13px 14px;
+  padding:14px 28px;
 
-  border-radius:10px;
+  border-radius:14px;
 
-  color:var(--text);
+  color:#ffffff;
 
-  font-size:16px;
-  font-weight:650;
+  font-size:18px;
 
-  transition:.2s ease;
+  font-weight:700;
 }
 
 .mobile-menu-nav .menu-link:hover{
-  background:#f2f7f3;
-  color:var(--green);
+  background:#17201b;
 }
 
 .mobile-menu-nav .menu-list-property{
-  min-height:58px;
+  min-height:62px;
 
-  margin:10px 0;
+  margin:12px 0;
 
-  padding:15px 18px;
+  padding:15px 28px;
 
   background:
     linear-gradient(
       90deg,
-      #168342,
-      #0c602f
+      #218044,
+      #145f31
     );
 
-  color:#fff;
-
-  border-radius:11px;
-
-  font-weight:800;
+  border-radius:18px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 }
 
 .menu-arrow{
-  font-size:21px;
+  font-size:27px;
 }
 
 
 /* ========================================
-   MOBILE MENU BOTTOM
+   MOBILE MENU ACTIONS
 ======================================== */
 
 .mobile-menu-actions{
   margin-top:auto;
 
-  padding-top:20px;
+  padding-top:24px;
 
-  border-top:1px solid #e7ece8;
+  border-top:1px solid #26332c;
 }
 
 .menu-whatsapp{
-  min-height:54px;
+  min-height:58px;
 
   width:100%;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
-  border:1px solid #d9e3dc;
+  border:1px solid #b9c5bd;
 
-  border-radius:10px;
+  border-radius:14px;
 
-  padding:14px 18px;
+  color:#ffffff;
 
-  color:var(--text);
+  font-size:17px;
 
-  font-size:15px;
   font-weight:700;
 }
 
@@ -658,9 +684,10 @@ select{
 ======================================== */
 
 .hero{
-  min-height:580px;
+  min-height:650px;
 
   position:relative;
+
   overflow:hidden;
 
   background:
@@ -678,9 +705,11 @@ select{
   position:absolute;
 
   right:-4%;
+
   top:0;
 
   width:44%;
+
   height:100%;
 
   background:
@@ -701,6 +730,7 @@ select{
 
 .hero-inner{
   position:relative;
+
   z-index:2;
 
   display:grid;
@@ -712,8 +742,14 @@ select{
   padding:72px 0;
 }
 
+
+/* ========================================
+   HERO TEXT
+======================================== */
+
 .eyebrow{
   font-size:12px;
+
   font-weight:800;
 
   letter-spacing:2px;
@@ -743,7 +779,6 @@ h1 span{
   max-width:610px;
 }
 
-.hero-copy b,
 .hero-copy strong{
   color:#326e4a;
 }
@@ -769,7 +804,9 @@ h1 span{
   padding:0 22px;
 
   display:inline-flex;
+
   align-items:center;
+
   justify-content:center;
 
   font-weight:800;
@@ -791,7 +828,7 @@ h1 span{
       #0c602f
     );
 
-  color:#fff;
+  color:#ffffff;
 
   box-shadow:
     0 8px 22px
@@ -799,16 +836,21 @@ h1 span{
 }
 
 .btn-outline{
-  background:#fff;
+  background:#ffffff;
 
   border:1px solid #68716d;
 
-  color:#222;
+  color:#222222;
 }
 
 .btn:hover{
   transform:translateY(-2px);
 }
+
+
+/* ========================================
+   HERO NOTES
+======================================== */
 
 .hero-notes{
   display:flex;
@@ -832,11 +874,108 @@ h1 span{
   margin-right:6px;
 }
 
-.location-pill{
-  display:inline-flex;
+
+/* ========================================
+   LAUNCH COUNTDOWN
+======================================== */
+
+.launch-countdown{
+  margin-top:28px;
+
+  max-width:610px;
+
+  background:rgba(255,255,255,.75);
+
+  border:1px solid #d7e2da;
+
+  border-radius:18px;
+
+  padding:18px 20px;
+
+  box-shadow:
+    0 10px 30px rgba(13,107,54,.08);
+}
+
+.launch-label{
+  display:flex;
+
   align-items:center;
 
-  margin-top:27px;
+  gap:8px;
+
+  margin-bottom:14px;
+
+  color:#0d6b36;
+
+  font-size:13px;
+
+  font-weight:800;
+
+  letter-spacing:.4px;
+}
+
+.countdown{
+  display:flex;
+
+  gap:10px;
+}
+
+.countdown-box{
+  min-width:82px;
+
+  padding:11px 8px;
+
+  background:#030506;
+
+  border-radius:12px;
+
+  text-align:center;
+
+  color:#ffffff;
+}
+
+.countdown-number{
+  display:block;
+
+  font-size:25px;
+
+  font-weight:800;
+
+  line-height:1.1;
+}
+
+.countdown-text{
+  display:block;
+
+  margin-top:5px;
+
+  color:#aeb9b3;
+
+  font-size:10px;
+
+  font-weight:700;
+
+  text-transform:uppercase;
+
+  letter-spacing:.8px;
+}
+
+.launch-date{
+  margin:13px 0 0;
+
+  color:#66706d;
+
+  font-size:12px;
+
+  font-weight:600;
+}
+
+.location-pill{
+  display:inline-flex;
+
+  align-items:center;
+
+  margin-top:22px;
 
   background:#edf3ee;
 
@@ -845,6 +984,7 @@ h1 span{
   padding:9px 15px;
 
   font-size:12px;
+
   font-weight:700;
 
   color:#45604f;
@@ -883,11 +1023,12 @@ h1 span{
       #123e29
     );
 
-  color:#fff;
+  color:#ffffff;
 }
 
 .lead-head h2{
   font-size:21px;
+
   margin:0 0 3px;
 }
 
@@ -907,6 +1048,7 @@ h1 span{
 
 .field{
   width:100%;
+
   height:55px;
 
   border:1px solid #d9dfdc;
@@ -916,6 +1058,7 @@ h1 span{
   margin-bottom:11px;
 
   display:flex;
+
   align-items:center;
 
   padding:0 15px;
@@ -926,9 +1069,11 @@ h1 span{
 .field input,
 .field select{
   width:100%;
+
   height:100%;
 
   border:0;
+
   outline:0;
 
   background:transparent;
@@ -1025,6 +1170,7 @@ h1 span{
 
 .benefit-icon{
   width:42px;
+
   height:42px;
 
   border-radius:50%;
@@ -1032,6 +1178,7 @@ h1 span{
   background:#f0f6f1;
 
   display:grid;
+
   place-items:center;
 
   color:#14733b;
@@ -1092,11 +1239,12 @@ h1 span{
 
   padding:30px 20px;
 
-  background:#fff;
+  background:#ffffff;
 }
 
 .step-icon{
   width:64px;
+
   height:64px;
 
   border-radius:50%;
@@ -1106,6 +1254,7 @@ h1 span{
   background:#eef5ef;
 
   display:grid;
+
   place-items:center;
 
   font-size:30px;
@@ -1159,6 +1308,7 @@ h1 span{
   height:116px;
 
   display:grid;
+
   place-items:center;
 
   background:#eff6ef;
@@ -1222,6 +1372,7 @@ h1 span{
 
 .about-content{
   max-width:780px;
+
   margin:auto;
 }
 
@@ -1240,19 +1391,23 @@ h1 span{
   position:fixed;
 
   right:22px;
+
   bottom:22px;
 
   width:60px;
+
   height:60px;
 
   border-radius:50%;
 
   background:#25D366;
 
-  color:#fff;
+  color:#ffffff;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   font-size:27px;
@@ -1272,7 +1427,7 @@ h1 span{
 .footer{
   background:#030506;
 
-  color:#fff;
+  color:#ffffff;
 
   padding:60px 0 0;
 }
@@ -1290,11 +1445,13 @@ h1 span{
 
 .footer-logo{
   width:205px;
+
   height:60px;
 
   max-width:100%;
 
   object-fit:contain;
+
   object-position:left center;
 
   margin-bottom:18px;
@@ -1338,6 +1495,7 @@ h1 span{
 
 .social-links a{
   width:44px;
+
   height:44px;
 
   border:1px solid #2b3831;
@@ -1345,10 +1503,12 @@ h1 span{
   border-radius:50%;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
-  color:#fff;
+  color:#ffffff;
 
   font-weight:700;
 }
@@ -1373,7 +1533,7 @@ h1 span{
 
 
 /* ========================================
-   TABLET & MOBILE
+   TABLET
 ======================================== */
 
 @media(max-width:900px){
@@ -1396,6 +1556,7 @@ h1 span{
 
   .brand-logo{
     width:180px;
+
     height:56px;
   }
 
@@ -1454,6 +1615,10 @@ h1 span{
 }
 
 
+/* ========================================
+   MOBILE
+======================================== */
+
 @media(max-width:500px){
 
   .container{
@@ -1470,17 +1635,21 @@ h1 span{
 
   .brand-logo{
     width:165px;
+
     height:52px;
   }
 
   .mobile-menu{
     width:90%;
+
     padding-left:20px;
+
     padding-right:20px;
   }
 
   .mobile-menu-logo{
     width:160px;
+
     height:52px;
   }
 
@@ -1514,6 +1683,32 @@ h1 span{
     flex-direction:column;
   }
 
+  .launch-countdown{
+    padding:16px;
+  }
+
+  .countdown{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:7px;
+  }
+
+  .countdown-box{
+    min-width:0;
+
+    padding:10px 4px;
+  }
+
+  .countdown-number{
+    font-size:19px;
+  }
+
+  .countdown-text{
+    font-size:8px;
+  }
+
 }
 
 </style>
@@ -1532,7 +1727,12 @@ h1 span{
 
 <div class="container nav-inner">
 
-<a href="#home" class="brand">
+
+<a
+href="#home"
+class="brand"
+aria-label="Hopebed Home"
+>
 
 <img
 src="./assets/Logo_with_background.PNG"
@@ -1558,9 +1758,13 @@ class="brand-logo"
 
 <div class="nav-actions">
 
-<a href="contact.html" class="contact">
+<a
+href="contact.html"
+class="contact"
+>
 Contact Us
 </a>
+
 
 <button
 class="menu-btn"
@@ -1598,11 +1802,14 @@ class="mobile-menu"
 id="mobileMenu"
 >
 
+
 <div class="mobile-menu-header">
+
 
 <a
 href="#home"
 class="mobile-menu-brand"
+aria-label="Hopebed Home"
 >
 
 <img
@@ -1631,13 +1838,21 @@ class="mobile-menu-nav"
 aria-label="Mobile navigation"
 >
 
-<a href="#home" class="menu-link">
+<a
+href="#home"
+class="menu-link"
+>
 Home
 </a>
 
-<a href="find-stay.html" class="menu-link">
+
+<a
+href="find-stay.html"
+class="menu-link"
+>
 Find a Stay
 </a>
+
 
 <a
 href="#list"
@@ -1654,15 +1869,27 @@ List Your Property
 
 </a>
 
-<a href="how-it-works.html" class="menu-link">
+
+<a
+href="how-it-works.html"
+class="menu-link"
+>
 How It Works
 </a>
 
-<a href="about.html" class="menu-link">
+
+<a
+href="about.html"
+class="menu-link"
+>
 About Hopebed
 </a>
 
-<a href="contact.html" class="menu-link">
+
+<a
+href="contact.html"
+class="menu-link"
+>
 Contact
 </a>
 
@@ -1701,7 +1928,10 @@ class="menu-whatsapp"
 <div class="container hero-inner">
 
 
+<!-- LEFT CONTENT -->
+
 <div>
+
 
 <div class="eyebrow">
 WE'RE BUILDING HOPEBED
@@ -1727,12 +1957,19 @@ in India
 
 <p class="hero-copy">
 
-Hopebed is a stay platform designed to help travelers
-<strong>find, book and verify trusted accommodation in India</strong>,
+Hopebed is building a smarter way to help travelers
+
+<strong>
+find, book and verify trusted accommodation in India
+</strong>,
+
 including hotels, PGs, hostels, rooms and homes.
 
-Currently launching in
-<strong>Taloja and Kharghar, Navi Mumbai.</strong>
+Our first launch is focused on
+
+<strong>
+Taloja and Kharghar, Navi Mumbai.
+</strong>
 
 </p>
 
@@ -1763,16 +2000,112 @@ Find a Stay
 
 <span>No commission until your first booking</span>
 
-<span>Verified tenants</span>
+<span>Verified properties</span>
+
+</div>
+
+
+<!-- ========================================
+     LAUNCH COUNTDOWN
+======================================== -->
+
+<div class="launch-countdown">
+
+
+<div class="launch-label">
+🚀 HOPEBED IS LAUNCHING SOON
+</div>
+
+
+<div class="countdown">
+
+
+<div class="countdown-box">
+
+<span
+class="countdown-number"
+id="days"
+>
+00
+</span>
+
+<span class="countdown-text">
+Days
+</span>
+
+</div>
+
+
+<div class="countdown-box">
+
+<span
+class="countdown-number"
+id="hours"
+>
+00
+</span>
+
+<span class="countdown-text">
+Hours
+</span>
+
+</div>
+
+
+<div class="countdown-box">
+
+<span
+class="countdown-number"
+id="minutes"
+>
+00
+</span>
+
+<span class="countdown-text">
+Minutes
+</span>
+
+</div>
+
+
+<div class="countdown-box">
+
+<span
+class="countdown-number"
+id="seconds"
+>
+00
+</span>
+
+<span class="countdown-text">
+Seconds
+</span>
+
+</div>
+
+
+</div>
+
+
+<p class="launch-date">
+
+🎯 Target Launch:
+
+<strong>
+18 January 2027
+</strong>
+
+</p>
 
 </div>
 
 
 <div class="location-pill">
 
-📍 Launching in Taloja & Kharghar, Navi Mumbai
+📍 Launching first in Taloja & Kharghar, Navi Mumbai
 
 </div>
+
 
 </div>
 
@@ -1785,6 +2118,7 @@ Find a Stay
 class="lead-card"
 id="list"
 >
+
 
 <div class="lead-head">
 
@@ -1805,6 +2139,7 @@ id="leadForm"
 novalidate
 >
 
+
 <div class="field">
 
 👤
@@ -1813,9 +2148,11 @@ novalidate
 type="text"
 id="fName"
 placeholder="Your Name"
+autocomplete="name"
 >
 
 </div>
+
 
 <div
 class="error-msg"
@@ -1834,9 +2171,11 @@ type="tel"
 id="fPhone"
 placeholder="WhatsApp Number"
 inputmode="numeric"
+autocomplete="tel"
 >
 
 </div>
+
 
 <div
 class="error-msg"
@@ -1848,7 +2187,10 @@ Please enter a valid 10-digit number.
 
 <div class="field">
 
-<select id="fRole">
+<select
+id="fRole"
+aria-label="Select your role"
+>
 
 <option value="">
 I am a...
@@ -1870,6 +2212,7 @@ Broker / Agent
 
 </div>
 
+
 <div
 class="error-msg"
 id="err-fRole"
@@ -1886,6 +2229,7 @@ Please select an option.
 type="text"
 id="fLocation"
 placeholder="Property Location / Area (Optional)"
+autocomplete="address-level2"
 >
 
 </div>
@@ -1911,6 +2255,7 @@ Thanks! Opening WhatsApp...
 🔒 Your details are safe with us.
 </div>
 
+
 </form>
 
 </div>
@@ -1928,19 +2273,24 @@ Thanks! Opening WhatsApp...
 
 <div class="container">
 
+
 <div class="benefit-bar">
 
 
 <div class="benefit">
 
-<div class="benefit-icon">✓</div>
+<div class="benefit-icon">
+✓
+</div>
 
 <div>
 
-<h3>100% Verified Properties</h3>
+<h3>
+Verified Properties
+</h3>
 
 <p>
-Every property is verified for your safety.
+Properties are reviewed for a more trusted stay experience.
 </p>
 
 </div>
@@ -1950,14 +2300,18 @@ Every property is verified for your safety.
 
 <div class="benefit">
 
-<div class="benefit-icon">₹</div>
+<div class="benefit-icon">
+₹
+</div>
 
 <div>
 
-<h3>Transparent Information</h3>
+<h3>
+Transparent Information
+</h3>
 
 <p>
-Clear details and pricing.
+Clear property details and pricing information.
 </p>
 
 </div>
@@ -1967,14 +2321,18 @@ Clear details and pricing.
 
 <div class="benefit">
 
-<div class="benefit-icon">✓</div>
+<div class="benefit-icon">
+✓
+</div>
 
 <div>
 
-<h3>Dedicated Support</h3>
+<h3>
+Dedicated Support
+</h3>
 
 <p>
-We're here to help you.
+We're here to help throughout your journey.
 </p>
 
 </div>
@@ -1984,19 +2342,24 @@ We're here to help you.
 
 <div class="benefit">
 
-<div class="benefit-icon">★</div>
+<div class="benefit-icon">
+★
+</div>
 
 <div>
 
-<h3>Better for Everyone</h3>
+<h3>
+Better Stays
+</h3>
 
 <p>
-A better experience for everyone.
+A simpler experience for guests and property owners.
 </p>
 
 </div>
 
 </div>
+
 
 </div>
 
@@ -2016,6 +2379,7 @@ id="how"
 
 <div class="container">
 
+
 <h2 class="section-title">
 How Hopebed Works
 </h2>
@@ -2030,10 +2394,12 @@ How Hopebed Works
 🔍
 </div>
 
-<h3>Find</h3>
+<h3>
+Find
+</h3>
 
 <p>
-Verified properties that fit your needs.
+Discover stays that fit your needs and location.
 </p>
 
 </article>
@@ -2050,10 +2416,12 @@ Verified properties that fit your needs.
 📅
 </div>
 
-<h3>Book</h3>
+<h3>
+Book
+</h3>
 
 <p>
-Simple and hassle-free booking.
+Enjoy a simple and hassle-free booking experience.
 </p>
 
 </article>
@@ -2070,13 +2438,16 @@ Simple and hassle-free booking.
 ✓
 </div>
 
-<h3>Verify</h3>
+<h3>
+Verify
+</h3>
 
 <p>
-Digital verification for your safety.
+Experience a more trusted and transparent stay journey.
 </p>
 
 </article>
+
 
 </div>
 
@@ -2086,6 +2457,7 @@ Digital verification for your safety.
 ======================================== -->
 
 <div class="property-cta">
+
 
 <div class="building">
 🏢
@@ -2099,7 +2471,7 @@ Have a property to list?
 </h3>
 
 <p>
-Reach students and professionals looking for verified stays.
+Reach students, professionals and travelers looking for stays.
 </p>
 
 </div>
@@ -2111,6 +2483,7 @@ class="btn btn-primary"
 >
 List Your Property Free →
 </a>
+
 
 </div>
 
@@ -2124,12 +2497,16 @@ List Your Property Free →
 
 <div>
 
-<div class="owner-icon">📈</div>
+<div class="owner-icon">
+📈
+</div>
 
-<h4>More Visibility</h4>
+<h4>
+More Visibility
+</h4>
 
 <p>
-Get your property seen by potential tenants.
+Get your property discovered by potential guests and tenants.
 </p>
 
 </div>
@@ -2137,12 +2514,16 @@ Get your property seen by potential tenants.
 
 <div>
 
-<div class="owner-icon">👥</div>
+<div class="owner-icon">
+👥
+</div>
 
-<h4>Quality Tenants</h4>
+<h4>
+Reach More People
+</h4>
 
 <p>
-Connect with genuine tenants.
+Connect with students, professionals and travelers.
 </p>
 
 </div>
@@ -2150,9 +2531,13 @@ Connect with genuine tenants.
 
 <div>
 
-<div class="owner-icon">⚙️</div>
+<div class="owner-icon">
+⚙️
+</div>
 
-<h4>Simple Management</h4>
+<h4>
+Simple Management
+</h4>
 
 <p>
 Easy listing and inquiry management.
@@ -2163,15 +2548,20 @@ Easy listing and inquiry management.
 
 <div>
 
-<div class="owner-icon">🚀</div>
+<div class="owner-icon">
+🚀
+</div>
 
-<h4>Grow Your Business</h4>
+<h4>
+Grow Your Business
+</h4>
 
 <p>
-Increase occupancy and grow your property business.
+Increase visibility and grow your property business.
 </p>
 
 </div>
+
 
 </div>
 
@@ -2191,17 +2581,23 @@ id="about"
 
 <div class="container about-content">
 
+
 <h2 class="section-title">
 About Hopebed
 </h2>
 
+
 <p>
 
 Hopebed is building a smarter and more trusted way to find,
-book and verify stays in India. Our mission is to make stays
-safer, simpler and more transparent.
+book and verify stays in India.
+
+Our mission is to make accommodation discovery and booking
+safer, simpler and more transparent for travelers,
+tenants and property owners.
 
 </p>
+
 
 </div>
 
@@ -2238,6 +2634,8 @@ id="contact"
 <div class="container footer-grid">
 
 
+<!-- BRAND -->
+
 <div class="footer-brand">
 
 <img
@@ -2264,30 +2662,48 @@ booking and verifying stays across India.
 </div>
 
 
+<!-- QUICK LINKS -->
+
 <div>
 
-<h3>Quick Links</h3>
+<h3>
+Quick Links
+</h3>
 
 <div class="footer-links">
 
-<a href="#home">Home</a>
+<a href="#home">
+Home
+</a>
 
-<a href="find-stay.html">Find a Stay</a>
+<a href="find-stay.html">
+Find a Stay
+</a>
 
-<a href="how-it-works.html">How It Works</a>
+<a href="how-it-works.html">
+How It Works
+</a>
 
-<a href="#list">List Your Property</a>
+<a href="#list">
+List Your Property
+</a>
 
-<a href="about.html">About Us</a>
+<a href="about.html">
+About Us
+</a>
 
 </div>
 
 </div>
 
+
+<!-- CONTACT -->
 
 <div>
 
-<h3>Contact</h3>
+<h3>
+Contact
+</h3>
 
 <div class="footer-links">
 
@@ -2312,9 +2728,13 @@ Become a Property Partner
 </div>
 
 
+<!-- SOCIAL -->
+
 <div>
 
-<h3>Follow Hopebed</h3>
+<h3>
+Follow Hopebed
+</h3>
 
 <p style="color:#aeb9b3;font-size:14px;">
 
@@ -2326,25 +2746,38 @@ of verified stays.
 
 <div class="social-links">
 
-<a href="#" aria-label="Hopebed on LinkedIn">
+<a
+href="#"
+aria-label="Hopebed on LinkedIn"
+>
 in
 </a>
 
-<a href="#" aria-label="Hopebed on Instagram">
+<a
+href="#"
+aria-label="Hopebed on Instagram"
+>
 ◎
 </a>
 
-<a href="#" aria-label="Hopebed on Facebook">
+<a
+href="#"
+aria-label="Hopebed on Facebook"
+>
 f
 </a>
 
-<a href="#" aria-label="Hopebed on X">
+<a
+href="#"
+aria-label="Hopebed on X"
+>
 𝕏
 </a>
 
 </div>
 
 </div>
+
 
 </div>
 
@@ -2374,7 +2807,9 @@ Stay Smart. Stay Verified.
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener(
+"DOMContentLoaded",
+function(){
 
 
 /* ========================================
@@ -2432,58 +2867,60 @@ function closeMenu(){
 
 
 menuBtn.addEventListener(
-  "click",
-  openMenu
+"click",
+openMenu
 );
 
 
 menuClose.addEventListener(
-  "click",
-  closeMenu
+"click",
+closeMenu
 );
 
 
 menuOverlay.addEventListener(
-  "click",
-  closeMenu
+"click",
+closeMenu
 );
 
 
-menuLinks.forEach(function(link){
+menuLinks.forEach(
+function(link){
 
   link.addEventListener(
-    "click",
-    closeMenu
+  "click",
+  closeMenu
   );
 
-});
+}
+);
 
 
 document.addEventListener(
-  "keydown",
-  function(event){
+"keydown",
+function(event){
 
-    if(event.key === "Escape"){
+  if(event.key === "Escape"){
 
-      closeMenu();
-
-    }
+    closeMenu();
 
   }
+
+}
 );
 
 
 window.addEventListener(
-  "resize",
-  function(){
+"resize",
+function(){
 
-    if(window.innerWidth > 900){
+  if(window.innerWidth > 900){
 
-      closeMenu();
-
-    }
+    closeMenu();
 
   }
+
+}
 );
 
 
@@ -2507,9 +2944,9 @@ document.getElementById("formToast");
 
 
 function showError(
-  field,
-  error,
-  show
+field,
+error,
+show
 ){
 
   field.classList.toggle(
@@ -2642,7 +3079,130 @@ function(event){
 );
 
 
-});
+/* ========================================
+   LAUNCH COUNTDOWN
+======================================== */
+
+/*
+Target Launch:
+18 January 2027
+India Standard Time
+*/
+
+const launchDate =
+new Date(
+"2027-01-18T00:00:00+05:30"
+).getTime();
+
+
+function updateCountdown(){
+
+  const now =
+  new Date().getTime();
+
+
+  const distance =
+  launchDate - now;
+
+
+  const daysElement =
+  document.getElementById("days");
+
+  const hoursElement =
+  document.getElementById("hours");
+
+  const minutesElement =
+  document.getElementById("minutes");
+
+  const secondsElement =
+  document.getElementById("seconds");
+
+
+  if(distance <= 0){
+
+    daysElement.textContent = "00";
+
+    hoursElement.textContent = "00";
+
+    minutesElement.textContent = "00";
+
+    secondsElement.textContent = "00";
+
+    return;
+
+  }
+
+
+  const days =
+  Math.floor(
+    distance /
+    (1000 * 60 * 60 * 24)
+  );
+
+
+  const hours =
+  Math.floor(
+    (
+      distance %
+      (1000 * 60 * 60 * 24)
+    ) /
+    (1000 * 60 * 60)
+  );
+
+
+  const minutes =
+  Math.floor(
+    (
+      distance %
+      (1000 * 60 * 60)
+    ) /
+    (1000 * 60)
+  );
+
+
+  const seconds =
+  Math.floor(
+    (
+      distance %
+      (1000 * 60)
+    ) /
+    1000
+  );
+
+
+  daysElement.textContent =
+  String(days).padStart(2,"0");
+
+
+  hoursElement.textContent =
+  String(hours).padStart(2,"0");
+
+
+  minutesElement.textContent =
+  String(minutes).padStart(2,"0");
+
+
+  secondsElement.textContent =
+  String(seconds).padStart(2,"0");
+
+}
+
+
+/* Run immediately */
+
+updateCountdown();
+
+
+/* Update every second */
+
+setInterval(
+updateCountdown,
+1000
+);
+
+
+}
+);
 
 </script>
 
