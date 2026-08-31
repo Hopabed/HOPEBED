@@ -1,1876 +1,362 @@
 <!DOCTYPE html>
-<html lang="en-IN">
-
+<html lang="en">
 <head>
-
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-TLW8MNG6');
-    </script>
-    <!-- End Google Tag Manager -->
-
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6N89X4CFG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-L6N89X4CFG');
-    </script>
-
-
-
-    <meta charset="UTF-8">
-<meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Hopebed — Verified Stays in India | Stay Smart. Stay Verified.</title>
-
-    <meta
-        name="description"
-        content="Hopebed is building a smarter way to find, book and verify stays in India, including hotels, rooms, hostels, PGs and homes. Stay Smart. Stay Verified."
-    >
-
-    <meta name="robots" content="index, follow">
-
-    <link rel="canonical" href="https://hopebed.in/">
-
-    <meta
-        name="theme-color"
-        content="#101512"
-    >
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hopebed.in/">
-    <meta property="og:title" content="Hopebed — Verified Stays in India">
-    <meta
-        property="og:description"
-        content="Find, book and verify stays in India with Hopebed. Stay Smart. Stay Verified."
-    >
-    <meta property="og:site_name" content="Hopebed">
-    <meta
-        property="og:image"
-        content="https://hopebed.in/assets/Hopebed_logo.PNG"
-    >
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Hopebed — Verified Stays in India">
-    <meta
-        name="twitter:description"
-        content="Find, book and verify stays in India with Hopebed."
-    >
-    <meta
-        name="twitter:image"
-        content="https://hopebed.in/assets/Hopebed_logo.PNG"
-    >
-
-    <!-- Organization structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Hopebed",
-        "url": "https://hopebed.in/",
-        "logo": "https://hopebed.in/assets/Hopebed_logo.PNG",
-        "description": "Hopebed is building a smarter way to find, book and verify stays in India."
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Hopebed",
-        "url": "https://hopebed.in/",
-        "description": "Hopebed is building a smarter way to find, book and verify stays in India."
-    }
-    </script>
-
-    <link
-        rel="icon"
-        type="image/png"
-        href="./assets/favicon.PNG"
-    >
-
-    <!-- Google Fonts -->
-
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- Main CSS -->
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-    <style>
-
-        :focus-visible {
-            outline: 3px solid #8fd14f;
-            outline-offset: 4px;
-            border-radius: 6px;
-        }
-
-        .skip-link {
-            position: fixed;
-            top: 12px;
-            left: 12px;
-            z-index: 9999;
-            transform: translateY(-160%);
-            padding: 10px 14px;
-            border-radius: 8px;
-            background: #8fd14f;
-            color: #101512;
-            font-weight: 800;
-            text-decoration: none;
-        }
-
-        .skip-link:focus {
-            transform: translateY(0);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html,
-            html * {
-                scroll-behavior: auto !important;
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        .homepage-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-top: 22px;
-        }
-
-        .homepage-links a {
-            color: #557f2e;
-            font-weight: 700;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        @media (max-width: 600px) {
-
-            .hero-actions {
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                gap: 8px;
-                margin-top: 32px;
-            }
-
-            .hero-actions a {
-                width: auto;
-            }
-
-        }
-
-        .footer-container nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .footer-container nav a {
-            color: rgba(255, 255, 255, .72);
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .footer-container nav a:hover,
-        .footer-container nav a:focus-visible {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        .site-nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .site-nav > a:not(.contact-button) {
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            opacity: .9;
-        }
-
-        .site-nav > a:not(.contact-button):hover,
-        .site-nav > a:not(.contact-button):focus-visible {
-            opacity: 1;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        @media (max-width: 768px) {
-
-            .site-nav > a:not(.contact-button) {
-                display: none;
-            }
-
-        }
-
-        .seo-about {
-            width: 100%;
-            padding: 18px 0 70px;
-            margin-top: 48px;
-        }
-
-        .seo-about-inner {
-            max-width: 720px;
-        }
-
-        .seo-about-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            margin-top: 24px;
-        }
-
-        .seo-about-links a {
-            color: #167d35;
-            font-weight: 700;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        @media (max-width: 768px) {
-
-            .seo-about {
-                width: min(100% - 28px, 1120px);
-                padding: 52px 0 64px;
-            }
-
-        }
-
-        /* Responsive polish — preserve the original Hopebed visual direction */
-
-        @media (max-width: 900px) {
-
-            .header-container {
-                width: min(100% - 32px, 1120px);
-            }
-
-            .hero-container {
-                width: min(100% - 32px, 1120px);
-            }
-
-            .hero-content {
-                max-width: 680px;
-                margin-inline: auto;
-            }
-
-        }
-
-        @media (max-width: 768px) {
-
-            .header-container {
-                min-height: 72px;
-            }
-
-            .hopabed-logo {
-                width: 165px;
-                height: auto;
-            }
-
-            .hero {
-                padding-top: 58px;
-            }
-
-            .hero-container {
-                display: block;
-                width: min(100% - 32px, 620px);
-            }
-
-            .hero-content {
-                width: 100%;
-                text-align: center;
-            }
-
-            .eyebrow {
-                font-size: 11px;
-                letter-spacing: .14em;
-            }
-
-            .hero-content h1 {
-                max-width: 560px;
-                margin-inline: auto;
-                font-size: clamp(40px, 8vw, 54px);
-                line-height: 1.02;
-                letter-spacing: -.045em;
-            }
-
-            .green-line {
-                margin-inline: auto;
-            }
-
-            .hero-description {
-                max-width: 540px;
-                margin-inline: auto;
-                font-size: 16px;
-            }
-
-            .desktop-break {
-                display: none;
-            }
-
-            .features {
-                width: 100%;
-                max-width: 560px;
-                margin: 30px auto 0;
-                gap: 8px;
-            }
-
-            .feature {
-                padding: 14px 8px 12px;
-            }
-
-            .feature h2 {
-                font-size: 17px;
-            }
-
-            .feature p {
-                font-size: 12px;
-                line-height: 1.45;
-            }
-
-            .feature-icon {
-                width: 40px;
-                height: 40px;
-                margin-inline: auto;
-            }
-
-            /* The illustration stays part of the brand on mobile,
-               but sits below the message rather than competing with it. */
-
-            .city-scene {
-                display: block !important;
-                width: 100%;
-                max-width: 560px;
-                height: 260px;
-                margin: 20px auto 0;
-                position: relative;
-                overflow: hidden;
-            }
-
-            .seo-about {
-                width: min(100% - 32px, 720px);
-                margin-inline: auto;
-                padding: 46px 0 64px;
-                text-align: left;
-            }
-
-            .seo-about-inner {
-                max-width: 100%;
-            }
-
-        }
-
-        @media (max-width: 520px) {
-
-            .header-container {
-                width: min(100% - 24px, 1120px);
-            }
-
-            .hopabed-logo {
-                width: 150px;
-            }
-
-            .hero {
-                padding-top: 48px;
-            }
-
-            .hero-container {
-                width: min(100% - 24px, 620px);
-            }
-
-            .hero-content h1 {
-                font-size: clamp(36px, 10vw, 46px);
-            }
-
-            .features {
-                gap: 4px;
-            }
-
-            .feature {
-                padding-inline: 5px;
-            }
-
-            .feature p {
-                font-size: 11px;
-            }
-
-            .city-scene {
-                height: 220px;
-            }
-
-        }
-
-        /* Hopebed hero CTAs — always retain both buttons */
-
-        .hero-actions {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 12px;
-            margin-top: 55px;
-            padding: 20px 0 30px;
-            padding-bottom: 5px;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 46px;
-            padding: 0 20px;
-            border-radius: 999px;
-            font-weight: 750;
-            font-size: 14px;
-            line-height: 1;
-            text-decoration: none;
-            white-space: nowrap;
-            box-sizing: border-box;
-        }
-
-        .hero-cta-primary {
-            background: #101512;
-            color: #fff;
-        }
-
-        .hero-cta-secondary {
-            background: transparent;
-            color: #557f2e;
-            border: 1.5px solid #557f2e;
-        }
-
-        @media (max-width: 768px) {
-
-            .hero-actions {
-                justify-content: center;
-                gap: 10px;
-                width: 100%;
-            }
-
-            .hero-cta {
-                flex: 0 1 auto;
-                padding: 0 14px;
-                font-size: 12.5px;
-            }
-
-        }
-
-        @media (max-width: 520px) {
-
-            .hero-actions {
-                flex-direction: row;
-                flex-wrap: nowrap;
-                gap: 7px;
-                margin-top: 20px;
-            }
-
-            .hero-cta {
-                flex: 1 1 0;
-                min-width: 0;
-                width: auto;
-                padding: 0 8px;
-                font-size: 11.5px;
-            }
-
-        }
-
-        /* Hopebed launch notification */
-
-        .launch-notification {
-            width: 100%;
-            background: #101512;
-            color: #ffffff;
-            border-bottom: 1px solid rgba(255, 255, 255, .08);
-        }
-
-        .launch-notification-inner {
-            width: min(1180px, calc(100% - 40px));
-            min-height: 46px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 18px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-        .launch-notification-label {
-            color: #8bd64c;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        .launch-notification-title {
-            font-size: 13px;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .launch-notification-timer {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 800;
-            white-space: nowrap;
-        }
-
-        .launch-notification-timer span {
-            color: #8bd64c;
-        }
-
-        .launch-notification-dates {
-            color: #aeb8b2;
-            font-size: 11px;
-            white-space: nowrap;
-        }
-
-        @media (max-width: 760px) {
-
-            .launch-notification-inner {
-                width: calc(100% - 20px);
-                min-height: 42px;
-                gap: 8px;
-                overflow: hidden;
-            }
-
-            .launch-notification-label,
-            .launch-notification-dates {
-                display: none;
-            }
-
-            .launch-notification-title {
-                font-size: 11px;
-            }
-
-            .launch-notification-timer {
-                font-size: 12px;
-                gap: 3px;
-            }
-
-        }
-
-        .site-footer {
-            margin-top: 40px;
-            background: #000;
-            color: #f5f8f5;
-            border-top: 1px solid rgba(143, 209, 79, .18);
-        }
-
-        .footer-container {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 52px 0 42px;
-            display: flex;
-            justify-content: space-between;
-            gap: 60px;
-        }
-
-        .footer-brand {
-            max-width: 420px;
-        }
-
-        .footer-logo {
-            display: inline-block;
-            color: #ffffff;
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: -.04em;
-            text-decoration: none;
-        }
-
-        .footer-brand > p {
-            margin: 6px 0 0;
-            color: #9bcf74;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .footer-brand .footer-description {
-            margin-top: 16px;
-            max-width: 360px;
-            color: #b7c0ba;
-            font-size: 14px;
-            line-height: 1.65;
-            font-weight: 400;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 32px;
-        }
-
-        .footer-links > div {
-            display: flex;
-            flex-direction: column;
-            gap: 11px;
-            min-width: 130px;
-        }
-
-        .footer-links h2 {
-            margin: 0 0 5px;
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 800;
-        }
-
-        .footer-links a {
-            color: #b7c0ba;
-            font-size: 14px;
-            text-decoration: none;
-            transition: color .18s ease;
-        }
-
-        .footer-links a:hover,
-        .footer-links a:focus-visible {
-            color: #9bcf74;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        .footer-bottom {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 18px 0 22px;
-            border-top: 1px solid rgba(255,255,255,.10);
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            color: #7f8b83;
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 700px) {
-
-            .footer-container {
-                width: min(100% - 32px, 1120px);
-                padding: 42px 0 32px;
-                flex-direction: column;
-                gap: 34px;
-            }
-
-            .footer-links {
-                gap: 42px;
-            }
-
-            .footer-bottom {
-                width: min(100% - 32px, 1120px);
-                flex-direction: column;
-                gap: 6px;
-            }
-
-        }
-
-        /* SEO/about content spacing */
-
-        .seo-about h2 {
-            margin: 0 0 22px;
-        }
-
-        .seo-about p {
-            margin: 0;
-            line-height: 1.65;
-        }
-
-        .seo-about p + p {
-            margin-top: 50px;
-        }
-
-    </style>
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hopebed – Find, Book & Verify Verified Stays</title>
+<style>
+:root{
+  --green:#0d6b36;
+  --green2:#159447;
+  --dark:#050707;
+  --text:#171b1d;
+  --muted:#66706d;
+  --line:#dce3df;
+  --soft:#f4f7f4;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  color:var(--text);background:#fff;line-height:1.55;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+
+/* NAV */
+.nav{height:84px;background:#030506;color:#fff;display:flex;align-items:center;position:sticky;top:0;z-index:20}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{
+ width:48px;height:48px;border:3px solid #25a95b;border-radius:7px 7px 3px 3px;
+ transform:rotate(45deg);position:relative;display:grid;place-items:center;
+}
+.brand-mark:after{content:"✓";transform:rotate(-45deg);font-size:20px;font-weight:900;color:#31b967}
+.brand-name{font-size:29px;font-weight:800;letter-spacing:-1.2px}
+.brand-name span{color:#25aa58}
+.tagline{font-size:10px;font-weight:700;color:#d8dedb;margin-top:-5px}
+.tagline span{color:#2ebc61}
+.nav-actions{display:flex;align-items:center;gap:18px}
+.contact{border:1px solid #2f8b57;border-radius:10px;padding:13px 22px;font-weight:700;color:#fff}
+.menu{font-size:30px;line-height:1}
+
+/* HERO */
+.hero{
+ min-height:580px;position:relative;overflow:hidden;
+ background:linear-gradient(90deg,#f8faf8 0%,#f7f8f5 58%,#ddd9cf 100%);
+}
+.hero:after{
+ content:"";position:absolute;right:-4%;top:0;width:44%;height:100%;
+ background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(20,55,32,.1)),
+ linear-gradient(90deg,#b8aa98,#e8e0d4 35%,#8c7764);
+ opacity:.55;
+}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;padding:72px 0}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;color:#35714e}
+h1{font-size:56px;line-height:1.08;letter-spacing:-2.5px;margin:14px 0 20px;max-width:650px}
+h1 span{color:var(--green)}
+.hero-copy{font-size:17px;color:#4d5554;max-width:610px}
+.hero-copy b{color:#326e4a}
+.hero-buttons{display:flex;gap:14px;margin:28px 0}
+.btn{
+ min-height:56px;border-radius:8px;padding:0 22px;display:inline-flex;align-items:center;justify-content:center;
+ gap:10px;font-weight:800;transition:.2s;border:0;font-family:inherit;font-size:15px;cursor:pointer;
+}
+.btn-primary{background:linear-gradient(90deg,#168342,#0c602f);color:#fff;box-shadow:0 8px 22px rgba(17,102,50,.2)}
+.btn-outline{border:1px solid #68716d;background:#fff;color:#222}
+.btn:hover{transform:translateY(-1px)}
+.hero-notes{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:#59615e}
+.hero-notes span:before{content:"◉";color:#269657;margin-right:5px}
+.location-pill{
+ display:inline-flex;align-items:center;gap:9px;margin-top:27px;background:#edf3ee;border-radius:24px;
+ padding:9px 15px;font-size:12px;font-weight:700;color:#45604f;box-shadow:0 7px 18px rgba(0,0,0,.06)
+}
+
+/* FORM */
+.lead-card{
+ align-self:center;background:rgba(255,255,255,.96);border-radius:17px;overflow:hidden;
+ box-shadow:0 25px 55px rgba(0,0,0,.22);max-width:440px;justify-self:end;
+}
+.lead-head{padding:23px 25px 18px;background:linear-gradient(135deg,#0d3c25,#123e29);color:#fff}
+.lead-head h2{font-size:21px;margin:0 0 3px}
+.lead-head p{margin:0;color:#e8d16e;font-size:13px;font-weight:700}
+.form{padding:15px 16px 18px}
+.field{
+ width:100%;height:55px;border:1px solid #d9dfdc;border-radius:8px;margin-bottom:11px;
+ display:flex;align-items:center;padding:0 15px;gap:12px;color:#4e5654;background:#fff;font-size:14px;
+}
+.field.error{border-color:#d64545}
+.field .ico{font-size:20px;color:#222;flex:none}
+.field input,.field select{
+ border:0;outline:0;background:transparent;font:inherit;color:inherit;width:100%;height:100%;appearance:none;
+}
+.field.select{justify-content:space-between}
+.field.select select{cursor:pointer}
+.field.select b{pointer-events:none}
+.error-msg{color:#d64545;font-size:11px;margin:-6px 0 10px 3px;display:none}
+.error-msg.show{display:block}
+.form .submit{width:100%;border:0;cursor:pointer}
+.secure{text-align:center;font-size:11px;color:#69716e;margin:12px 0 0}
+.secure:before{content:"🔒";font-size:11px;margin-right:5px}
+.toast{
+ margin-top:12px;background:#eaf6ee;border:1px solid #b7ddc3;color:#1b6b3a;font-size:12px;font-weight:700;
+ border-radius:8px;padding:10px 12px;text-align:center;display:none;
+}
+.toast.show{display:block}
+
+/* BENEFITS */
+.section{padding:28px 0}
+.benefit-bar{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:15px;background:#fff;border:1px solid #e1e7e3;
+ border-radius:20px;padding:25px 22px;box-shadow:0 16px 35px rgba(15,50,28,.08)
+}
+.benefit{display:grid;grid-template-columns:45px 1fr;gap:10px}
+.benefit-icon{width:42px;height:42px;border-radius:50%;background:#f0f6f1;display:grid;place-items:center;color:#14733b;font-size:23px}
+.benefit h3{font-size:15px;margin:0;font-weight:800}
+.benefit p{font-size:11px;color:#66706c;margin:5px 0 0}
+
+/* HOW */
+.how{padding:20px 0 32px;text-align:center}
+.section-title{font-size:28px;margin:8px 0 24px;letter-spacing:-.8px}
+.steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:20px}
+.step{
+ border:1px solid #d8e0dc;border-radius:18px;padding:30px 20px 24px;min-height:230px;background:#fff;
+ box-shadow:0 8px 20px rgba(20,55,35,.03)
+}
+.step-icon{width:64px;height:64px;border-radius:50%;margin:0 auto 15px;background:#eef5ef;display:grid;place-items:center;font-size:31px;color:#16773d}
+.step h3{font-size:22px;margin:0 0 8px}
+.step p{margin:0;color:#69716e;font-size:14px}
+.arrow{font-size:31px;color:#78a085}
+
+/* PROPERTY CTA */
+.property-cta{
+ display:grid;grid-template-columns:145px 1fr auto;align-items:center;gap:22px;
+ border:1px solid #d9e3dc;border-radius:18px;overflow:hidden;background:linear-gradient(90deg,#eff6ef,#f8faf7);
+ margin:10px 0 34px;box-shadow:0 12px 30px rgba(15,60,30,.05)
+}
+.building{height:116px;background:
+ linear-gradient(145deg,transparent 20%,#c8d5ca 21% 100%);
+ position:relative;overflow:hidden;
+}
+.building:after{content:"🏢";font-size:80px;position:absolute;left:28px;bottom:3px;filter:saturate(.7)}
+.property-copy h3{margin:0;font-size:21px}
+.property-copy p{margin:5px 0;color:#68716e;font-size:14px}
+.property-cta .btn{margin-right:16px}
+
+/* OWNER BENEFITS */
+.owner-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:4px 0 60px}
+.owner{display:grid;grid-template-columns:42px 1fr;gap:10px}
+.owner .owner-icon{font-size:31px;color:#176f3b}
+.owner h4{margin:0;font-size:15px}
+.owner p{margin:4px 0;color:#69716e;font-size:13px}
+
+/* FLOAT + FOOTER CTA */
+.whatsapp{
+ position:fixed;right:25px;bottom:92px;width:60px;height:60px;border-radius:50%;
+ background:#24a85a;color:#fff;display:grid;place-items:center;font-size:30px;z-index:15;
+ box-shadow:0 10px 25px rgba(0,0,0,.2)
+}
+.bottom-cta{background:#030506;color:#fff}
+.bottom-inner{display:grid;grid-template-columns:1fr 50px 1fr}
+.bottom-item{padding:25px 30px;display:flex;align-items:center;justify-content:center;gap:14px;cursor:pointer;border:0;background:transparent;color:inherit;font-family:inherit;text-align:left}
+.bottom-item:first-child{background:linear-gradient(90deg,#126838,#0b522b)}
+.bottom-item h3{margin:0;font-size:17px}
+.bottom-item p{margin:2px 0 0;font-size:12px;color:#d4ddd7}
+.or{display:grid;place-items:center;font-weight:800;font-size:12px}
+
+@media(max-width:800px){
+ .container{width:min(100% - 28px,700px)}
+ .nav{height:74px}.brand-mark{width:36px;height:36px}.brand-name{font-size:24px}
+ .contact{padding:10px 14px;font-size:13px}
+ .hero-inner{grid-template-columns:1fr;padding:48px 0 38px;gap:28px}
+ .hero:after{width:80%;opacity:.28}
+ h1{font-size:43px}.hero-copy{font-size:15px}
+ .lead-card{justify-self:center;width:100%;max-width:480px}
+ .benefit-bar{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:1fr;gap:12px}.arrow{transform:rotate(90deg);height:25px}
+ .step{min-height:0;padding:22px}.property-cta{grid-template-columns:95px 1fr}
+ .building{height:100%}.property-cta .btn{grid-column:1/-1;margin:0;border-radius:0}
+ .owner-grid{grid-template-columns:repeat(2,1fr);gap:24px 15px}
+ .bottom-inner{grid-template-columns:1fr}.or{height:35px}
+ .bottom-item{padding:19px 12px}
+}
+@media(max-width:430px){
+ .nav-actions .contact{display:none}
+ .tagline{font-size:8px}
+ h1{font-size:38px}
+ .hero-buttons{flex-direction:column}.btn{width:100%}
+ .hero-notes{gap:8px;font-size:10px}
+ .benefit-bar{grid-template-columns:1fr}
+ .owner-grid{grid-template-columns:1fr}
+ .property-copy{padding:14px 10px}
+ .property-copy h3{font-size:17px}
+}
+</style>
 </head>
-
-
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLW8MNG6"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <a href="https://hopebed.in/cdn-cgi/content?id=xg0jhIrJ3yy4g64xFgrjwOlEhHEhi1HEj8nT2cpI_ps-1788002510.5141962-1.2.1.1-inUZNBZ3ihQ_ILO6ljfiKvd9eACdiE9sOEh.G4HD9p5XD6qy3SShCP6BWpBuBf60" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
 
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <div class="brand-mark"></div>
+      <div><div class="brand-name">Hope<span>bed</span></div><div class="tagline">Stay <span>Smart</span>. Stay <span>Verified</span>.</div></div>
+    </a>
+    <div class="nav-actions">
+      <a href="#contact" class="contact">◉ &nbsp; Contact Us</a>
+      <div class="menu" aria-label="Menu">☰</div>
+    </div>
+  </div>
+</nav>
 
-
-<!-- =========================================
-     HEADER
-========================================= -->
-
-<header class="site-header">
-
-    <div class="header-container">
-
-        <!-- Hopebed Logo -->
-
-        <a
-            class="brand"
-            href="index.html"
-            aria-label="Hopebed Home"
-        >
-
-            <img
-                class="hopebed-logo"
-                src="./assets/Hopebed_logo.PNG"
-                alt="Hopebed — Stay Smart. Stay Verified."
-                width="180"
-                height="auto"
-            >
-
-        </a>
-
-
-        <!-- Main navigation -->
-
-        <nav class="site-nav" aria-label="Main navigation">
-
-            <a href="index.html" aria-current="page">Home</a>
-
-            <a href="./vision.html">Our Vision</a>
-
-            <a href="about.html">About</a>
-
-            <a
-                class="contact-button"
-                href="contact.html"
-                aria-label="Contact Hopebed"
-            >
-
-                <span
-                    class="whatsapp-icon"
-                    aria-hidden="true"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-
-                        <path
-                            d="M20 11.5a8.3 8.3 0 0 1-12.4 7.2L4 20l1.3-3.4A8.3 8.3 0 1 1 20 11.5Z"
-                        ></path>
-
-                        <path
-                            d="M9 8.8c.2-.3.5-.4.8-.2l1.2.7c.3.2.4.5.2.8l-.5.7c.5 1 1.2 1.7 2.2 2.2l.7-.5c.3-.2.6-.1.8.2l.7 1.2c.2.3.1.6-.2.8-.5.4-1.1.6-1.7.5-2.2-.5-4.8-3.1-5.3-5.3-.1-.6.1-1.2.5-1.7Z"
-                        ></path>
-
-                    </svg>
-
-                </span>
-
-                Contact Us
-
-            </a>
-
-        </nav>
-
+<main>
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <div class="eyebrow">WE'RE BUILDING HOPEBED</div>
+      <h1>Find, Book & Verify<br><span>Verified Stays<br>in India.</span></h1>
+      <p class="hero-copy">Hopebed is an upcoming stay platform designed to <b>Find, Book & Verify</b> stays in India — including hotels, PGs, hostels, rooms & homes.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#list">⌂ &nbsp; List Your Property Free &nbsp; →</a>
+        <a class="btn btn-outline" href="#how">⌕ &nbsp; Find a Stay</a>
+      </div>
+      <div class="hero-notes"><span>Free to list</span><span>No commission until your first booking</span><span>Verified tenants</span></div>
+      <div class="location-pill">⌖ &nbsp; Launching in Taloja & Kharghar, Navi Mumbai</div>
     </div>
 
-</header>
-
-
-<!-- =========================================
-     MAIN
-========================================= -->
-
-
-<!-- Hopebed launch notification -->
-
-<div
-    class="launch-notification"
-    role="status"
-    aria-live="polite"
->
-
-    <div class="launch-notification-inner">
-
-        <span class="launch-notification-label">
-            🚀 Hopebed Launch
-        </span>
-
-        <span
-            class="launch-notification-title"
-            id="launch-notification-title"
-        >
-            Launch countdown
-        </span>
-
-        <span
-            class="launch-notification-timer"
-            aria-label="Launch countdown"
-        >
-
-            <span id="notification-days">
-                00
-            </span>d :
-
-            <span id="notification-hours">
-                00
-            </span>h :
-
-            <span id="notification-minutes">
-                00
-            </span>m :
-
-            <span id="notification-seconds">
-                00
-            </span>s
-
-        </span>
-
-        <span
-            class="launch-notification-dates"
-            id="launch-notification-dates"
-        >
-            Starts when Hopebed goes live
-        </span>
-
-    </div>
-
-</div>
-
-
-<main
-    id="main-content"
-    tabindex="-1"
->
-
-
-    <section class="hero">
-
-
-        <div class="hero-container">
-
-
-            <!-- =================================
-                 LEFT CONTENT
-            ================================== -->
-
-            <div class="hero-content">
-
-
-                <p class="eyebrow">
-                    WE'RE BUILDING HOPEBED
-                </p>
-
-
-                <h1>
-
-                    Find, Book &amp; Verify
-
-                    <br>
-
-                    <span>
-                        Verified Stays in India.
-                    </span>
-
-                </h1>
-
-
-                <div class="green-line"></div>
-
-
-                <p class="hero-description">
-
-                    Hopebed is an upcoming stay platform designed to
-
-                    <strong>
-                        Find, Book &amp; Verify
-                    </strong>
-
-                    <br class="desktop-break">
-
-                    stays in India — including hotels, PGs, hostels, rooms &amp; homes.
-
-                </p>
-
-
-                <!-- =================================
-                     FEATURES
-                ================================== -->
-
-                <div
-                    class="features"
-                    aria-label="Hopebed benefits"
-                >
-
-
-                    <!-- FIND -->
-
-                    <article class="feature">
-
-
-                        <div
-                            class="feature-icon"
-                            aria-hidden="true"
-                        >
-
-                            <svg viewBox="0 0 24 24">
-
-                                <circle
-                                    cx="10.8"
-                                    cy="10.8"
-                                    r="6.5"
-                                ></circle>
-
-                                <path
-                                    d="M16 16l5 5"
-                                ></path>
-
-                            </svg>
-
-                        </div>
-
-
-                        <h2>
-                            Find
-                        </h2>
-
-
-                        <p>
-                            Verified properties
-                            <br>
-                            that fit your needs
-                        </p>
-
-
-                    </article>
-
-
-
-                    <!-- BOOK -->
-
-                    <article class="feature">
-
-
-                        <div
-                            class="feature-icon"
-                            aria-hidden="true"
-                        >
-
-                            <svg viewBox="0 0 24 24">
-
-                                <rect
-                                    x="4"
-                                    y="5"
-                                    width="16"
-                                    height="15"
-                                    rx="2"
-                                ></rect>
-
-                                <path
-                                    d="M8 3v4M16 3v4M4 9h16M8 13h3M8 16h3"
-                                ></path>
-
-                            </svg>
-
-                        </div>
-
-
-                        <h2>
-                            Book
-                        </h2>
-
-
-                        <p>
-                            Hassle-free booking
-                            <br>
-                            in simple steps
-                        </p>
-
-
-                    </article>
-
-
-
-                    <!-- VERIFY -->
-
-                    <article class="feature">
-
-
-                        <div
-                            class="feature-icon"
-                            aria-hidden="true"
-                        >
-
-                            <svg viewBox="0 0 24 24">
-
-                                <path
-                                    d="M12 3 20 6v5c0 5-3.3 8.3-8 10-4.7-1.7-8-5-8-10V6l8-3Z"
-                                ></path>
-
-                                <path
-                                    d="m8.5 12 2.2 2.2 4.8-5"
-                                ></path>
-
-                            </svg>
-
-                        </div>
-
-
-                        <h2>
-                            Verify
-                        </h2>
-
-
-                        <p>
-                            Digital verification
-                            <br>
-                            for your safety
-                        </p>
-
-
-                    </article>
-
-
-                </div>
-
-
-                <!-- Primary homepage actions -->
-
-                <div
-                    class="hero-actions"
-                    aria-label="Hopebed next steps"
-                >
-
-                    <a
-                        class="hero-cta hero-cta-primary"
-                        href="about.html"
-                    >
-                        Learn About Hopebed
-                    </a>
-
-                    <a
-                        class="hero-cta hero-cta-secondary"
-                        href="./vision.html"
-                    >
-                        Explore Our Vision
-                    </a>
-
-                </div>
-
-
-                <!-- =================================
-                     ABOUT HOPEBED
-                ================================== -->
-
-                <section
-                    class="seo-about"
-                    aria-labelledby="about-heading"
-                >
-
-                    <div class="seo-about-inner">
-
-                        <h2 id="about-heading">
-                            A Smarter Way to Find and Verify Stays
-                        </h2>
-
-                        <p>
-                            Hopebed is an upcoming stay platform designed to make it easier
-                            to discover accommodation in India with clear information and
-                            a simple verification experience.
-                        </p>
-
-                        <p>
-                            From hotels and rooms to PGs, hostels and homes, Hopebed is being
-                            built around a simple journey: find a suitable stay, book it
-                            easily and verify your stay with confidence.
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-            </div>
-
-
-
-            <!-- =================================
-                 CITY ILLUSTRATION
-            ================================== -->
-
-            <div
-                class="city-scene"
-                aria-hidden="true"
-            >
-
-
-                <!-- Soft background -->
-
-                <div class="sun-glow"></div>
-
-
-                <!-- Clouds -->
-
-                <div class="cloud cloud-one"></div>
-
-                <div class="cloud cloud-two"></div>
-
-                <div class="cloud cloud-three"></div>
-
-
-                <!-- Birds -->
-
-                <div class="bird bird-one">
-                    ⌁
-                </div>
-
-                <div class="bird bird-two">
-                    ⌁
-                </div>
-
-
-                <!-- Buildings -->
-
-                <div class="buildings">
-
-
-                    <div class="building building-one">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
-
-
-                    <div class="building building-two">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
-
-
-                    <div class="building building-three">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
-
-
-                    <div class="building building-four">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
-
-
-                    <div class="building building-five">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
-
-
-                    <div class="building building-six">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- House -->
-
-                <div class="house">
-
-
-                    <div class="house-roof"></div>
-
-
-                    <div class="house-body">
-
-
-                        <div class="house-window"></div>
-
-
-                        <div class="house-door"></div>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- Trees -->
-
-                <div class="tree tree-one"></div>
-
-                <div class="tree tree-two"></div>
-
-                <div class="tree tree-three"></div>
-
-                <div class="tree tree-four"></div>
-
-                <div class="tree tree-five"></div>
-
-
-
-                <!-- Location Pin -->
-
-                <div
-                    class="location-pin"
-                    aria-hidden="true"
-                >
-
-                    <div class="pin-hole"></div>
-
-                </div>
-
-
-
-                <!-- Map connection -->
-
-                <div
-                    class="pin-dashed-line"
-                    aria-hidden="true"
-                ></div>
-
-
-
-                <!-- Ground -->
-
-                <div
-                    class="ground-line"
-                    aria-hidden="true"
-                ></div>
-
-
-            </div>
-
-
+    <div class="lead-card" id="list">
+      <div class="lead-head"><h2>List Your Property on Hopebed</h2><p>Join our early property partner network.</p></div>
+      <form class="form" id="leadForm" novalidate>
+        <div class="field">
+          <span class="ico" aria-hidden="true">♙</span>
+          <input type="text" name="name" id="fName" placeholder="Your Name" aria-label="Your Name" required>
+        </div>
+        <div class="error-msg" id="err-fName">Please enter your name.</div>
+
+        <div class="field">
+          <span class="ico" aria-hidden="true">◉</span>
+          <input type="tel" name="whatsapp" id="fPhone" placeholder="WhatsApp Number" aria-label="WhatsApp Number" inputmode="tel" required>
+        </div>
+        <div class="error-msg" id="err-fPhone">Please enter a valid 10-digit number.</div>
+
+        <div class="field select">
+          <select name="role" id="fRole" aria-label="I am a...">
+            <option value="" disabled selected>▥ &nbsp; I am a...</option>
+            <option value="Property Owner">Property Owner</option>
+            <option value="Tenant / Guest">Tenant / Guest</option>
+            <option value="Broker / Agent">Broker / Agent</option>
+          </select>
+          <b aria-hidden="true">⌄</b>
+        </div>
+        <div class="error-msg" id="err-fRole">Please tell us who you are.</div>
+
+        <div class="field">
+          <span class="ico" aria-hidden="true">⌖</span>
+          <input type="text" name="location" id="fLocation" placeholder="Property Location / Area (Optional)" aria-label="Property Location / Area (Optional)">
         </div>
 
+        <button type="submit" class="btn btn-primary submit">Get Started Free &nbsp; →</button>
+        <div class="toast" id="formToast">Thanks! Opening WhatsApp to confirm your details…</div>
+        <div class="secure">Your details are safe with us.<br>We'll never share your info.</div>
+      </form>
+    </div>
+  </div>
+</section>
 
-    </section>
+<section class="section">
+<div class="container">
+  <div class="benefit-bar">
+    <div class="benefit"><div class="benefit-icon">♢</div><div><h3>100% Verified<br>Properties</h3><p>Every property is verified for your safety and peace of mind.</p></div></div>
+    <div class="benefit"><div class="benefit-icon">₹</div><div><h3>Transparent<br>Information</h3><p>Clear details and pricing. No hidden surprises.</p></div></div>
+    <div class="benefit"><div class="benefit-icon">♧</div><div><h3>Dedicated<br>Support</h3><p>We're here to help you at every step.</p></div></div>
+    <div class="benefit"><div class="benefit-icon">♙</div><div><h3>Better for<br>Everyone</h3><p>Great experience for owners and tenants alike.</p></div></div>
+  </div>
+</div>
+</section>
 
+<section class="how" id="how">
+<div class="container">
+  <h2 class="section-title">How Hopebed Works</h2>
+  <div class="steps">
+    <article class="step"><div class="step-icon">⌕</div><h3>Find</h3><p>Verified properties<br>that fit your needs</p></article>
+    <div class="arrow">→</div>
+    <article class="step"><div class="step-icon">▣</div><h3>Book</h3><p>Hassle-free booking<br>in simple steps</p></article>
+    <div class="arrow">→</div>
+    <article class="step"><div class="step-icon">♢</div><h3>Verify</h3><p>Digital verification<br>for your safety</p></article>
+  </div>
 
+  <div class="property-cta">
+    <div class="building"></div>
+    <div class="property-copy"><h3>Have a property to list?</h3><p>Reach thousands of students & professionals<br>looking for verified stays.</p></div>
+    <a class="btn btn-primary" href="#list">List Your Property Free &nbsp; →</a>
+  </div>
+
+  <div class="owner-grid">
+    <div class="owner"><div class="owner-icon">⚑</div><div><h4>More Visibility</h4><p>Get your property seen by verified tenants.</p></div></div>
+    <div class="owner"><div class="owner-icon">♙</div><div><h4>Quality Tenants</h4><p>Attract genuine tenants for long-term stays.</p></div></div>
+    <div class="owner"><div class="owner-icon">▣</div><div><h4>Simple Management</h4><p>Easy listing, updates and inquiries — all in one place.</p></div></div>
+    <div class="owner"><div class="owner-icon">↗</div><div><h4>Grow Your Business</h4><p>Increase occupancy and maximise your earnings.</p></div></div>
+  </div>
+</div>
+</section>
 </main>
 
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer class="site-footer">
-
-    <div class="footer-container">
-
-
-        <!-- Hopebed Brand -->
-
-        <div class="footer-brand">
-
-
-            <a
-                href="index.html"
-                class="footer-logo"
-                aria-label="Hopebed home"
-            >
-                Hopebed
-            </a>
-
-
-            <p>
-                Stay Smart. Stay Verified.
-            </p>
-
-
-            <p class="footer-description">
-                A smarter way to discover, book and verify stays in India.
-            </p>
-
-
-            <!-- Social Media Icons -->
-
-            <div class="footer-social">
-
-
-                <!-- Instagram -->
-
-                <a
-                    href="https://www.instagram.com/hopabed.in"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Follow Hopebed on Instagram"
-                    title="Instagram"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-
-                        <rect
-                            x="3"
-                            y="3"
-                            width="18"
-                            height="18"
-                            rx="5"
-                        ></rect>
-
-                        <circle
-                            cx="12"
-                            cy="12"
-                            r="4"
-                        ></circle>
-
-                        <circle
-                            cx="17.5"
-                            cy="6.5"
-                            r=".8"
-                            fill="currentColor"
-                            stroke="none"
-                        ></circle>
-
-                    </svg>
-
-                </a>
-
-
-
-                <!-- Facebook -->
-
-                <a
-                    href="https://www.facebook.com/share/1EjBmgsgFB/?mibextid=wwXIfr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Follow Hopebed on Facebook"
-                    title="Facebook"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-
-                        <path
-                            d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1Z"
-                        ></path>
-
-                    </svg>
-
-                </a>
-
-
-
-                <!-- LinkedIn -->
-
-                <a
-                    href="https://www.linkedin.com/company/hopabed/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Follow Hopebed on LinkedIn"
-                    title="LinkedIn"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-
-                        <rect
-                            x="4"
-                            y="4"
-                            width="16"
-                            height="16"
-                            rx="2"
-                        ></rect>
-
-                        <path d="M8 10v6"></path>
-
-                        <path d="M8 7.5v.1"></path>
-
-                        <path
-                            d="M12 16v-3.2c0-1.8 1-2.8 2.5-2.8s2.5 1 2.5 2.8V16"
-                        ></path>
-
-                        <path d="M12 10v6"></path>
-
-                    </svg>
-
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- Footer Links -->
-
-        <nav
-            class="footer-links"
-            aria-label="Footer navigation"
-        >
-
-
-            <!-- Explore -->
-
-            <div>
-
-                <h2>
-                    Explore
-                </h2>
-
-                <a href="./index.html">
-                    Home
-                </a>
-
-                <a href="./vision.html">
-                    Our Vision
-                </a>
-
-                <a href="./about.html">
-                    About Hopebed
-                </a>
-
-            </div>
-
-
-
-            <!-- Support -->
-
-            <div>
-
-                <h2>
-                    Support
-                </h2>
-
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
-            </div>
-
-
-        </nav>
-
-
-    </div>
-
-
-
-    <!-- Footer Bottom -->
-
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 Hopebed. All rights reserved.
-        </p>
-
-        <p>
-            Built for smarter, more confident stays in India.
-        </p>
-
-    </div>
-
-
+<a class="whatsapp" href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Hopebed" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">◔</a>
+
+<footer class="bottom-cta" id="contact">
+  <div class="container bottom-inner">
+    <a class="bottom-item" href="#list"><div style="font-size:35px">⌂</div><div><h3>List Your Property Free</h3><p>Free to list. No commission until your first booking.</p></div></a>
+    <div class="or">or</div>
+    <a class="bottom-item" href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Hopebed" target="_blank" rel="noopener"><div style="font-size:35px">◉</div><div><h3>Chat on WhatsApp</h3><p>We're online!</p></div></a>
+  </div>
 </footer>
 
-
-<!-- JavaScript -->
-
-<script src="script.js"></script>
-
-
 <script>
+(function(){
+  var WHATSAPP_NUMBER = "919999999999"; // TODO: replace with your real business WhatsApp number (country code + number, no + or spaces)
 
-(function () {
+  var form = document.getElementById('leadForm');
+  var toast = document.getElementById('formToast');
 
-    /*
-     * Hopebed production launch countdown
-     *
-     * The countdown DOES NOT start from a visitor's first visit.
-     * It starts from the single go-live timestamp returned by
-     * the Cloudflare Worker endpoint:
-     *
-     *   GET /api/go-live
-     *
-     * Expected response:
-     *   { "goLive": "2026-08-19T19:30:00.000Z" }
-     *
-     * The Worker should store the go-live timestamp once when
-     * the production deployment is activated.
-     *
-     * Localhost/development:
-     *   - If /api/go-live is unavailable, the notification is hidden.
-     *
-     * Production:
-     *   - All visitors receive the same go-live timestamp.
-     */
+  function setError(fieldEl, errEl, show){
+    fieldEl.classList.toggle('error', show);
+    errEl.classList.toggle('show', show);
+  }
 
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
 
-    const COUNTDOWN_DAYS = 30;
+    var name = document.getElementById('fName');
+    var phone = document.getElementById('fPhone');
+    var role = document.getElementById('fRole');
+    var location = document.getElementById('fLocation');
 
+    var nameOk = name.value.trim().length > 1;
+    var phoneDigits = phone.value.replace(/\D/g,'');
+    var phoneOk = phoneDigits.length === 10;
+    var roleOk = role.value !== '';
 
-    const notification =
-        document.querySelector(".launch-notification");
+    setError(name.parentElement, document.getElementById('err-fName'), !nameOk);
+    setError(phone.parentElement, document.getElementById('err-fPhone'), !phoneOk);
+    setError(role.parentElement, document.getElementById('err-fRole'), !roleOk);
 
-
-    const days =
-        document.getElementById("notification-days");
-
-
-    const hours =
-        document.getElementById("notification-hours");
-
-
-    const minutes =
-        document.getElementById("notification-minutes");
-
-
-    const seconds =
-        document.getElementById("notification-seconds");
-
-
-    const title =
-        document.getElementById("launch-notification-title");
-
-
-    const dates =
-        document.getElementById("launch-notification-dates");
-
-
-    if (
-        !notification ||
-        !days ||
-        !hours ||
-        !minutes ||
-        !seconds
-    ) {
-        return;
+    if(!nameOk || !phoneOk || !roleOk){
+      toast.classList.remove('show');
+      return;
     }
 
-
-    function pad(value) {
-
-        return String(value).padStart(2, "0");
-
-    }
-
-
-    function hideCountdown() {
-
-        notification.hidden = true;
-
-        notification.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-    }
-
-
-    function showCountdown() {
-
-        notification.hidden = false;
-
-        notification.removeAttribute(
-            "aria-hidden"
-        );
-
-    }
-
-
-    async function getGoLiveTimestamp() {
-
-        /*
-         * Only activate on the real production domain.
-         * This prevents the countdown from appearing on localhost.
-         */
-
-        const productionHosts = [
-            "hopebed.in",
-            "www.hopebed.in"
-        ];
-
-
-        if (
-            !productionHosts.includes(
-                window.location.hostname
-            )
-        ) {
-
-            hideCountdown();
-
-            return null;
-
-        }
-
-
-        try {
-
-            const response = await fetch(
-                "/api/go-live",
-                {
-                    method: "GET",
-                    cache: "no-store",
-                    headers: {
-                        "Accept": "application/json"
-                    }
-                }
-            );
-
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "Go-live endpoint unavailable"
-                );
-
-            }
-
-
-            const data =
-                await response.json();
-
-
-            const timestamp =
-                new Date(
-                    data.goLive
-                ).getTime();
-
-
-            if (
-                !Number.isFinite(timestamp)
-            ) {
-
-                throw new Error(
-                    "Invalid go-live timestamp"
-                );
-
-            }
-
-
-            return timestamp;
-
-
-        } catch (error) {
-
-            /*
-             * Never invent a start time.
-             * Until Cloudflare provides the real production
-             * timestamp, keep the countdown hidden.
-             */
-
-            hideCountdown();
-
-            console.warn(
-                "Hopebed launch countdown unavailable:",
-                error
-            );
-
-            return null;
-
-        }
-
-    }
-
-
-    async function startCountdown() {
-
-        const goLiveTime =
-            await getGoLiveTimestamp();
-
-
-        if (!goLiveTime) {
-
-            return;
-
-        }
-
-
-        showCountdown();
-
-
-        const deadline =
-            goLiveTime +
-            (
-                COUNTDOWN_DAYS *
-                24 *
-                60 *
-                60 *
-                1000
-            );
-
-
-        function updateCountdown() {
-
-            const remaining =
-                deadline - Date.now();
-
-
-            if (remaining <= 0) {
-
-                days.textContent = "00";
-
-                hours.textContent = "00";
-
-                minutes.textContent = "00";
-
-                seconds.textContent = "00";
-
-
-                title.textContent =
-                    "Launch countdown complete";
-
-
-                dates.textContent =
-                    "Launch window reached";
-
-
-                return;
-
-            }
-
-
-            const totalSeconds =
-                Math.floor(
-                    remaining / 1000
-                );
-
-
-            days.textContent =
-                pad(
-                    Math.floor(
-                        totalSeconds / 86400
-                    )
-                );
-
-
-            hours.textContent =
-                pad(
-                    Math.floor(
-                        (
-                            totalSeconds % 86400
-                        ) / 3600
-                    )
-                );
-
-
-            minutes.textContent =
-                pad(
-                    Math.floor(
-                        (
-                            totalSeconds % 3600
-                        ) / 60
-                    )
-                );
-
-
-            seconds.textContent =
-                pad(
-                    totalSeconds % 60
-                );
-
-
-            title.textContent =
-                "Launching soon";
-
-
-            dates.textContent =
-                COUNTDOWN_DAYS +
-                "-day launch countdown";
-
-        }
-
-
-        updateCountdown();
-
-
-        setInterval(
-            updateCountdown,
-            1000
-        );
-
-    }
-
-
-    hideCountdown();
-
-    startCountdown();
-
+    var msg = "Hi Hopebed! I'd like to list my property.%0A" +
+      "Name: " + encodeURIComponent(name.value.trim()) + "%0A" +
+      "WhatsApp: " + encodeURIComponent(phone.value.trim()) + "%0A" +
+      "I am a: " + encodeURIComponent(role.value) +
+      (location.value.trim() ? ("%0AArea: " + encodeURIComponent(location.value.trim())) : "");
+
+    toast.classList.add('show');
+
+    window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg, "_blank");
+  });
 })();
-
 </script>
 
-
 </body>
-
 </html>
