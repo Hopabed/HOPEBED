@@ -1,1116 +1,1478 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 
 <head>
 
 <meta charset="UTF-8">
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
 >
 
 <meta
-name="description"
-content="Find verified hotels, PGs, hostels, rooms and stays with Hopebed."
+  name="description"
+  content="Find verified hotels, PGs, hostels, rooms and homes with Hopebed. Stay Smart. Stay Verified."
 >
 
-<title>Find a Stay — Hopebed</title>
+<meta name="theme-color" content="#030506">
+
+<title>Find a Stay | Hopebed</title>
 
 
-<!-- FAVICON -->
+<!-- ========================================
+     FAVICON
+     Make sure this file exists:
+     assets/favicon.PNG
+======================================== -->
 
 <link
-rel="icon"
-type="image/png"
-href="./assets/favicon.PNG"
+  rel="icon"
+  type="image/png"
+  href="./assets/favicon.PNG"
+>
+
+<link
+  rel="shortcut icon"
+  href="./assets/favicon.PNG"
+>
+
+<link
+  rel="apple-touch-icon"
+  href="./assets/favicon.PNG"
 >
 
 
 <!-- GOOGLE FONT -->
 
 <link
-rel="preconnect"
-href="https://fonts.googleapis.com"
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
 >
 
 <link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
 >
 
 <link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
 >
 
 
 <style>
 
 /* ========================================
-ROOT
+   ROOT
 ======================================== */
 
 :root{
 
---green:#0d6b36;
---green-dark:#084a25;
---green-light:#159447;
+  --green:#0d6b36;
+  --green-dark:#084a25;
+  --green-light:#159447;
 
---dark:#030506;
+  --dark:#030506;
 
---text:#171b1d;
---muted:#66706d;
+  --text:#171b1d;
+  --muted:#66706d;
 
---line:#dce3df;
+  --line:#dce3df;
 
---soft:#f4f7f4;
+  --soft:#f4f7f4;
 
---white:#ffffff;
+  --white:#ffffff;
 
 }
 
 
 /* ========================================
-RESET
+   RESET
 ======================================== */
 
 *{
-box-sizing:border-box;
+  box-sizing:border-box;
 }
 
+
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
+
 
 body{
 
-margin:0;
+  margin:0;
 
-font-family:
-Inter,
-ui-sans-serif,
-system-ui,
--apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Arial,
-sans-serif;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
-color:var(--text);
+  color:var(--text);
 
-background:#ffffff;
+  background:#ffffff;
 
-line-height:1.55;
+  line-height:1.55;
+
+  overflow-x:hidden;
 
 }
+
+
+img{
+  max-width:100%;
+}
+
 
 a{
 
-text-decoration:none;
+  text-decoration:none;
 
-color:inherit;
+  color:inherit;
 
 }
 
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+
 .container{
 
-width:min(
-1180px,
-calc(100% - 40px)
-);
+  width:min(
+    1180px,
+    calc(100% - 40px)
+  );
 
-margin:auto;
+  margin:auto;
 
 }
 
 
 /* ========================================
-NAVBAR
+   NAVBAR
 ======================================== */
 
 .nav{
 
-height:84px;
+  height:84px;
 
-background:var(--dark);
+  background:var(--dark);
 
-color:#ffffff;
+  color:#ffffff;
 
-display:flex;
+  display:flex;
 
-align-items:center;
+  align-items:center;
 
-position:sticky;
+  position:sticky;
 
-top:0;
+  top:0;
 
-z-index:1000;
+  z-index:1000;
+
+  box-shadow:
+    0 2px 15px
+    rgba(0,0,0,.15);
 
 }
+
 
 .nav-inner{
 
-display:flex;
+  display:flex;
 
-align-items:center;
+  align-items:center;
 
-justify-content:space-between;
+  justify-content:space-between;
 
-width:100%;
+  width:100%;
+
+  gap:20px;
 
 }
+
 
 .brand{
 
-display:flex;
+  display:flex;
 
-align-items:center;
+  align-items:center;
 
-height:70px;
+  height:70px;
+
+  flex-shrink:0;
 
 }
+
 
 .brand-logo{
 
-width:210px;
+  width:210px;
 
-max-height:65px;
+  height:65px;
 
-height:auto;
+  object-fit:contain;
 
-object-fit:contain;
+  object-position:left center;
 
-display:block;
+  display:block;
 
 }
+
 
 .back-button{
 
-min-height:46px;
+  min-height:46px;
 
-display:flex;
+  display:flex;
 
-align-items:center;
+  align-items:center;
 
-justify-content:center;
+  justify-content:center;
 
-padding:0 20px;
+  padding:0 20px;
 
-border:1px solid #2f8b57;
+  border:1px solid #2f8b57;
 
-border-radius:10px;
+  border-radius:10px;
 
-font-size:14px;
+  font-size:14px;
 
-font-weight:700;
+  font-weight:700;
 
-transition:.2s ease;
+  transition:.2s ease;
+
+  white-space:nowrap;
 
 }
 
+
 .back-button:hover{
 
-background:var(--green);
+  background:var(--green);
+
+  border-color:var(--green);
 
 }
 
 
 /* ========================================
-HERO
+   HERO
 ======================================== */
 
 .hero{
 
-background:
+  background:
 
-linear-gradient(
-135deg,
-#f5faf6,
-#edf5ef
-);
+    linear-gradient(
+      135deg,
+      #f5faf6,
+      #edf5ef
+    );
 
-padding:85px 0 75px;
+  padding:85px 0 75px;
 
-text-align:center;
+  text-align:center;
 
-border-bottom:
-1px solid #e2ebe4;
+  border-bottom:
+    1px solid #e2ebe4;
 
 }
+
 
 .eyebrow{
 
-font-size:12px;
+  font-size:12px;
 
-font-weight:800;
+  font-weight:800;
 
-letter-spacing:2px;
+  letter-spacing:2px;
 
-color:#35714e;
+  color:#35714e;
 
-margin-bottom:14px;
+  margin-bottom:14px;
 
 }
+
 
 .hero h1{
 
-font-size:
-clamp(
-40px,
-6vw,
-64px
-);
+  font-size:
+    clamp(
+      40px,
+      6vw,
+      64px
+    );
 
-line-height:1.08;
+  line-height:1.08;
 
-letter-spacing:-2px;
+  letter-spacing:-2px;
 
-margin:0 0 20px;
+  margin:0 0 20px;
 
 }
+
 
 .hero h1 span{
 
-color:var(--green);
+  color:var(--green);
 
 }
 
+
 .hero p{
 
-max-width:700px;
+  max-width:700px;
 
-margin:auto;
+  margin:auto;
 
-font-size:17px;
+  font-size:17px;
 
-color:var(--muted);
+  color:var(--muted);
 
 }
 
 
 /* ========================================
-SEARCH SECTION
+   SEARCH SECTION
 ======================================== */
 
 .search-section{
 
-padding:55px 0 30px;
+  padding:55px 0 30px;
 
 }
+
 
 .search-box{
 
-background:#ffffff;
+  background:#ffffff;
 
-border:1px solid var(--line);
+  border:1px solid var(--line);
 
-border-radius:18px;
+  border-radius:18px;
 
-padding:18px;
+  padding:18px;
 
-box-shadow:
-0 15px 40px
-rgba(0,0,0,.07);
+  box-shadow:
+    0 15px 40px
+    rgba(0,0,0,.07);
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
-1.2fr
-1fr
-1fr
-auto;
+  grid-template-columns:
+    1.2fr
+    1fr
+    1fr
+    auto;
 
-gap:12px;
+  gap:12px;
 
 }
+
 
 .search-field{
 
-height:58px;
+  height:58px;
 
-border:1px solid #d9e2dc;
+  border:1px solid #d9e2dc;
 
-border-radius:10px;
+  border-radius:10px;
 
-display:flex;
+  display:flex;
 
-align-items:center;
+  align-items:center;
 
-padding:0 16px;
+  padding:0 16px;
 
-gap:10px;
+  gap:10px;
 
-background:#fbfdfb;
+  background:#fbfdfb;
+
+  min-width:0;
 
 }
+
 
 .search-field input,
 .search-field select{
 
-width:100%;
+  width:100%;
 
-height:100%;
+  height:100%;
 
-border:0;
+  min-width:0;
 
-outline:none;
+  border:0;
 
-background:transparent;
+  outline:none;
 
-font:inherit;
+  background:transparent;
 
-color:var(--text);
+  font:inherit;
+
+  color:var(--text);
 
 }
+
 
 .search-button{
 
-height:58px;
+  height:58px;
 
-border:0;
+  border:0;
 
-border-radius:10px;
+  border-radius:10px;
 
-padding:0 28px;
+  padding:0 28px;
 
-background:
+  background:
 
-linear-gradient(
-90deg,
-#168342,
-#0c602f
-);
+    linear-gradient(
+      90deg,
+      #168342,
+      #0c602f
+    );
 
-color:#ffffff;
+  color:#ffffff;
 
-font-weight:800;
+  font-weight:800;
 
-font-size:15px;
+  font-size:15px;
 
-cursor:pointer;
+  cursor:pointer;
 
-transition:.2s ease;
+  transition:.2s ease;
+
+  white-space:nowrap;
 
 }
 
+
 .search-button:hover{
 
-transform:translateY(-2px);
+  transform:translateY(-2px);
 
-box-shadow:
-0 10px 25px
-rgba(13,107,54,.22);
+  box-shadow:
+    0 10px 25px
+    rgba(13,107,54,.22);
 
 }
 
 
 /* ========================================
-COMING SOON
+   STATUS BOX
 ======================================== */
 
 .status-box{
 
-margin-top:25px;
+  margin-top:25px;
 
-padding:18px 20px;
+  padding:18px 20px;
 
-border-radius:12px;
+  border-radius:12px;
 
-background:#f0f7f2;
+  background:#f0f7f2;
 
-border:1px solid #d8e8dc;
+  border:1px solid #d8e8dc;
 
-color:#3d6049;
+  color:#3d6049;
 
-font-size:14px;
+  font-size:14px;
 
-text-align:center;
+  text-align:center;
 
 }
 
+
 .status-box strong{
 
-color:var(--green-dark);
+  color:var(--green-dark);
 
 }
 
 
 /* ========================================
-SECTION
+   SECTION
 ======================================== */
 
 .section{
 
-padding:60px 0;
+  padding:60px 0;
 
 }
+
 
 .section-title{
 
-text-align:center;
+  text-align:center;
 
-font-size:32px;
+  font-size:32px;
 
-letter-spacing:-1px;
+  letter-spacing:-1px;
 
-margin:0 0 12px;
+  margin:0 0 12px;
 
 }
 
+
 .section-subtitle{
 
-text-align:center;
+  text-align:center;
 
-max-width:650px;
+  max-width:650px;
 
-margin:0 auto 40px;
+  margin:0 auto 40px;
 
-color:var(--muted);
+  color:var(--muted);
 
 }
 
 
 /* ========================================
-STAY TYPES
+   STAY TYPES
 ======================================== */
 
 .stay-grid{
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
-repeat(5,1fr);
+  grid-template-columns:
+    repeat(5,1fr);
 
-gap:18px;
+  gap:18px;
 
 }
+
 
 .stay-card{
 
-border:1px solid var(--line);
+  border:1px solid var(--line);
 
-border-radius:18px;
+  border-radius:18px;
 
-padding:25px 18px;
+  padding:25px 18px;
 
-text-align:center;
+  text-align:center;
 
-background:#ffffff;
+  background:#ffffff;
 
-transition:.25s ease;
+  transition:.25s ease;
 
-cursor:pointer;
+  cursor:pointer;
 
 }
+
 
 .stay-card:hover{
 
-transform:translateY(-5px);
+  transform:translateY(-5px);
 
-border-color:#a8cbb3;
+  border-color:#a8cbb3;
 
-box-shadow:
-0 15px 35px
-rgba(0,0,0,.08);
+  box-shadow:
+    0 15px 35px
+    rgba(0,0,0,.08);
 
 }
+
 
 .stay-icon{
 
-width:65px;
+  width:65px;
 
-height:65px;
+  height:65px;
 
-border-radius:50%;
+  border-radius:50%;
 
-margin:0 auto 15px;
+  margin:0 auto 15px;
 
-display:grid;
+  display:grid;
 
-place-items:center;
+  place-items:center;
 
-background:#edf5ef;
+  background:#edf5ef;
 
-font-size:30px;
+  font-size:30px;
 
 }
+
 
 .stay-card h3{
 
-margin:0 0 7px;
+  margin:0 0 7px;
 
-font-size:16px;
+  font-size:16px;
 
 }
 
+
 .stay-card p{
 
-margin:0;
+  margin:0;
 
-font-size:12px;
+  font-size:12px;
 
-color:var(--muted);
+  color:var(--muted);
 
 }
 
 
 /* ========================================
-HOW SEARCH WORKS
+   HOW IT WORKS
 ======================================== */
 
 .how-section{
 
-background:#f6f9f6;
+  background:#f6f9f6;
 
 }
+
 
 .steps{
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
-repeat(3,1fr);
+  grid-template-columns:
+    repeat(3,1fr);
 
-gap:25px;
+  gap:25px;
 
 }
+
 
 .step{
 
-background:#ffffff;
+  background:#ffffff;
 
-border:1px solid var(--line);
+  border:1px solid var(--line);
 
-border-radius:18px;
+  border-radius:18px;
 
-padding:32px 25px;
+  padding:32px 25px;
 
-text-align:center;
+  text-align:center;
 
 }
+
 
 .step-number{
 
-width:45px;
+  width:45px;
 
-height:45px;
+  height:45px;
 
-border-radius:50%;
+  border-radius:50%;
 
-margin:0 auto 18px;
+  margin:0 auto 18px;
 
-display:grid;
+  display:grid;
 
-place-items:center;
+  place-items:center;
 
-background:var(--green);
+  background:var(--green);
 
-color:#ffffff;
+  color:#ffffff;
 
-font-weight:800;
+  font-weight:800;
 
 }
+
 
 .step h3{
 
-margin:0 0 10px;
+  margin:0 0 10px;
 
-font-size:20px;
+  font-size:20px;
 
 }
 
+
 .step p{
 
-margin:0;
+  margin:0;
 
-color:var(--muted);
+  color:var(--muted);
 
-font-size:14px;
+  font-size:14px;
 
 }
 
 
 /* ========================================
-LAUNCH LOCATIONS
+   LAUNCH LOCATIONS
 ======================================== */
 
 .location-section{
 
-padding:65px 0;
+  padding:65px 0;
 
 }
+
 
 .location-card{
 
-max-width:850px;
+  max-width:850px;
 
-margin:auto;
+  margin:auto;
 
-padding:40px;
+  padding:40px;
 
-border-radius:22px;
+  border-radius:22px;
 
-background:
+  background:
 
-linear-gradient(
-135deg,
-#0d3c25,
-#123e29
-);
+    linear-gradient(
+      135deg,
+      #0d3c25,
+      #123e29
+    );
 
-color:#ffffff;
+  color:#ffffff;
 
-text-align:center;
+  text-align:center;
 
 }
+
 
 .location-card h2{
 
-font-size:30px;
+  font-size:30px;
 
-margin:0 0 12px;
+  margin:0 0 12px;
 
 }
+
 
 .location-card p{
 
-margin:0 auto 25px;
+  margin:0 auto 25px;
 
-max-width:600px;
+  max-width:600px;
 
-color:#c9d8ce;
+  color:#c9d8ce;
 
 }
+
 
 .location-tags{
 
-display:flex;
+  display:flex;
 
-justify-content:center;
+  justify-content:center;
 
-flex-wrap:wrap;
+  flex-wrap:wrap;
 
-gap:12px;
+  gap:12px;
 
 }
 
+
 .location-tag{
 
-padding:10px 18px;
+  padding:10px 18px;
 
-border-radius:30px;
+  border-radius:30px;
 
-background:
-rgba(255,255,255,.12);
+  background:
+    rgba(255,255,255,.12);
 
-border:
-1px solid
-rgba(255,255,255,.15);
+  border:
+    1px solid
+    rgba(255,255,255,.15);
 
-font-size:14px;
+  font-size:14px;
 
-font-weight:700;
+  font-weight:700;
 
 }
 
 
 /* ========================================
-REQUEST FORM
+   REQUEST FORM
 ======================================== */
 
 .request-section{
 
-padding:65px 0;
+  padding:65px 0;
 
-background:#ffffff;
+  background:#ffffff;
 
 }
+
 
 .request-card{
 
-max-width:650px;
+  max-width:650px;
 
-margin:auto;
+  margin:auto;
 
-border:1px solid var(--line);
+  border:1px solid var(--line);
 
-border-radius:20px;
+  border-radius:20px;
 
-padding:35px;
+  padding:35px;
 
-box-shadow:
-0 15px 40px
-rgba(0,0,0,.06);
+  box-shadow:
+    0 15px 40px
+    rgba(0,0,0,.06);
 
 }
+
 
 .request-card h2{
 
-text-align:center;
+  text-align:center;
 
-margin:0 0 8px;
+  margin:0 0 8px;
 
-font-size:28px;
+  font-size:28px;
 
 }
+
 
 .request-card > p{
 
-text-align:center;
+  text-align:center;
 
-color:var(--muted);
+  color:var(--muted);
 
-margin:0 0 25px;
+  margin:0 0 25px;
 
 }
+
 
 .form-group{
 
-margin-bottom:15px;
+  margin-bottom:15px;
 
 }
+
 
 .form-group label{
 
-display:block;
+  display:block;
 
-margin-bottom:7px;
+  margin-bottom:7px;
 
-font-size:13px;
+  font-size:13px;
 
-font-weight:700;
+  font-weight:700;
 
 }
+
 
 .form-group input,
 .form-group select{
 
-width:100%;
+  width:100%;
 
-height:54px;
+  height:54px;
 
-border:1px solid #d9e2dc;
+  border:1px solid #d9e2dc;
 
-border-radius:10px;
+  border-radius:10px;
 
-padding:0 15px;
+  padding:0 15px;
 
-font:inherit;
+  font:inherit;
 
-outline:none;
+  outline:none;
 
-background:#fbfdfb;
+  background:#fbfdfb;
 
 }
+
 
 .form-group input:focus,
 .form-group select:focus{
 
-border-color:var(--green);
+  border-color:var(--green);
 
-box-shadow:
-0 0 0 3px
-rgba(13,107,54,.10);
+  box-shadow:
+    0 0 0 3px
+    rgba(13,107,54,.10);
 
 }
+
 
 .request-button{
 
-width:100%;
+  width:100%;
 
-height:56px;
+  height:56px;
 
-border:0;
+  border:0;
 
-border-radius:10px;
+  border-radius:10px;
 
-background:
+  background:
 
-linear-gradient(
-90deg,
-#168342,
-#0c602f
-);
+    linear-gradient(
+      90deg,
+      #168342,
+      #0c602f
+    );
 
-color:#ffffff;
+  color:#ffffff;
 
-font-weight:800;
+  font-weight:800;
 
-font-size:15px;
+  font-size:15px;
 
-cursor:pointer;
+  cursor:pointer;
 
 }
+
 
 .form-message{
 
-display:none;
+  display:none;
 
-margin-top:15px;
+  margin-top:15px;
 
-padding:12px;
+  padding:12px;
 
-border-radius:10px;
+  border-radius:10px;
 
-background:#eaf6ee;
+  background:#eaf6ee;
 
-border:1px solid #b7ddc3;
+  border:1px solid #b7ddc3;
 
-color:#1b6b3a;
+  color:#1b6b3a;
 
-font-size:13px;
+  font-size:13px;
 
-text-align:center;
+  text-align:center;
 
 }
 
+
 .form-message.show{
 
-display:block;
+  display:block;
 
 }
 
 
 /* ========================================
-WHATSAPP
+   WHATSAPP
 ======================================== */
 
 .whatsapp{
 
-position:fixed;
+  position:fixed;
 
-right:22px;
+  right:22px;
 
-bottom:22px;
+  bottom:22px;
 
-width:60px;
+  width:60px;
 
-height:60px;
+  height:60px;
 
-border-radius:50%;
+  border-radius:50%;
 
-background:#25D366;
+  background:#25D366;
 
-color:#ffffff;
+  color:#ffffff;
 
-display:flex;
+  display:flex;
 
-align-items:center;
+  align-items:center;
 
-justify-content:center;
+  justify-content:center;
 
-font-size:26px;
+  font-size:26px;
 
-z-index:900;
+  z-index:900;
 
-box-shadow:
-0 10px 25px
-rgba(0,0,0,.2);
+  box-shadow:
+    0 10px 25px
+    rgba(0,0,0,.2);
 
 }
 
 
 /* ========================================
-FOOTER
+   FOOTER
 ======================================== */
 
 .footer{
 
-background:#030506;
+  background:#030506;
 
-color:#ffffff;
+  color:#ffffff;
 
-padding:45px 0 0;
+  padding:60px 0 0;
+
+  overflow:hidden;
+
+}
+
+
+/* FIXED FOOTER GRID */
+
+.footer-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    1.8fr
+    1fr
+    1fr
+    1.2fr;
+
+  gap:45px;
+
+  padding-bottom:45px;
 
 }
 
-.footer-inner{
 
-display:flex;
+.footer-brand{
 
-justify-content:space-between;
-
-align-items:center;
-
-gap:30px;
-
-padding-bottom:35px;
+  min-width:0;
 
 }
+
 
 .footer-logo{
 
-width:200px;
+  width:205px;
 
-max-width:100%;
+  height:60px;
 
-height:auto;
+  object-fit:contain;
+
+  object-position:left center;
+
+  display:block;
+
+  margin-bottom:18px;
+
+}
+
+
+.footer-brand p{
+
+  color:#aeb9b3;
+
+  font-size:14px;
+
+  margin:10px 0;
+
+  max-width:340px;
 
 }
 
-.footer-text{
 
-color:#aeb9b3;
+.footer h3{
 
-font-size:14px;
+  font-size:16px;
 
-max-width:400px;
+  margin:8px 0 18px;
 
 }
+
 
 .footer-links{
 
-display:flex;
+  display:flex;
 
-gap:22px;
+  flex-direction:column;
 
-flex-wrap:wrap;
+  gap:11px;
 
 }
+
 
 .footer-links a{
 
-color:#aeb9b3;
+  color:#aeb9b3;
 
-font-size:14px;
+  font-size:14px;
+
+  transition:.2s ease;
+
+  overflow-wrap:anywhere;
 
 }
+
 
 .footer-links a:hover{
 
-color:#ffffff;
+  color:#ffffff;
 
 }
 
+
+/* SOCIAL LINKS */
+
+.social-links{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+}
+
+
+.social-links a{
+
+  width:42px;
+
+  height:42px;
+
+  border:1px solid #2b3831;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:#ffffff;
+
+  font-weight:700;
+
+  transition:.2s ease;
+
+}
+
+
+.social-links a:hover{
+
+  background:var(--green);
+
+  border-color:var(--green);
+
+}
+
+
+/* FOOTER BOTTOM */
+
 .footer-bottom{
 
-border-top:
-1px solid #1d2923;
+  border-top:
+    1px solid #1d2923;
 
-padding:20px 0;
+  padding:20px 0;
 
-color:#849088;
+  color:#849088;
 
-font-size:13px;
+  font-size:13px;
 
-text-align:center;
+}
+
+
+.footer-bottom-inner{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:20px;
 
 }
 
 
 /* ========================================
-MOBILE
+   TABLET
 ======================================== */
 
-@media(max-width:850px){
+@media(max-width:900px){
 
-.search-box{
+  .container{
 
-grid-template-columns:
-1fr 1fr;
+    width:min(
+      calc(100% - 32px),
+      700px
+    );
+
+  }
+
+
+  .search-box{
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+  }
+
+
+  .search-button{
+
+    width:100%;
+
+  }
+
+
+  .stay-grid{
+
+    grid-template-columns:
+      repeat(3,1fr);
+
+  }
+
+
+  .steps{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  /* FIXED RESPONSIVE FOOTER */
+
+  .footer-grid{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+    gap:35px;
+
+  }
 
 }
 
-.search-button{
 
-width:100%;
-
-}
-
-.stay-grid{
-
-grid-template-columns:
-repeat(3,1fr);
-
-}
-
-.steps{
-
-grid-template-columns:1fr;
-
-}
-
-.footer-inner{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-}
-
-}
-
+/* ========================================
+   MOBILE
+======================================== */
 
 @media(max-width:550px){
 
-.container{
+  .container{
 
-width:calc(100% - 28px);
+    width:calc(100% - 28px);
 
-}
+  }
 
-.nav{
 
-height:74px;
+  .nav{
 
-}
+    height:74px;
 
-.brand-logo{
+  }
 
-width:170px;
 
-max-height:55px;
+  .brand-logo{
 
-}
+    width:165px;
 
-.back-button{
+    height:52px;
 
-padding:0 14px;
+  }
 
-font-size:13px;
 
-}
+  .back-button{
 
-.hero{
+    min-height:42px;
 
-padding:60px 0;
+    padding:0 12px;
 
-}
+    font-size:12px;
 
-.search-box{
+  }
 
-grid-template-columns:1fr;
 
-padding:14px;
+  .hero{
 
-}
+    padding:60px 0;
 
-.stay-grid{
+  }
 
-grid-template-columns:
-repeat(2,1fr);
 
-}
+  .hero h1{
 
-.section{
+    font-size:40px;
 
-padding:50px 0;
+    letter-spacing:-1.5px;
 
-}
+  }
 
-.location-card{
 
-padding:30px 20px;
+  .hero p{
 
-}
+    font-size:15px;
 
-.request-card{
+  }
 
-padding:25px 18px;
 
-}
+  .search-section{
+
+    padding:35px 0 20px;
+
+  }
+
+
+  .search-box{
+
+    grid-template-columns:1fr;
+
+    padding:14px;
+
+  }
+
+
+  .search-button{
+
+    width:100%;
+
+  }
+
+
+  .stay-grid{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+    gap:12px;
+
+  }
+
+
+  .stay-card{
+
+    padding:20px 12px;
+
+  }
+
+
+  .section{
+
+    padding:50px 0;
+
+  }
+
+
+  .section-title{
+
+    font-size:27px;
+
+  }
+
+
+  .location-section{
+
+    padding:50px 0;
+
+  }
+
+
+  .location-card{
+
+    padding:30px 20px;
+
+  }
+
+
+  .location-card h2{
+
+    font-size:25px;
+
+  }
+
+
+  .request-section{
+
+    padding:50px 0;
+
+  }
+
+
+  .request-card{
+
+    padding:25px 18px;
+
+  }
+
+
+  /* MOBILE FOOTER FIX */
+
+  .footer{
+
+    padding-top:45px;
+
+  }
+
+
+  .footer-grid{
+
+    grid-template-columns:1fr;
+
+    gap:30px;
+
+    padding-bottom:35px;
+
+  }
+
+
+  .footer-logo{
+
+    width:190px;
+
+    height:58px;
+
+  }
+
+
+  .footer-brand p{
+
+    max-width:100%;
+
+  }
+
+
+  .footer-links{
+
+    gap:12px;
+
+  }
+
+
+  .footer-bottom-inner{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:7px;
+
+  }
+
+
+  .whatsapp{
+
+    width:56px;
+
+    height:56px;
+
+    right:16px;
+
+    bottom:16px;
+
+  }
 
 }
 
@@ -1119,983 +1481,1010 @@ padding:25px 18px;
 </head>
 
 
-<body>
+<body id="home">
 
 
 <!-- ========================================
-NAVBAR
+     NAVBAR
 ======================================== -->
 
 <nav class="nav">
 
-<div class="container nav-inner">
+  <div class="container nav-inner">
 
-<a
-href="index.html"
-class="brand"
->
+    <a
+      href="index.html"
+      class="brand"
+      aria-label="Hopebed Home"
+    >
 
-<img
-src="./assets/Hopebed_logo.PNG"
-alt="Hopebed - Stay Smart. Stay Verified."
-class="brand-logo"
->
+      <img
+        src="./assets/Hopebed_logo.PNG"
+        alt="Hopebed - Stay Smart. Stay Verified."
+        class="brand-logo"
+      >
 
-</a>
+    </a>
 
 
-<a
-href="index.html"
-class="back-button"
->
+    <a
+      href="index.html"
+      class="back-button"
+    >
+      ← Back Home
+    </a>
 
-← Back Home
-
-</a>
-
-</div>
+  </div>
 
 </nav>
 
 
-
 <!-- ========================================
-HERO
+     HERO
 ======================================== -->
 
 <section class="hero">
 
-<div class="container">
+  <div class="container">
 
-<div class="eyebrow">
-
-FIND YOUR NEXT STAY
-
-</div>
+    <div class="eyebrow">
+      FIND YOUR NEXT STAY
+    </div>
 
 
-<h1>
+    <h1>
 
-Find a stay.<br>
+      Find a stay.<br>
 
-<span>
-Stay with confidence.
-</span>
+      <span>
+        Stay with confidence.
+      </span>
 
-</h1>
+    </h1>
 
 
-<p>
+    <p>
 
-Hopebed is building a smarter way to discover verified
-hotels, PGs, hostels, rooms and homes in India.
+      Hopebed is building a smarter way to discover verified
+      hotels, PGs, hostels, rooms and homes in India.
 
-</p>
+    </p>
 
-</div>
+  </div>
 
 </section>
 
 
-
 <!-- ========================================
-SEARCH
+     SEARCH
 ======================================== -->
 
 <section class="search-section">
 
-<div class="container">
+  <div class="container">
 
 
-<div class="search-box">
+    <div class="search-box">
 
 
-<div class="search-field">
+      <div class="search-field">
 
-📍
+        📍
 
-<input
-type="text"
-id="searchLocation"
-placeholder="Where are you looking?"
->
+        <input
+          type="text"
+          id="searchLocation"
+          placeholder="Where are you looking?"
+        >
 
-</div>
-
-
-<div class="search-field">
-
-🏠
-
-<select id="stayType">
-
-<option value="">
-Stay Type
-</option>
-
-<option>
-Hotel
-</option>
-
-<option>
-PG
-</option>
-
-<option>
-Hostel
-</option>
-
-<option>
-Room
-</option>
-
-<option>
-Home
-</option>
-
-</select>
-
-</div>
+      </div>
 
 
-<div class="search-field">
+      <div class="search-field">
 
-👥
+        🏠
 
-<select id="guestType">
+        <select id="stayType">
 
-<option value="">
-I'm looking as...
-</option>
+          <option value="">
+            Stay Type
+          </option>
 
-<option>
-Student
-</option>
+          <option value="Hotel">
+            Hotel
+          </option>
 
-<option>
-Working Professional
-</option>
+          <option value="PG">
+            PG
+          </option>
 
-<option>
-Traveller
-</option>
+          <option value="Hostel">
+            Hostel
+          </option>
 
-</select>
+          <option value="Room">
+            Room
+          </option>
 
-</div>
+          <option value="Home">
+            Home
+          </option>
 
+        </select>
 
-<button
-class="search-button"
-id="searchButton"
->
-
-Search Stays 🔍
-
-</button>
+      </div>
 
 
-</div>
+      <div class="search-field">
+
+        👥
+
+        <select id="guestType">
+
+          <option value="">
+            I'm looking as...
+          </option>
+
+          <option value="Student">
+            Student
+          </option>
+
+          <option value="Working Professional">
+            Working Professional
+          </option>
+
+          <option value="Traveller">
+            Traveller
+          </option>
+
+        </select>
+
+      </div>
 
 
-<div
-class="status-box"
-id="searchStatus"
->
-
-<strong>
-Hopebed is currently launching in Taloja & Kharghar.
-</strong>
-
-Submit your stay requirement below and we'll help you
-find the right option.
-
-</div>
+      <button
+        class="search-button"
+        id="searchButton"
+        type="button"
+      >
+        Search Stays 🔍
+      </button>
 
 
-</div>
+    </div>
+
+
+    <div
+      class="status-box"
+      id="searchStatus"
+    >
+
+      <strong>
+        Hopebed is currently launching in Taloja & Kharghar.
+      </strong>
+
+      <br>
+
+      Submit your stay requirement below and we'll help you
+      find the right option.
+
+    </div>
+
+
+  </div>
 
 </section>
 
 
-
 <!-- ========================================
-STAY TYPES
+     STAY TYPES
 ======================================== -->
 
 <section class="section">
 
-<div class="container">
+  <div class="container">
 
 
-<h2 class="section-title">
-
-What kind of stay are you looking for?
-
-</h2>
+    <h2 class="section-title">
+      What kind of stay are you looking for?
+    </h2>
 
 
-<p class="section-subtitle">
+    <p class="section-subtitle">
 
-Hopebed is designed to help you discover different types
-of verified accommodation in one place.
+      Hopebed is designed to help you discover different types
+      of verified accommodation in one place.
 
-</p>
-
-
-<div class="stay-grid">
+    </p>
 
 
-<div class="stay-card">
-
-<div class="stay-icon">
-🏨
-</div>
-
-<h3>
-Hotels
-</h3>
-
-<p>
-Comfortable stays for travellers.
-</p>
-
-</div>
+    <div class="stay-grid">
 
 
-<div class="stay-card">
+      <div class="stay-card">
 
-<div class="stay-icon">
-🏠
-</div>
+        <div class="stay-icon">
+          🏨
+        </div>
 
-<h3>
-PGs
-</h3>
+        <h3>
+          Hotels
+        </h3>
 
-<p>
-Convenient accommodation for students and professionals.
-</p>
+        <p>
+          Comfortable stays for travellers.
+        </p>
 
-</div>
-
-
-<div class="stay-card">
-
-<div class="stay-icon">
-🛏️
-</div>
-
-<h3>
-Hostels
-</h3>
-
-<p>
-Flexible and affordable stays.
-</p>
-
-</div>
+      </div>
 
 
-<div class="stay-card">
+      <div class="stay-card">
 
-<div class="stay-icon">
-🚪
-</div>
+        <div class="stay-icon">
+          🏠
+        </div>
 
-<h3>
-Rooms
-</h3>
+        <h3>
+          PGs
+        </h3>
 
-<p>
-Find rooms that fit your needs.
-</p>
+        <p>
+          Convenient accommodation for students and professionals.
+        </p>
 
-</div>
-
-
-<div class="stay-card">
-
-<div class="stay-icon">
-🏡
-</div>
-
-<h3>
-Homes
-</h3>
-
-<p>
-Discover comfortable places to stay.
-</p>
-
-</div>
+      </div>
 
 
-</div>
+      <div class="stay-card">
 
-</div>
+        <div class="stay-icon">
+          🛏️
+        </div>
+
+        <h3>
+          Hostels
+        </h3>
+
+        <p>
+          Flexible and affordable stays.
+        </p>
+
+      </div>
+
+
+      <div class="stay-card">
+
+        <div class="stay-icon">
+          🚪
+        </div>
+
+        <h3>
+          Rooms
+        </h3>
+
+        <p>
+          Find rooms that fit your needs.
+        </p>
+
+      </div>
+
+
+      <div class="stay-card">
+
+        <div class="stay-icon">
+          🏡
+        </div>
+
+        <h3>
+          Homes
+        </h3>
+
+        <p>
+          Discover comfortable places to stay.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
 
 </section>
 
 
-
 <!-- ========================================
-HOW IT WORKS
+     HOW IT WORKS
 ======================================== -->
 
-<section class="section how-section">
+<section
+  class="section how-section"
+  id="how"
+>
 
-<div class="container">
-
-
-<h2 class="section-title">
-
-Finding a stay with Hopebed
-
-</h2>
+  <div class="container">
 
 
-<p class="section-subtitle">
-
-A simple process designed to make finding accommodation
-easier and more transparent.
-
-</p>
+    <h2 class="section-title">
+      Finding a stay with Hopebed
+    </h2>
 
 
-<div class="steps">
+    <p class="section-subtitle">
+
+      A simple process designed to make finding accommodation
+      easier and more transparent.
+
+    </p>
 
 
-<div class="step">
-
-<div class="step-number">
-1
-</div>
-
-<h3>
-Tell us what you need
-</h3>
-
-<p>
-
-Choose your location, stay type and requirements.
-
-</p>
-
-</div>
+    <div class="steps">
 
 
-<div class="step">
+      <div class="step">
 
-<div class="step-number">
-2
-</div>
+        <div class="step-number">
+          1
+        </div>
 
-<h3>
-Discover suitable stays
-</h3>
+        <h3>
+          Tell us what you need
+        </h3>
 
-<p>
+        <p>
+          Choose your location, stay type and requirements.
+        </p>
 
-Explore available accommodation that matches your needs.
-
-</p>
-
-</div>
+      </div>
 
 
-<div class="step">
+      <div class="step">
 
-<div class="step-number">
-3
-</div>
+        <div class="step-number">
+          2
+        </div>
 
-<h3>
-Stay with confidence
-</h3>
+        <h3>
+          Discover suitable stays
+        </h3>
 
-<p>
+        <p>
+          Explore available accommodation that matches your needs.
+        </p>
 
-Hopebed is building a trusted and transparent stay experience.
-
-</p>
-
-</div>
+      </div>
 
 
-</div>
+      <div class="step">
 
-</div>
+        <div class="step-number">
+          3
+        </div>
+
+        <h3>
+          Stay with confidence
+        </h3>
+
+        <p>
+          Hopebed is building a trusted and transparent stay experience.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
 
 </section>
 
 
-
 <!-- ========================================
-LAUNCH LOCATIONS
+     LAUNCH LOCATIONS
 ======================================== -->
 
 <section class="location-section">
 
-<div class="container">
+  <div class="container">
 
 
-<div class="location-card">
+    <div class="location-card">
 
 
-<h2>
-
-📍 Starting in Navi Mumbai
-
-</h2>
+      <h2>
+        📍 Starting in Navi Mumbai
+      </h2>
 
 
-<p>
+      <p>
 
-Hopebed is beginning its journey by connecting people
-with better stay options in selected areas of Navi Mumbai.
+        Hopebed is beginning its journey by connecting people
+        with better stay options in selected areas of Navi Mumbai.
 
-</p>
-
-
-<div class="location-tags">
-
-<div class="location-tag">
-Taloja
-</div>
-
-<div class="location-tag">
-Kharghar
-</div>
-
-<div class="location-tag">
-Navi Mumbai
-</div>
-
-</div>
+      </p>
 
 
-</div>
+      <div class="location-tags">
 
-</div>
+        <div class="location-tag">
+          Taloja
+        </div>
+
+        <div class="location-tag">
+          Kharghar
+        </div>
+
+        <div class="location-tag">
+          Navi Mumbai
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
 
 </section>
 
 
-
 <!-- ========================================
-REQUEST A STAY
+     REQUEST A STAY
 ======================================== -->
 
-<section class="request-section">
-
-<div class="container">
-
-
-<div class="request-card">
-
-
-<h2>
-
-Can't find your stay yet?
-
-</h2>
-
-
-<p>
-
-Tell us what you're looking for and the Hopebed team
-will understand your requirement.
-
-</p>
-
-
-<form
-id="stayRequestForm"
+<section
+  class="request-section"
+  id="request-stay"
 >
 
-
-<div class="form-group">
-
-<label>
-Your Name
-</label>
-
-<input
-type="text"
-id="requestName"
-placeholder="Enter your name"
-required
->
-
-</div>
+  <div class="container">
 
 
-
-<div class="form-group">
-
-<label>
-WhatsApp Number
-</label>
-
-<input
-type="tel"
-id="requestPhone"
-placeholder="Enter your WhatsApp number"
-inputmode="numeric"
-required
->
-
-</div>
+    <div class="request-card">
 
 
-
-<div class="form-group">
-
-<label>
-Preferred Location
-</label>
-
-<input
-type="text"
-id="requestLocation"
-placeholder="Example: Taloja, Kharghar"
-required
->
-
-</div>
+      <h2>
+        Can't find your stay yet?
+      </h2>
 
 
+      <p>
 
-<div class="form-group">
+        Tell us what you're looking for and the Hopebed team
+        will understand your requirement.
 
-<label>
-Stay Type
-</label>
-
-<select
-id="requestStayType"
-required
->
-
-<option value="">
-Select stay type
-</option>
-
-<option>
-Hotel
-</option>
-
-<option>
-PG
-</option>
-
-<option>
-Hostel
-</option>
-
-<option>
-Room
-</option>
-
-<option>
-Home
-</option>
-
-</select>
-
-</div>
+      </p>
 
 
-
-<button
-type="submit"
-class="request-button"
->
-
-Send My Requirement →
-
-</button>
+      <form id="stayRequestForm">
 
 
-<div
-class="form-message"
-id="formMessage"
->
+        <div class="form-group">
 
-✓ Thanks! Opening WhatsApp so you can send your requirement.
+          <label for="requestName">
+            Your Name
+          </label>
 
-</div>
+          <input
+            type="text"
+            id="requestName"
+            placeholder="Enter your name"
+            required
+          >
+
+        </div>
 
 
-</form>
+        <div class="form-group">
+
+          <label for="requestPhone">
+            WhatsApp Number
+          </label>
+
+          <input
+            type="tel"
+            id="requestPhone"
+            placeholder="Enter your WhatsApp number"
+            inputmode="numeric"
+            required
+          >
+
+        </div>
 
 
-</div>
+        <div class="form-group">
 
-</div>
+          <label for="requestLocation">
+            Preferred Location
+          </label>
+
+          <input
+            type="text"
+            id="requestLocation"
+            placeholder="Example: Taloja, Kharghar"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="requestStayType">
+            Stay Type
+          </label>
+
+          <select
+            id="requestStayType"
+            required
+          >
+
+            <option value="">
+              Select stay type
+            </option>
+
+            <option value="Hotel">
+              Hotel
+            </option>
+
+            <option value="PG">
+              PG
+            </option>
+
+            <option value="Hostel">
+              Hostel
+            </option>
+
+            <option value="Room">
+              Room
+            </option>
+
+            <option value="Home">
+              Home
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="request-button"
+        >
+          Send My Requirement →
+        </button>
+
+
+        <div
+          class="form-message"
+          id="formMessage"
+        >
+          ✓ Thanks! Opening WhatsApp so you can send your requirement.
+        </div>
+
+
+      </form>
+
+
+    </div>
+
+  </div>
 
 </section>
 
 
-
 <!-- ========================================
-WHATSAPP
+     WHATSAPP
 ======================================== -->
 
 <a
-href="https://wa.me/918291025730?text=Hi%20Hopebed%2C%20I%20want%20to%20find%20a%20stay."
-class="whatsapp"
-target="_blank"
-rel="noopener"
-aria-label="Chat with Hopebed on WhatsApp"
+  href="https://wa.me/918291025730?text=Hi%20Hopebed%2C%20I%20want%20to%20find%20a%20stay."
+  class="whatsapp"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with Hopebed on WhatsApp"
 >
-
-💬
-
+  💬
 </a>
 
 
-
-<!-- FOOTER -->
+<!-- ========================================
+     FOOTER
+======================================== -->
 
 <footer
-class="footer"
-id="contact"
+  class="footer"
+  id="contact"
 >
 
-<div class="container footer-grid">
+  <div class="container footer-grid">
 
 
-<div class="footer-brand">
+    <!-- BRAND -->
 
-<img
-src="./assets/Hopebed_logo.PNG"
-alt="Hopebed"
-class="footer-logo"
->
+    <div class="footer-brand">
 
-<p>
-
-<strong>
-Stay Smart. Stay Verified.
-</strong>
-
-</p>
-
-<p>
-
-Hopebed is building a trusted platform for finding,
-booking and verifying stays across India.
-
-</p>
-
-</div>
+      <img
+        src="./assets/Hopebed_logo.PNG"
+        alt="Hopebed"
+        class="footer-logo"
+      >
 
 
-<div>
-
-<h3>Quick Links</h3>
-
-<div class="footer-links">
-
-<a href="#home">Home</a>
-
-<a href="find-stay.html">Find a Stay</a>
-
-<a href="how-it-works.html">How It Works</a>
-
-<a href="#list">List Your Property</a>
-
-<a href="about.html">About Us</a>
-
-</div>
-
-</div>
+      <p>
+        <strong>
+          Stay Smart. Stay Verified.
+        </strong>
+      </p>
 
 
-<div>
+      <p>
 
-<h3>Contact</h3>
+        Hopebed is building a trusted platform for finding,
+        booking and verifying stays across India.
 
-<div class="footer-links">
+      </p>
 
-<a href="mailto:hello@hopebed.in">
-hello@hopebed.in
-</a>
-
-<a
-href="https://wa.me/918291025730"
-target="_blank"
-rel="noopener"
->
-WhatsApp Us
-</a>
-
-<a href="#list">
-Become a Property Partner
-</a>
-
-</div>
-
-</div>
+    </div>
 
 
-<div>
+    <!-- QUICK LINKS -->
 
-<h3>Follow Hopebed</h3>
+    <div>
 
-<p style="color:#aeb9b3;font-size:14px;">
-
-Follow our journey as we build the future
-of verified stays.
-
-</p>
+      <h3>
+        Quick Links
+      </h3>
 
 
-<div class="social-links">
+      <div class="footer-links">
 
-<a href="#" aria-label="LinkedIn">
-in
-</a>
+        <a href="index.html">
+          Home
+        </a>
 
-<a href="#" aria-label="Instagram">
-◎
-</a>
+        <a href="find-stay.html">
+          Find a Stay
+        </a>
 
-<a href="#" aria-label="Facebook">
-f
-</a>
+        <a href="#how">
+          How It Works
+        </a>
 
-<a href="#" aria-label="X">
-𝕏
-</a>
+        <a href="index.html#list">
+          List Your Property
+        </a>
 
-</div>
+        <a href="index.html#about">
+          About Us
+        </a>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
 
-<div class="footer-bottom">
+    <!-- CONTACT -->
 
-<div class="container footer-bottom-inner">
+    <div>
 
-<div>
-© 2026 Hopebed. All rights reserved.
-</div>
+      <h3>
+        Contact
+      </h3>
 
-<div>
-Stay Smart. Stay Verified.
-</div>
 
-</div>
+      <div class="footer-links">
 
-</div>
+        <a href="mailto:hello@hopebed.in">
+          hello@hopebed.in
+        </a>
+
+
+        <a
+          href="https://wa.me/918291025730"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp Us
+        </a>
+
+
+        <a href="index.html#list">
+          Become a Property Partner
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- SOCIAL -->
+
+    <div>
+
+      <h3>
+        Follow Hopebed
+      </h3>
+
+
+      <p style="color:#aeb9b3;font-size:14px;">
+
+        Follow our journey as we build the future
+        of verified stays.
+
+      </p>
+
+
+      <div class="social-links">
+
+        <a
+          href="#"
+          aria-label="LinkedIn"
+        >
+          in
+        </a>
+
+        <a
+          href="#"
+          aria-label="Instagram"
+        >
+          ◎
+        </a>
+
+        <a
+          href="#"
+          aria-label="Facebook"
+        >
+          f
+        </a>
+
+        <a
+          href="#"
+          aria-label="X"
+        >
+          𝕏
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- FOOTER BOTTOM -->
+
+  <div class="footer-bottom">
+
+    <div class="container footer-bottom-inner">
+
+      <div>
+        © 2026 Hopebed. All rights reserved.
+      </div>
+
+      <div>
+        Stay Smart. Stay Verified.
+      </div>
+
+    </div>
+
+  </div>
+
 
 </footer>
 
 
-
-
 <!-- ========================================
-JAVASCRIPT
+     JAVASCRIPT
 ======================================== -->
 
 <script>
 
-
-const WHATSAPP_NUMBER =
-"918291025730";
+const WHATSAPP_NUMBER = "918291025730";
 
 
 /* ========================================
-SEARCH BUTTON
+   SEARCH BUTTON
 ======================================== */
 
 document
-.getElementById("searchButton")
-.addEventListener(
-"click",
-function(){
+  .getElementById("searchButton")
+  .addEventListener(
+    "click",
+    function(){
 
 
-const location =
-document
-.getElementById("searchLocation")
-.value
-.trim();
+      const location =
+        document
+          .getElementById("searchLocation")
+          .value
+          .trim();
 
 
-const stayType =
-document
-.getElementById("stayType")
-.value;
+      const stayType =
+        document
+          .getElementById("stayType")
+          .value;
 
 
-let message =
-"Hi Hopebed! 👋\n\n";
-
-message +=
-"I am looking for a stay.\n\n";
-
-
-if(location){
-
-message +=
-"Preferred Location: " +
-location +
-"\n";
-
-}
+      const guestType =
+        document
+          .getElementById("guestType")
+          .value;
 
 
-if(stayType){
+      let message =
+        "Hi Hopebed! 👋\n\n";
 
-message +=
-"Stay Type: " +
-stayType +
-"\n";
-
-}
+      message +=
+        "I am looking for a stay.\n\n";
 
 
-message +=
-"\nPlease help me find a suitable stay.";
+      if(location){
+
+        message +=
+          "Preferred Location: " +
+          location +
+          "\n";
+
+      }
 
 
-const whatsappURL =
-"https://wa.me/" +
-WHATSAPP_NUMBER +
-"?text=" +
-encodeURIComponent(message);
+      if(stayType){
+
+        message +=
+          "Stay Type: " +
+          stayType +
+          "\n";
+
+      }
 
 
-window.open(
-whatsappURL,
-"_blank"
-);
+      if(guestType){
+
+        message +=
+          "I am looking as: " +
+          guestType +
+          "\n";
+
+      }
 
 
-}
-);
+      message +=
+        "\nPlease help me find a suitable stay.";
 
+
+      const whatsappURL =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+
+    }
+  );
 
 
 /* ========================================
-STAY REQUEST FORM
+   STAY REQUEST FORM
 ======================================== */
 
 document
-.getElementById("stayRequestForm")
-.addEventListener(
-"submit",
-function(event){
+  .getElementById("stayRequestForm")
+  .addEventListener(
+    "submit",
+    function(event){
 
 
-event.preventDefault();
+      event.preventDefault();
 
 
-const name =
-document
-.getElementById("requestName")
-.value
-.trim();
+      const name =
+        document
+          .getElementById("requestName")
+          .value
+          .trim();
 
 
-const phone =
-document
-.getElementById("requestPhone")
-.value
-.trim();
+      const phone =
+        document
+          .getElementById("requestPhone")
+          .value
+          .trim();
 
 
-const location =
-document
-.getElementById("requestLocation")
-.value
-.trim();
+      const location =
+        document
+          .getElementById("requestLocation")
+          .value
+          .trim();
 
 
-const stayType =
-document
-.getElementById("requestStayType")
-.value;
+      const stayType =
+        document
+          .getElementById("requestStayType")
+          .value;
 
 
-const phoneDigits =
-phone.replace(/\D/g,"");
+      const phoneDigits =
+        phone.replace(/\D/g,"");
 
 
-if(
+      if(
 
-name.length < 2 ||
+        name.length < 2 ||
 
-phoneDigits.length !== 10 ||
+        phoneDigits.length !== 10 ||
 
-!location ||
+        !location ||
 
-!stayType
+        !stayType
 
-){
+      ){
 
-alert(
-"Please complete all fields with valid information."
-);
+        alert(
+          "Please complete all fields with valid information."
+        );
 
-return;
+        return;
 
-}
-
-
-const message =
-
-"Hi Hopebed! 👋\n\n" +
-
-"I am looking for a stay.\n\n" +
-
-"Name: " +
-name +
-
-"\nWhatsApp: " +
-phone +
-
-"\nPreferred Location: " +
-location +
-
-"\nStay Type: " +
-stayType +
-
-"\n\nPlease help me find a suitable stay.";
+      }
 
 
-document
-.getElementById("formMessage")
-.classList
-.add("show");
+      const message =
+
+        "Hi Hopebed! 👋\n\n" +
+
+        "I am looking for a stay.\n\n" +
+
+        "Name: " +
+        name +
+
+        "\nWhatsApp: " +
+        phone +
+
+        "\nPreferred Location: " +
+        location +
+
+        "\nStay Type: " +
+        stayType +
+
+        "\n\nPlease help me find a suitable stay.";
 
 
-const whatsappURL =
-
-"https://wa.me/" +
-
-WHATSAPP_NUMBER +
-
-"?text=" +
-
-encodeURIComponent(message);
+      document
+        .getElementById("formMessage")
+        .classList
+        .add("show");
 
 
-window.open(
-whatsappURL,
-"_blank"
-);
+      const whatsappURL =
+
+        "https://wa.me/" +
+
+        WHATSAPP_NUMBER +
+
+        "?text=" +
+
+        encodeURIComponent(message);
 
 
-}
-);
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
 
+
+    }
+  );
 
 </script>
 
