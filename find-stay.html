@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+name="description"
+content="Find verified hotels, PGs, hostels, rooms and stays with Hopebed."
+>
+
+<title>Find a Stay — Hopebed</title>
+
+
+<!-- FAVICON -->
+
+<link
+rel="icon"
+type="image/png"
+href="./assets/favicon.PNG"
+>
+
+
+<!-- GOOGLE FONT -->
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
+
+
+<style>
+
+/* ========================================
+ROOT
+======================================== */
+
+:root{
+
+--green:#0d6b36;
+--green-dark:#084a25;
+--green-light:#159447;
+
+--dark:#030506;
+
+--text:#171b1d;
+--muted:#66706d;
+
+--line:#dce3df;
+
+--soft:#f4f7f4;
+
+--white:#ffffff;
+
+}
+
+
+/* ========================================
+RESET
+======================================== */
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+margin:0;
+
+font-family:
+Inter,
+ui-sans-serif,
+system-ui,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Arial,
+sans-serif;
+
+color:var(--text);
+
+background:#ffffff;
+
+line-height:1.55;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+.container{
+
+width:min(
+1180px,
+calc(100% - 40px)
+);
+
+margin:auto;
+
+}
+
+
+/* ========================================
+NAVBAR
+======================================== */
+
+.nav{
+
+height:84px;
+
+background:var(--dark);
+
+color:#ffffff;
+
+display:flex;
+
+align-items:center;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+}
+
+.nav-inner{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+width:100%;
+
+}
+
+.brand{
+
+display:flex;
+
+align-items:center;
+
+height:70px;
+
+}
+
+.brand-logo{
+
+width:210px;
+
+max-height:65px;
+
+height:auto;
+
+object-fit:contain;
+
+display:block;
+
+}
+
+.back-button{
+
+min-height:46px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:0 20px;
+
+border:1px solid #2f8b57;
+
+border-radius:10px;
+
+font-size:14px;
+
+font-weight:700;
+
+transition:.2s ease;
+
+}
+
+.back-button:hover{
+
+background:var(--green);
+
+}
+
+
+/* ========================================
+HERO
+======================================== */
+
+.hero{
+
+background:
+
+linear-gradient(
+135deg,
+#f5faf6,
+#edf5ef
+);
+
+padding:85px 0 75px;
+
+text-align:center;
+
+border-bottom:
+1px solid #e2ebe4;
+
+}
+
+.eyebrow{
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+color:#35714e;
+
+margin-bottom:14px;
+
+}
+
+.hero h1{
+
+font-size:
+clamp(
+40px,
+6vw,
+64px
+);
+
+line-height:1.08;
+
+letter-spacing:-2px;
+
+margin:0 0 20px;
+
+}
+
+.hero h1 span{
+
+color:var(--green);
+
+}
+
+.hero p{
+
+max-width:700px;
+
+margin:auto;
+
+font-size:17px;
+
+color:var(--muted);
+
+}
+
+
+/* ========================================
+SEARCH SECTION
+======================================== */
+
+.search-section{
+
+padding:55px 0 30px;
+
+}
+
+.search-box{
+
+background:#ffffff;
+
+border:1px solid var(--line);
+
+border-radius:18px;
+
+padding:18px;
+
+box-shadow:
+0 15px 40px
+rgba(0,0,0,.07);
+
+display:grid;
+
+grid-template-columns:
+1.2fr
+1fr
+1fr
+auto;
+
+gap:12px;
+
+}
+
+.search-field{
+
+height:58px;
+
+border:1px solid #d9e2dc;
+
+border-radius:10px;
+
+display:flex;
+
+align-items:center;
+
+padding:0 16px;
+
+gap:10px;
+
+background:#fbfdfb;
+
+}
+
+.search-field input,
+.search-field select{
+
+width:100%;
+
+height:100%;
+
+border:0;
+
+outline:none;
+
+background:transparent;
+
+font:inherit;
+
+color:var(--text);
+
+}
+
+.search-button{
+
+height:58px;
+
+border:0;
+
+border-radius:10px;
+
+padding:0 28px;
+
+background:
+
+linear-gradient(
+90deg,
+#168342,
+#0c602f
+);
+
+color:#ffffff;
+
+font-weight:800;
+
+font-size:15px;
+
+cursor:pointer;
+
+transition:.2s ease;
+
+}
+
+.search-button:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 10px 25px
+rgba(13,107,54,.22);
+
+}
+
+
+/* ========================================
+COMING SOON
+======================================== */
+
+.status-box{
+
+margin-top:25px;
+
+padding:18px 20px;
+
+border-radius:12px;
+
+background:#f0f7f2;
+
+border:1px solid #d8e8dc;
+
+color:#3d6049;
+
+font-size:14px;
+
+text-align:center;
+
+}
+
+.status-box strong{
+
+color:var(--green-dark);
+
+}
+
+
+/* ========================================
+SECTION
+======================================== */
+
+.section{
+
+padding:60px 0;
+
+}
+
+.section-title{
+
+text-align:center;
+
+font-size:32px;
+
+letter-spacing:-1px;
+
+margin:0 0 12px;
+
+}
+
+.section-subtitle{
+
+text-align:center;
+
+max-width:650px;
+
+margin:0 auto 40px;
+
+color:var(--muted);
+
+}
+
+
+/* ========================================
+STAY TYPES
+======================================== */
+
+.stay-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(5,1fr);
+
+gap:18px;
+
+}
+
+.stay-card{
+
+border:1px solid var(--line);
+
+border-radius:18px;
+
+padding:25px 18px;
+
+text-align:center;
+
+background:#ffffff;
+
+transition:.25s ease;
+
+cursor:pointer;
+
+}
+
+.stay-card:hover{
+
+transform:translateY(-5px);
+
+border-color:#a8cbb3;
+
+box-shadow:
+0 15px 35px
+rgba(0,0,0,.08);
+
+}
+
+.stay-icon{
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+margin:0 auto 15px;
+
+display:grid;
+
+place-items:center;
+
+background:#edf5ef;
+
+font-size:30px;
+
+}
+
+.stay-card h3{
+
+margin:0 0 7px;
+
+font-size:16px;
+
+}
+
+.stay-card p{
+
+margin:0;
+
+font-size:12px;
+
+color:var(--muted);
+
+}
+
+
+/* ========================================
+HOW SEARCH WORKS
+======================================== */
+
+.how-section{
+
+background:#f6f9f6;
+
+}
+
+.steps{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:25px;
+
+}
+
+.step{
+
+background:#ffffff;
+
+border:1px solid var(--line);
+
+border-radius:18px;
+
+padding:32px 25px;
+
+text-align:center;
+
+}
+
+.step-number{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+margin:0 auto 18px;
+
+display:grid;
+
+place-items:center;
+
+background:var(--green);
+
+color:#ffffff;
+
+font-weight:800;
+
+}
+
+.step h3{
+
+margin:0 0 10px;
+
+font-size:20px;
+
+}
+
+.step p{
+
+margin:0;
+
+color:var(--muted);
+
+font-size:14px;
+
+}
+
+
+/* ========================================
+LAUNCH LOCATIONS
+======================================== */
+
+.location-section{
+
+padding:65px 0;
+
+}
+
+.location-card{
+
+max-width:850px;
+
+margin:auto;
+
+padding:40px;
+
+border-radius:22px;
+
+background:
+
+linear-gradient(
+135deg,
+#0d3c25,
+#123e29
+);
+
+color:#ffffff;
+
+text-align:center;
+
+}
+
+.location-card h2{
+
+font-size:30px;
+
+margin:0 0 12px;
+
+}
+
+.location-card p{
+
+margin:0 auto 25px;
+
+max-width:600px;
+
+color:#c9d8ce;
+
+}
+
+.location-tags{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+}
+
+.location-tag{
+
+padding:10px 18px;
+
+border-radius:30px;
+
+background:
+rgba(255,255,255,.12);
+
+border:
+1px solid
+rgba(255,255,255,.15);
+
+font-size:14px;
+
+font-weight:700;
+
+}
+
+
+/* ========================================
+REQUEST FORM
+======================================== */
+
+.request-section{
+
+padding:65px 0;
+
+background:#ffffff;
+
+}
+
+.request-card{
+
+max-width:650px;
+
+margin:auto;
+
+border:1px solid var(--line);
+
+border-radius:20px;
+
+padding:35px;
+
+box-shadow:
+0 15px 40px
+rgba(0,0,0,.06);
+
+}
+
+.request-card h2{
+
+text-align:center;
+
+margin:0 0 8px;
+
+font-size:28px;
+
+}
+
+.request-card > p{
+
+text-align:center;
+
+color:var(--muted);
+
+margin:0 0 25px;
+
+}
+
+.form-group{
+
+margin-bottom:15px;
+
+}
+
+.form-group label{
+
+display:block;
+
+margin-bottom:7px;
+
+font-size:13px;
+
+font-weight:700;
+
+}
+
+.form-group input,
+.form-group select{
+
+width:100%;
+
+height:54px;
+
+border:1px solid #d9e2dc;
+
+border-radius:10px;
+
+padding:0 15px;
+
+font:inherit;
+
+outline:none;
+
+background:#fbfdfb;
+
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+border-color:var(--green);
+
+box-shadow:
+0 0 0 3px
+rgba(13,107,54,.10);
+
+}
+
+.request-button{
+
+width:100%;
+
+height:56px;
+
+border:0;
+
+border-radius:10px;
+
+background:
+
+linear-gradient(
+90deg,
+#168342,
+#0c602f
+);
+
+color:#ffffff;
+
+font-weight:800;
+
+font-size:15px;
+
+cursor:pointer;
+
+}
+
+.form-message{
+
+display:none;
+
+margin-top:15px;
+
+padding:12px;
+
+border-radius:10px;
+
+background:#eaf6ee;
+
+border:1px solid #b7ddc3;
+
+color:#1b6b3a;
+
+font-size:13px;
+
+text-align:center;
+
+}
+
+.form-message.show{
+
+display:block;
+
+}
+
+
+/* ========================================
+WHATSAPP
+======================================== */
+
+.whatsapp{
+
+position:fixed;
+
+right:22px;
+
+bottom:22px;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:#25D366;
+
+color:#ffffff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:26px;
+
+z-index:900;
+
+box-shadow:
+0 10px 25px
+rgba(0,0,0,.2);
+
+}
+
+
+/* ========================================
+FOOTER
+======================================== */
+
+.footer{
+
+background:#030506;
+
+color:#ffffff;
+
+padding:45px 0 0;
+
+}
+
+.footer-inner{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:30px;
+
+padding-bottom:35px;
+
+}
+
+.footer-logo{
+
+width:200px;
+
+max-width:100%;
+
+height:auto;
+
+}
+
+.footer-text{
+
+color:#aeb9b3;
+
+font-size:14px;
+
+max-width:400px;
+
+}
+
+.footer-links{
+
+display:flex;
+
+gap:22px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-links a{
+
+color:#aeb9b3;
+
+font-size:14px;
+
+}
+
+.footer-links a:hover{
+
+color:#ffffff;
+
+}
+
+.footer-bottom{
+
+border-top:
+1px solid #1d2923;
+
+padding:20px 0;
+
+color:#849088;
+
+font-size:13px;
+
+text-align:center;
+
+}
+
+
+/* ========================================
+MOBILE
+======================================== */
+
+@media(max-width:850px){
+
+.search-box{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+.search-button{
+
+width:100%;
+
+}
+
+.stay-grid{
+
+grid-template-columns:
+repeat(3,1fr);
+
+}
+
+.steps{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-inner{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+}
+
+
+@media(max-width:550px){
+
+.container{
+
+width:calc(100% - 28px);
+
+}
+
+.nav{
+
+height:74px;
+
+}
+
+.brand-logo{
+
+width:170px;
+
+max-height:55px;
+
+}
+
+.back-button{
+
+padding:0 14px;
+
+font-size:13px;
+
+}
+
+.hero{
+
+padding:60px 0;
+
+}
+
+.search-box{
+
+grid-template-columns:1fr;
+
+padding:14px;
+
+}
+
+.stay-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.section{
+
+padding:50px 0;
+
+}
+
+.location-card{
+
+padding:30px 20px;
+
+}
+
+.request-card{
+
+padding:25px 18px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+NAVBAR
+======================================== -->
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<a
+href="index.html"
+class="brand"
+>
+
+<img
+src="./assets/Hopebed_logo.PNG"
+alt="Hopebed - Stay Smart. Stay Verified."
+class="brand-logo"
+>
+
+</a>
+
+
+<a
+href="index.html"
+class="back-button"
+>
+
+← Back Home
+
+</a>
+
+</div>
+
+</nav>
+
+
+
+<!-- ========================================
+HERO
+======================================== -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="eyebrow">
+
+FIND YOUR NEXT STAY
+
+</div>
+
+
+<h1>
+
+Find a stay.<br>
+
+<span>
+Stay with confidence.
+</span>
+
+</h1>
+
+
+<p>
+
+Hopebed is building a smarter way to discover verified
+hotels, PGs, hostels, rooms and homes in India.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================
+SEARCH
+======================================== -->
+
+<section class="search-section">
+
+<div class="container">
+
+
+<div class="search-box">
+
+
+<div class="search-field">
+
+📍
+
+<input
+type="text"
+id="searchLocation"
+placeholder="Where are you looking?"
+>
+
+</div>
+
+
+<div class="search-field">
+
+🏠
+
+<select id="stayType">
+
+<option value="">
+Stay Type
+</option>
+
+<option>
+Hotel
+</option>
+
+<option>
+PG
+</option>
+
+<option>
+Hostel
+</option>
+
+<option>
+Room
+</option>
+
+<option>
+Home
+</option>
+
+</select>
+
+</div>
+
+
+<div class="search-field">
+
+👥
+
+<select id="guestType">
+
+<option value="">
+I'm looking as...
+</option>
+
+<option>
+Student
+</option>
+
+<option>
+Working Professional
+</option>
+
+<option>
+Traveller
+</option>
+
+</select>
+
+</div>
+
+
+<button
+class="search-button"
+id="searchButton"
+>
+
+Search Stays 🔍
+
+</button>
+
+
+</div>
+
+
+<div
+class="status-box"
+id="searchStatus"
+>
+
+<strong>
+Hopebed is currently launching in Taloja & Kharghar.
+</strong>
+
+Submit your stay requirement below and we'll help you
+find the right option.
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================
+STAY TYPES
+======================================== -->
+
+<section class="section">
+
+<div class="container">
+
+
+<h2 class="section-title">
+
+What kind of stay are you looking for?
+
+</h2>
+
+
+<p class="section-subtitle">
+
+Hopebed is designed to help you discover different types
+of verified accommodation in one place.
+
+</p>
+
+
+<div class="stay-grid">
+
+
+<div class="stay-card">
+
+<div class="stay-icon">
+🏨
+</div>
+
+<h3>
+Hotels
+</h3>
+
+<p>
+Comfortable stays for travellers.
+</p>
+
+</div>
+
+
+<div class="stay-card">
+
+<div class="stay-icon">
+🏠
+</div>
+
+<h3>
+PGs
+</h3>
+
+<p>
+Convenient accommodation for students and professionals.
+</p>
+
+</div>
+
+
+<div class="stay-card">
+
+<div class="stay-icon">
+🛏️
+</div>
+
+<h3>
+Hostels
+</h3>
+
+<p>
+Flexible and affordable stays.
+</p>
+
+</div>
+
+
+<div class="stay-card">
+
+<div class="stay-icon">
+🚪
+</div>
+
+<h3>
+Rooms
+</h3>
+
+<p>
+Find rooms that fit your needs.
+</p>
+
+</div>
+
+
+<div class="stay-card">
+
+<div class="stay-icon">
+🏡
+</div>
+
+<h3>
+Homes
+</h3>
+
+<p>
+Discover comfortable places to stay.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================
+HOW IT WORKS
+======================================== -->
+
+<section class="section how-section">
+
+<div class="container">
+
+
+<h2 class="section-title">
+
+Finding a stay with Hopebed
+
+</h2>
+
+
+<p class="section-subtitle">
+
+A simple process designed to make finding accommodation
+easier and more transparent.
+
+</p>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+1
+</div>
+
+<h3>
+Tell us what you need
+</h3>
+
+<p>
+
+Choose your location, stay type and requirements.
+
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+2
+</div>
+
+<h3>
+Discover suitable stays
+</h3>
+
+<p>
+
+Explore available accommodation that matches your needs.
+
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+3
+</div>
+
+<h3>
+Stay with confidence
+</h3>
+
+<p>
+
+Hopebed is building a trusted and transparent stay experience.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================
+LAUNCH LOCATIONS
+======================================== -->
+
+<section class="location-section">
+
+<div class="container">
+
+
+<div class="location-card">
+
+
+<h2>
+
+📍 Starting in Navi Mumbai
+
+</h2>
+
+
+<p>
+
+Hopebed is beginning its journey by connecting people
+with better stay options in selected areas of Navi Mumbai.
+
+</p>
+
+
+<div class="location-tags">
+
+<div class="location-tag">
+Taloja
+</div>
+
+<div class="location-tag">
+Kharghar
+</div>
+
+<div class="location-tag">
+Navi Mumbai
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================
+REQUEST A STAY
+======================================== -->
+
+<section class="request-section">
+
+<div class="container">
+
+
+<div class="request-card">
+
+
+<h2>
+
+Can't find your stay yet?
+
+</h2>
+
+
+<p>
+
+Tell us what you're looking for and the Hopebed team
+will understand your requirement.
+
+</p>
+
+
+<form
+id="stayRequestForm"
+>
+
+
+<div class="form-group">
+
+<label>
+Your Name
+</label>
+
+<input
+type="text"
+id="requestName"
+placeholder="Enter your name"
+required
+>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+WhatsApp Number
+</label>
+
+<input
+type="tel"
+id="requestPhone"
+placeholder="Enter your WhatsApp number"
+inputmode="numeric"
+required
+>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Preferred Location
+</label>
+
+<input
+type="text"
+id="requestLocation"
+placeholder="Example: Taloja, Kharghar"
+required
+>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Stay Type
+</label>
+
+<select
+id="requestStayType"
+required
+>
+
+<option value="">
+Select stay type
+</option>
+
+<option>
+Hotel
+</option>
+
+<option>
+PG
+</option>
+
+<option>
+Hostel
+</option>
+
+<option>
+Room
+</option>
+
+<option>
+Home
+</option>
+
+</select>
+
+</div>
+
+
+
+<button
+type="submit"
+class="request-button"
+>
+
+Send My Requirement →
+
+</button>
+
+
+<div
+class="form-message"
+id="formMessage"
+>
+
+✓ Thanks! Opening WhatsApp so you can send your requirement.
+
+</div>
+
+
+</form>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================
+WHATSAPP
+======================================== -->
+
+<a
+href="https://wa.me/918291025730?text=Hi%20Hopebed%2C%20I%20want%20to%20find%20a%20stay."
+class="whatsapp"
+target="_blank"
+rel="noopener"
+aria-label="Chat with Hopebed on WhatsApp"
+>
+
+💬
+
+</a>
+
+
+
+<!-- ========================================
+FOOTER
+======================================== -->
+
+<footer class="footer">
+
+
+<div class="container footer-inner">
+
+
+<div>
+
+<img
+src="./assets/Hopebed_logo.PNG"
+alt="Hopebed"
+class="footer-logo"
+>
+
+<p class="footer-text">
+
+Stay Smart. Stay Verified.
+
+<br><br>
+
+A smarter way to discover, book and verify stays in India.
+
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="find-stay.html">
+Find a Stay
+</a>
+
+<a href="how-it-works.html">
+How It Works
+</a>
+
+<a href="about.html">
+About Hopebed
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<div class="container">
+
+© 2026 Hopebed. All rights reserved.
+&nbsp; • &nbsp;
+Stay Smart. Stay Verified.
+
+</div>
+
+</div>
+
+
+</footer>
+
+
+
+<!-- ========================================
+JAVASCRIPT
+======================================== -->
+
+<script>
+
+
+const WHATSAPP_NUMBER =
+"918291025730";
+
+
+/* ========================================
+SEARCH BUTTON
+======================================== */
+
+document
+.getElementById("searchButton")
+.addEventListener(
+"click",
+function(){
+
+
+const location =
+document
+.getElementById("searchLocation")
+.value
+.trim();
+
+
+const stayType =
+document
+.getElementById("stayType")
+.value;
+
+
+let message =
+"Hi Hopebed! 👋\n\n";
+
+message +=
+"I am looking for a stay.\n\n";
+
+
+if(location){
+
+message +=
+"Preferred Location: " +
+location +
+"\n";
+
+}
+
+
+if(stayType){
+
+message +=
+"Stay Type: " +
+stayType +
+"\n";
+
+}
+
+
+message +=
+"\nPlease help me find a suitable stay.";
+
+
+const whatsappURL =
+"https://wa.me/" +
+WHATSAPP_NUMBER +
+"?text=" +
+encodeURIComponent(message);
+
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+
+}
+);
+
+
+
+/* ========================================
+STAY REQUEST FORM
+======================================== */
+
+document
+.getElementById("stayRequestForm")
+.addEventListener(
+"submit",
+function(event){
+
+
+event.preventDefault();
+
+
+const name =
+document
+.getElementById("requestName")
+.value
+.trim();
+
+
+const phone =
+document
+.getElementById("requestPhone")
+.value
+.trim();
+
+
+const location =
+document
+.getElementById("requestLocation")
+.value
+.trim();
+
+
+const stayType =
+document
+.getElementById("requestStayType")
+.value;
+
+
+const phoneDigits =
+phone.replace(/\D/g,"");
+
+
+if(
+
+name.length < 2 ||
+
+phoneDigits.length !== 10 ||
+
+!location ||
+
+!stayType
+
+){
+
+alert(
+"Please complete all fields with valid information."
+);
+
+return;
+
+}
+
+
+const message =
+
+"Hi Hopebed! 👋\n\n" +
+
+"I am looking for a stay.\n\n" +
+
+"Name: " +
+name +
+
+"\nWhatsApp: " +
+phone +
+
+"\nPreferred Location: " +
+location +
+
+"\nStay Type: " +
+stayType +
+
+"\n\nPlease help me find a suitable stay.";
+
+
+document
+.getElementById("formMessage")
+.classList
+.add("show");
+
+
+const whatsappURL =
+
+"https://wa.me/" +
+
+WHATSAPP_NUMBER +
+
+"?text=" +
+
+encodeURIComponent(message);
+
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+
+}
+);
+
+
+</script>
+
+
+</body>
+
+</html>
