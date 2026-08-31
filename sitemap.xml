@@ -5,33 +5,41 @@
     <!-- Homepage -->
     <url>
         <loc>https://hopebed.in/</loc>
-        <lastmod>2026-08-28</lastmod>
+        <lastmod>2026-08-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
+    <!-- Find a Stay -->
+    <url>
+        <loc>https://hopebed.in/find-stay</loc>
+        <lastmod>2026-08-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
     <!-- About Hopebed -->
     <url>
-        <loc>https://hopebed.in/about.html</loc>
-        <lastmod>2026-08-28</lastmod>
+        <loc>https://hopebed.in/about</loc>
+        <lastmod>2026-08-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Our Vision -->
     <url>
-        <loc>https://hopebed.in/vision.html</loc>
-        <lastmod>2026-08-28</lastmod>
+        <loc>https://hopebed.in/vision</loc>
+        <lastmod>2026-08-31</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
 
-    <!-- Contact Us -->
+    <!-- Contact -->
     <url>
-        <loc>https://hopebed.in/contact.html</loc>
-        <lastmod>2026-08-28</lastmod>
+        <loc>https://hopebed.in/contact</loc>
+        <lastmod>2026-08-31</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.7</priority>
     </url>
 
 </urlset>
