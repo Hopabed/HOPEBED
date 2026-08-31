@@ -7,36 +7,54 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
 <!-- ========================================
-     SEO
+     PRIMARY SEO
 ======================================== -->
 
-<title>Hopebed – Verified Stays in India | Stay Smart. Stay Verified.</title>
+<title>Hopebed | Find Verified Hotels, PGs & Hostels in India</title>
 
 <meta
   name="description"
-  content="Hopebed is a stay platform designed to help travelers discover, book and verify trusted accommodation in India. Find hotels, PGs, hostels, rooms and homes with clear information."
->
-
-<meta
-  name="keywords"
-  content="Hopebed, verified stays India, hotels, PG, hostel, accommodation, Taloja, Kharghar, Navi Mumbai"
+  content="Hopebed helps you discover verified hotels, PGs, hostels, rooms and accommodation in India. Find, book and verify trusted stays. Launching in Taloja and Kharghar, Navi Mumbai."
 >
 
 <meta name="author" content="Hopebed">
 
-<meta name="robots" content="index, follow">
+<meta
+  name="robots"
+  content="index, follow, max-image-preview:large"
+>
+
+<meta
+  name="googlebot"
+  content="index, follow, max-image-preview:large"
+>
 
 
 <!-- ========================================
      CANONICAL URL
 ======================================== -->
 
-<link rel="canonical" href="https://hopebed.in/">
+<link
+  rel="canonical"
+  href="https://hopebed.in/"
+>
 
 
 <!-- ========================================
-     FAVICON / GOOGLE SEARCH LOGO
+     SITEMAP
+======================================== -->
+
+<link
+  rel="sitemap"
+  type="application/xml"
+  href="https://hopebed.in/sitemap.xml"
+>
+
+
+<!-- ========================================
+     FAVICON
 ======================================== -->
 
 <link
@@ -66,24 +84,18 @@
      OPEN GRAPH
 ======================================== -->
 
-<meta
-  property="og:type"
-  content="website"
->
+<meta property="og:type" content="website">
 
-<meta
-  property="og:url"
-  content="https://hopebed.in/"
->
+<meta property="og:url" content="https://hopebed.in/">
 
 <meta
   property="og:title"
-  content="Hopebed – Verified Stays in India"
+  content="Hopebed | Find Verified Stays in India"
 >
 
 <meta
   property="og:description"
-  content="Find, Book & Verify trusted stays in India. Stay Smart. Stay Verified."
+  content="Discover, book and verify trusted hotels, PGs, hostels, rooms and accommodation in India."
 >
 
 <meta
@@ -91,26 +103,28 @@
   content="https://hopebed.in/assets/favicon.png"
 >
 
-<meta
-  property="og:site_name"
-  content="Hopebed"
->
+<meta property="og:site_name" content="Hopebed">
+
+<meta property="og:locale" content="en_IN">
 
 
 <!-- ========================================
      TWITTER
 ======================================== -->
 
-<meta name="twitter:card" content="summary_large_image">
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+>
 
 <meta
   name="twitter:title"
-  content="Hopebed – Verified Stays in India"
+  content="Hopebed | Verified Stays in India"
 >
 
 <meta
   name="twitter:description"
-  content="Find, Book & Verify trusted stays in India."
+  content="Find, book and verify trusted hotels, PGs, hostels and accommodation in India."
 >
 
 <meta
@@ -127,11 +141,62 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://hopebed.in/#organization",
   "name": "Hopebed",
   "url": "https://hopebed.in/",
-  "logo": "https://hopebed.in/assets/favicon.png",
-  "description": "Hopebed is a stay platform helping travelers discover, book and verify trusted accommodation in India.",
-  "sameAs": []
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://hopebed.in/assets/favicon.png"
+  },
+  "description": "Hopebed is a platform helping people discover, book and verify trusted accommodation including hotels, PGs, hostels, rooms and homes in India.",
+  "email": "hello@hopebed.in",
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  }
+}
+</script>
+
+
+<!-- ========================================
+     WEBSITE STRUCTURED DATA
+======================================== -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://hopebed.in/#website",
+  "url": "https://hopebed.in/",
+  "name": "Hopebed",
+  "description": "Find, book and verify trusted stays in India.",
+  "publisher": {
+    "@id": "https://hopebed.in/#organization"
+  },
+  "inLanguage": "en-IN"
+}
+</script>
+
+
+<!-- ========================================
+     WEBPAGE STRUCTURED DATA
+======================================== -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://hopebed.in/#webpage",
+  "url": "https://hopebed.in/",
+  "name": "Hopebed | Verified Stays in India",
+  "description": "Find verified hotels, PGs, hostels, rooms and accommodation in India.",
+  "isPartOf": {
+    "@id": "https://hopebed.in/#website"
+  },
+  "about": {
+    "@id": "https://hopebed.in/#organization"
+  },
+  "inLanguage": "en-IN"
 }
 </script>
 
@@ -678,7 +743,8 @@ h1 span{
   max-width:610px;
 }
 
-.hero-copy b{
+.hero-copy b,
+.hero-copy strong{
   color:#326e4a;
 }
 
@@ -1458,7 +1524,9 @@ h1 span{
 <body>
 
 
-<!-- NAVBAR -->
+<!-- ========================================
+     NAVBAR
+======================================== -->
 
 <nav class="nav">
 
@@ -1511,7 +1579,9 @@ aria-expanded="false"
 </nav>
 
 
-<!-- MOBILE MENU OVERLAY -->
+<!-- ========================================
+     MOBILE MENU OVERLAY
+======================================== -->
 
 <div
 class="mobile-menu-overlay"
@@ -1519,7 +1589,9 @@ id="menuOverlay"
 ></div>
 
 
-<!-- MOBILE MENU -->
+<!-- ========================================
+     MOBILE MENU
+======================================== -->
 
 <div
 class="mobile-menu"
@@ -1613,12 +1685,16 @@ class="menu-whatsapp"
 </div>
 
 
-<!-- MAIN -->
+<!-- ========================================
+     MAIN
+======================================== -->
 
 <main id="home">
 
 
-<!-- HERO -->
+<!-- ========================================
+     HERO
+======================================== -->
 
 <section class="hero">
 
@@ -1634,28 +1710,29 @@ WE'RE BUILDING HOPEBED
 
 <h1>
 
-Find, Book & Verify
+Find & Book
 
 <br>
 
 <span>
-
 Verified Stays
+</span>
 
 <br>
 
-in India.
-
-</span>
+in India
 
 </h1>
 
 
 <p class="hero-copy">
 
-Hopebed is an upcoming stay platform designed to
-<b>Find, Book & Verify</b>
-stays in India — including hotels, PGs, hostels, rooms & homes.
+Hopebed is a stay platform designed to help travelers
+<strong>find, book and verify trusted accommodation in India</strong>,
+including hotels, PGs, hostels, rooms and homes.
+
+Currently launching in
+<strong>Taloja and Kharghar, Navi Mumbai.</strong>
 
 </p>
 
@@ -1700,7 +1777,9 @@ Find a Stay
 </div>
 
 
-<!-- RIGHT FORM -->
+<!-- ========================================
+     RIGHT FORM
+======================================== -->
 
 <div
 class="lead-card"
@@ -1841,7 +1920,9 @@ Thanks! Opening WhatsApp...
 </section>
 
 
-<!-- BENEFITS -->
+<!-- ========================================
+     BENEFITS
+======================================== -->
 
 <section class="section">
 
@@ -1924,7 +2005,9 @@ A better experience for everyone.
 </section>
 
 
-<!-- HOW IT WORKS -->
+<!-- ========================================
+     HOW IT WORKS
+======================================== -->
 
 <section
 class="how"
@@ -1998,7 +2081,9 @@ Digital verification for your safety.
 </div>
 
 
-<!-- PROPERTY CTA -->
+<!-- ========================================
+     PROPERTY CTA
+======================================== -->
 
 <div class="property-cta">
 
@@ -2030,7 +2115,9 @@ List Your Property Free →
 </div>
 
 
-<!-- OWNER BENEFITS -->
+<!-- ========================================
+     OWNER BENEFITS
+======================================== -->
 
 <div class="owner-grid">
 
@@ -2093,7 +2180,9 @@ Increase occupancy and grow your property business.
 </section>
 
 
-<!-- ABOUT -->
+<!-- ========================================
+     ABOUT
+======================================== -->
 
 <section
 class="section about-section"
@@ -2122,20 +2211,24 @@ safer, simpler and more transparent.
 </main>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- ========================================
+     FLOATING WHATSAPP
+======================================== -->
 
 <a
 href="https://wa.me/918291025730?text=Hi%20Hopebed%2C%20I'd%20like%20to%20know%20more."
 class="whatsapp"
 target="_blank"
 rel="noopener"
-aria-label="Chat on WhatsApp"
+aria-label="Chat with Hopebed on WhatsApp"
 >
 💬
 </a>
 
 
-<!-- FOOTER -->
+<!-- ========================================
+     FOOTER
+======================================== -->
 
 <footer
 class="footer"
@@ -2149,7 +2242,7 @@ id="contact"
 
 <img
 src="./assets/Hopebed_logo.PNG"
-alt="Hopebed"
+alt="Hopebed - Stay Smart. Stay Verified."
 class="footer-logo"
 >
 
@@ -2233,19 +2326,19 @@ of verified stays.
 
 <div class="social-links">
 
-<a href="#" aria-label="LinkedIn">
+<a href="#" aria-label="Hopebed on LinkedIn">
 in
 </a>
 
-<a href="#" aria-label="Instagram">
+<a href="#" aria-label="Hopebed on Instagram">
 ◎
 </a>
 
-<a href="#" aria-label="Facebook">
+<a href="#" aria-label="Hopebed on Facebook">
 f
 </a>
 
-<a href="#" aria-label="X">
+<a href="#" aria-label="Hopebed on X">
 𝕏
 </a>
 
@@ -2275,12 +2368,18 @@ Stay Smart. Stay Verified.
 </footer>
 
 
-<!-- JAVASCRIPT -->
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
 
 <script>
 
 document.addEventListener("DOMContentLoaded", function(){
 
+
+/* ========================================
+   MOBILE MENU
+======================================== */
 
 const menuBtn =
 document.getElementById("menuBtn");
@@ -2302,99 +2401,103 @@ document.querySelectorAll(
 
 function openMenu(){
 
-mobileMenu.classList.add("active");
+  mobileMenu.classList.add("active");
 
-menuOverlay.classList.add("active");
+  menuOverlay.classList.add("active");
 
-document.body.classList.add("menu-open");
+  document.body.classList.add("menu-open");
 
-menuBtn.setAttribute(
-"aria-expanded",
-"true"
-);
+  menuBtn.setAttribute(
+    "aria-expanded",
+    "true"
+  );
 
 }
 
 
 function closeMenu(){
 
-mobileMenu.classList.remove("active");
+  mobileMenu.classList.remove("active");
 
-menuOverlay.classList.remove("active");
+  menuOverlay.classList.remove("active");
 
-document.body.classList.remove("menu-open");
+  document.body.classList.remove("menu-open");
 
-menuBtn.setAttribute(
-"aria-expanded",
-"false"
-);
+  menuBtn.setAttribute(
+    "aria-expanded",
+    "false"
+  );
 
 }
 
 
 menuBtn.addEventListener(
-"click",
-openMenu
+  "click",
+  openMenu
 );
 
 
 menuClose.addEventListener(
-"click",
-closeMenu
+  "click",
+  closeMenu
 );
 
 
 menuOverlay.addEventListener(
-"click",
-closeMenu
+  "click",
+  closeMenu
 );
 
 
 menuLinks.forEach(function(link){
 
-link.addEventListener(
-"click",
-closeMenu
-);
+  link.addEventListener(
+    "click",
+    closeMenu
+  );
 
 });
 
 
 document.addEventListener(
-"keydown",
-function(event){
+  "keydown",
+  function(event){
 
-if(event.key === "Escape"){
+    if(event.key === "Escape"){
 
-closeMenu();
+      closeMenu();
 
-}
+    }
 
-}
+  }
 );
 
 
 window.addEventListener(
-"resize",
-function(){
+  "resize",
+  function(){
 
-if(window.innerWidth > 900){
+    if(window.innerWidth > 900){
 
-closeMenu();
+      closeMenu();
 
-}
+    }
 
-}
+  }
 );
 
 
-/* WHATSAPP NUMBER */
+/* ========================================
+   WHATSAPP NUMBER
+======================================== */
 
 const WHATSAPP_NUMBER =
 "918291025730";
 
 
-/* PROPERTY FORM */
+/* ========================================
+   PROPERTY FORM
+======================================== */
 
 const form =
 document.getElementById("leadForm");
@@ -2404,20 +2507,20 @@ document.getElementById("formToast");
 
 
 function showError(
-field,
-error,
-show
+  field,
+  error,
+  show
 ){
 
-field.classList.toggle(
-"error",
-show
-);
+  field.classList.toggle(
+    "error",
+    show
+  );
 
-error.classList.toggle(
-"show",
-show
-);
+  error.classList.toggle(
+    "show",
+    show
+  );
 
 }
 
@@ -2426,114 +2529,114 @@ form.addEventListener(
 "submit",
 function(event){
 
-event.preventDefault();
+  event.preventDefault();
 
 
-const name =
-document.getElementById("fName");
+  const name =
+  document.getElementById("fName");
 
-const phone =
-document.getElementById("fPhone");
+  const phone =
+  document.getElementById("fPhone");
 
-const role =
-document.getElementById("fRole");
+  const role =
+  document.getElementById("fRole");
 
-const location =
-document.getElementById("fLocation");
-
-
-const nameOk =
-name.value.trim().length > 1;
+  const location =
+  document.getElementById("fLocation");
 
 
-const phoneDigits =
-phone.value.replace(/\D/g,"");
+  const nameOk =
+  name.value.trim().length > 1;
 
 
-const phoneOk =
-phoneDigits.length === 10;
+  const phoneDigits =
+  phone.value.replace(/\D/g,"");
 
 
-const roleOk =
-role.value !== "";
+  const phoneOk =
+  phoneDigits.length === 10;
 
 
-showError(
-name.parentElement,
-document.getElementById("err-fName"),
-!nameOk
-);
+  const roleOk =
+  role.value !== "";
 
 
-showError(
-phone.parentElement,
-document.getElementById("err-fPhone"),
-!phoneOk
-);
+  showError(
+    name.parentElement,
+    document.getElementById("err-fName"),
+    !nameOk
+  );
 
 
-showError(
-role.parentElement,
-document.getElementById("err-fRole"),
-!roleOk
-);
+  showError(
+    phone.parentElement,
+    document.getElementById("err-fPhone"),
+    !phoneOk
+  );
 
 
-if(
-!nameOk ||
-!phoneOk ||
-!roleOk
-){
-
-toast.classList.remove("show");
-
-return;
-
-}
+  showError(
+    role.parentElement,
+    document.getElementById("err-fRole"),
+    !roleOk
+  );
 
 
-let message =
-"Hi Hopebed! 👋\n\n" +
+  if(
+    !nameOk ||
+    !phoneOk ||
+    !roleOk
+  ){
 
-"I would like to get started with Hopebed.\n\n" +
+    toast.classList.remove("show");
 
-"Name: " +
-name.value.trim() +
+    return;
 
-"\nWhatsApp: " +
-phone.value.trim() +
-
-"\nI am a: " +
-role.value;
+  }
 
 
-if(location.value.trim()){
+  let message =
+  "Hi Hopebed! 👋\n\n" +
 
-message +=
-"\nProperty Area: " +
-location.value.trim();
+  "I would like to get started with Hopebed.\n\n" +
 
-}
+  "Name: " +
+  name.value.trim() +
 
+  "\nWhatsApp: " +
+  phone.value.trim() +
 
-message +=
-"\n\nLooking forward to connecting with the Hopebed team!";
-
-
-toast.classList.add("show");
-
-
-const whatsappURL =
-"https://wa.me/" +
-WHATSAPP_NUMBER +
-"?text=" +
-encodeURIComponent(message);
+  "\nI am a: " +
+  role.value;
 
 
-window.open(
-whatsappURL,
-"_blank"
-);
+  if(location.value.trim()){
+
+    message +=
+    "\nProperty Area: " +
+    location.value.trim();
+
+  }
+
+
+  message +=
+  "\n\nLooking forward to connecting with the Hopebed team!";
+
+
+  toast.classList.add("show");
+
+
+  const whatsappURL =
+  "https://wa.me/" +
+  WHATSAPP_NUMBER +
+  "?text=" +
+  encodeURIComponent(message);
+
+
+  window.open(
+    whatsappURL,
+    "_blank"
+  );
 
 }
 );
@@ -2542,6 +2645,7 @@ whatsappURL,
 });
 
 </script>
+
 
 </body>
 
