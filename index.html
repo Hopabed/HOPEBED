@@ -28,15 +28,7 @@ a{text-decoration:none;color:inherit}
 .nav{height:84px;background:#030506;color:#fff;display:flex;align-items:center;position:sticky;top:0;z-index:20}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
 .brand{display:flex;align-items:center;gap:10px}
-.brand-mark{
- width:48px;height:48px;border:3px solid #25a95b;border-radius:7px 7px 3px 3px;
- transform:rotate(45deg);position:relative;display:grid;place-items:center;
-}
-.brand-mark:after{content:"✓";transform:rotate(-45deg);font-size:20px;font-weight:900;color:#31b967}
-.brand-name{font-size:29px;font-weight:800;letter-spacing:-1.2px}
-.brand-name span{color:#25aa58}
-.tagline{font-size:10px;font-weight:700;color:#d8dedb;margin-top:-5px}
-.tagline span{color:#2ebc61}
+.brand-logo{height:46px;width:auto;display:block}
 .nav-actions{display:flex;align-items:center;gap:18px}
 .contact{border:1px solid #2f8b57;border-radius:10px;padding:13px 22px;font-weight:700;color:#fff}
 .menu{font-size:30px;line-height:1}
@@ -167,7 +159,8 @@ h1 span{color:var(--green)}
 
 @media(max-width:800px){
  .container{width:min(100% - 28px,700px)}
- .nav{height:74px}.brand-mark{width:36px;height:36px}.brand-name{font-size:24px}
+ .nav{height:74px}
+ .brand-logo{height:38px}
  .contact{padding:10px 14px;font-size:13px}
  .hero-inner{grid-template-columns:1fr;padding:48px 0 38px;gap:28px}
  .hero:after{width:80%;opacity:.28}
@@ -183,7 +176,7 @@ h1 span{color:var(--green)}
 }
 @media(max-width:430px){
  .nav-actions .contact{display:none}
- .tagline{font-size:8px}
+ .brand-logo{height:32px}
  h1{font-size:38px}
  .hero-buttons{flex-direction:column}.btn{width:100%}
  .hero-notes{gap:8px;font-size:10px}
@@ -199,8 +192,7 @@ h1 span{color:var(--green)}
 <nav class="nav">
   <div class="container nav-inner">
     <a href="#" class="brand">
-      <div class="brand-mark"></div>
-      <div><div class="brand-name">Hope<span>bed</span></div><div class="tagline">Stay <span>Smart</span>. Stay <span>Verified</span>.</div></div>
+      <img src="logo.png" alt="Hopebed – Stay Smart. Stay Verified." class="brand-logo">
     </a>
     <div class="nav-actions">
       <a href="#contact" class="contact">◉ &nbsp; Contact Us</a>
