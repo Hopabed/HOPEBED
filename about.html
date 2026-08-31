@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hopebed – Find, Book & Verify Verified Stays</title>
+<title>About Hopebed – Stay Smart. Stay Verified.</title>
+
+<meta
+  name="description"
+  content="Learn about Hopebed and our mission to build a smarter, safer and more transparent way to find, book and verify stays in India."
+>
 
 <style>
+
+/* ========================================
+   ROOT & RESET
+======================================== */
+
 :root{
   --green:#0d6b36;
-  --green2:#159447;
+  --green-dark:#084a25;
+  --green-light:#159447;
   --dark:#030506;
   --text:#171b1d;
   --muted:#66706d;
@@ -28,10 +41,15 @@ html{
 
 body{
   margin:0;
-  font-family:Inter,Arial,sans-serif;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,
+  BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   color:var(--text);
   background:#fff;
   line-height:1.55;
+}
+
+body.menu-open{
+  overflow:hidden;
 }
 
 a{
@@ -39,34 +57,46 @@ a{
   color:inherit;
 }
 
+button{
+  font:inherit;
+}
+
 .container{
   width:min(1180px,calc(100% - 40px));
   margin:auto;
 }
 
-/* ================= NAVBAR ================= */
+
+/* ========================================
+   NAVBAR
+======================================== */
 
 .nav{
   height:84px;
-  background:#030506;
+  background:var(--dark);
   color:#fff;
+
   display:flex;
   align-items:center;
+
   position:sticky;
   top:0;
+
   z-index:1000;
 }
 
 .nav-inner{
+  width:100%;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  width:100%;
 }
 
 .brand{
   display:flex;
   align-items:center;
+
   height:70px;
 }
 
@@ -74,6 +104,7 @@ a{
   width:210px;
   max-height:65px;
   height:auto;
+
   object-fit:contain;
   display:block;
 }
@@ -81,138 +112,398 @@ a{
 .nav-actions{
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:16px;
 }
 
 .contact{
+  min-height:46px;
+
+  display:flex;
+  align-items:center;
+
   border:1px solid #2f8b57;
   border-radius:10px;
-  padding:12px 20px;
+
+  padding:0 20px;
+
+  font-size:14px;
   font-weight:700;
-  transition:.2s;
+
+  transition:.2s ease;
 }
 
 .contact:hover{
-  background:#0d6b36;
+  background:var(--green);
 }
 
-/* ================= HAMBURGER ================= */
+
+/* ========================================
+   HAMBURGER BUTTON
+======================================== */
 
 .menu-btn{
   width:48px;
   height:48px;
+
   border:0;
   background:transparent;
+
   color:#fff;
-  cursor:pointer;
-  font-size:32px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
+  cursor:pointer;
+
+  font-size:30px;
 }
 
-/* ================= MOBILE MENU ================= */
 
-.mobile-menu{
+/* ========================================
+   MOBILE MENU OVERLAY
+======================================== */
+
+.mobile-menu-overlay{
   position:fixed;
-  top:84px;
-  left:0;
-  width:100%;
-  background:#030506;
-  color:#fff;
-  z-index:999;
+  inset:0;
 
-  transform:translateY(-120%);
+  background:rgba(0,0,0,.45);
+
   opacity:0;
   visibility:hidden;
 
-  transition:.3s ease;
+  transition:
+    opacity .3s ease,
+    visibility .3s ease;
+
+  z-index:1998;
 }
 
-.mobile-menu.active{
-  transform:translateY(0);
+.mobile-menu-overlay.active{
   opacity:1;
   visibility:visible;
 }
 
-.mobile-menu .container{
-  padding:20px 0 25px;
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobile-menu{
+  position:fixed;
+
+  top:0;
+  right:0;
+
+  width:min(420px,100%);
+  height:100vh;
+
+  background:#ffffff;
+
+  z-index:2000;
+
   display:flex;
   flex-direction:column;
-  gap:8px;
+
+  padding:0 24px 24px;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateX(45px);
+
+  transition:
+    transform .35s cubic-bezier(.22,.61,.36,1),
+    opacity .25s ease,
+    visibility .35s ease;
+
+  box-shadow:
+    -20px 0 50px rgba(0,0,0,.18);
 }
 
-.mobile-menu a{
+.mobile-menu.active{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(0);
+}
+
+
+/* ========================================
+   MENU HEADER
+======================================== */
+
+.mobile-menu-header{
+  min-height:84px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  border-bottom:1px solid #e7ece8;
+
+  flex-shrink:0;
+}
+
+.mobile-menu-brand{
+  display:flex;
+  align-items:center;
+
+  min-height:56px;
+
+  max-width:210px;
+}
+
+.mobile-menu-logo{
+  width:180px;
+  max-height:58px;
+  height:auto;
+
+  object-fit:contain;
+  display:block;
+}
+
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.mobile-menu-close{
+  width:48px;
+  height:48px;
+
+  border:none;
+
+  background:#f3f6f4;
+
+  border-radius:50%;
+
+  color:#171b1d;
+
+  font-size:30px;
+  line-height:1;
+
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:.2s ease;
+
+  flex-shrink:0;
+}
+
+.mobile-menu-close:hover{
+  background:#e7eee9;
+  transform:rotate(90deg);
+}
+
+
+/* ========================================
+   MENU NAVIGATION
+======================================== */
+
+.mobile-menu-nav{
+  display:flex;
+  flex-direction:column;
+
+  padding:28px 0;
+
+  gap:6px;
+}
+
+.mobile-menu-nav .menu-link{
+  min-height:52px;
+
+  display:flex;
+  align-items:center;
+
   padding:14px 16px;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  font-weight:700;
+
+  border-radius:10px;
+
+  color:var(--text);
+
+  font-size:17px;
+  font-weight:600;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    transform .2s ease;
 }
 
-.mobile-menu a:hover{
-  background:#0d6b36;
+.mobile-menu-nav .menu-link:hover{
+  background:#f3f7f4;
+  color:var(--green);
+  transform:translateX(4px);
 }
 
-/* ================= HERO ================= */
-
-.hero{
-  min-height:580px;
-  position:relative;
-  overflow:hidden;
-
-  background:linear-gradient(
-    90deg,
-    #f8faf8 0%,
-    #f7f8f5 58%,
-    #ddd9cf 100%
-  );
+.mobile-menu-nav .active-link{
+  background:#edf5ef;
+  color:var(--green);
 }
 
-.hero:after{
-  content:"";
-  position:absolute;
-  right:-4%;
-  top:0;
-  width:44%;
-  height:100%;
+
+/* ========================================
+   LIST PROPERTY CTA
+======================================== */
+
+.mobile-menu-nav .menu-list-property{
+  min-height:58px;
+
+  margin:12px 0;
+
+  padding:16px 18px;
 
   background:
     linear-gradient(
-      135deg,
-      rgba(255,255,255,.2),
-      rgba(20,55,32,.1)
-    ),
-    linear-gradient(
       90deg,
-      #b8aa98,
-      #e8e0d4 35%,
-      #8c7764
+      #168342,
+      #0c602f
     );
 
-  opacity:.55;
+  color:#ffffff;
+
+  border-radius:10px;
+
+  font-weight:800;
+
+  display:flex;
+  justify-content:space-between;
+
+  box-shadow:
+    0 10px 24px
+    rgba(13,107,54,.18);
 }
 
-.hero-inner{
+.mobile-menu-nav .menu-list-property:hover{
+  color:#fff;
+  background:var(--green);
+  transform:translateY(-1px);
+}
+
+.menu-arrow{
+  font-size:22px;
+}
+
+
+/* ========================================
+   MENU ACTIONS
+======================================== */
+
+.mobile-menu-actions{
+  margin-top:auto;
+
+  padding-top:20px;
+
+  border-top:1px solid #e7ece8;
+}
+
+.menu-whatsapp{
+  min-height:54px;
+
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #d9e3dc;
+
+  border-radius:10px;
+
+  padding:14px 18px;
+
+  color:var(--text);
+
+  font-size:16px;
+  font-weight:700;
+
+  transition:.2s ease;
+}
+
+.menu-whatsapp:hover{
+  background:#f3f7f4;
+  border-color:#b9d2c0;
+}
+
+
+/* ========================================
+   ABOUT HERO
+======================================== */
+
+.about-hero{
+  min-height:500px;
+
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f8faf8 0%,
+      #f7f8f5 58%,
+      #e1e8e2 100%
+    );
+
+  display:flex;
+  align-items:center;
+}
+
+.about-hero:after{
+  content:"";
+
+  position:absolute;
+
+  right:-5%;
+  top:-10%;
+
+  width:45%;
+  height:125%;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(21,148,71,.20),
+      rgba(13,107,54,.05) 55%,
+      transparent 70%
+    );
+}
+
+.about-hero-inner{
   position:relative;
   z-index:2;
 
   display:grid;
-  grid-template-columns:1.05fr .95fr;
+  grid-template-columns:1.1fr .9fr;
 
-  gap:48px;
-  padding:72px 0;
+  gap:70px;
+
+  align-items:center;
+
+  padding:80px 0;
 }
 
 .eyebrow{
   font-size:12px;
   font-weight:800;
+
   letter-spacing:2px;
+
   color:#35714e;
 }
 
 h1{
-  font-size:56px;
+  font-size:58px;
+
   line-height:1.08;
+
   letter-spacing:-2.5px;
+
   margin:14px 0 20px;
 }
 
@@ -220,47 +511,56 @@ h1 span{
   color:var(--green);
 }
 
-.hero-copy{
-  font-size:17px;
-  color:#4d5554;
-  max-width:610px;
-}
+.about-hero-copy{
+  font-size:18px;
 
-.hero-copy b{
-  color:#326e4a;
+  color:#4d5554;
+
+  max-width:620px;
 }
 
 .hero-buttons{
   display:flex;
+
   gap:14px;
-  margin:28px 0;
+
+  margin-top:30px;
 }
+
+
+/* ========================================
+   BUTTONS
+======================================== */
 
 .btn{
   min-height:56px;
+
   border-radius:8px;
+
   padding:0 22px;
 
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
-  gap:10px;
   font-weight:800;
 
   border:0;
+
   cursor:pointer;
 
   font-size:15px;
-  transition:.2s;
+
+  transition:.2s ease;
 }
 
 .btn-primary{
-  background:linear-gradient(
-    90deg,
-    #168342,
-    #0c602f
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #168342,
+      #0c602f
+    );
 
   color:#fff;
 
@@ -270,8 +570,10 @@ h1 span{
 }
 
 .btn-outline{
-  border:1px solid #68716d;
   background:#fff;
+
+  border:1px solid #68716d;
+
   color:#222;
 }
 
@@ -279,357 +581,493 @@ h1 span{
   transform:translateY(-2px);
 }
 
-.hero-notes{
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
 
-  font-size:12px;
-  color:#59615e;
+/* ========================================
+   HERO CARD
+======================================== */
+
+.about-visual{
+  position:relative;
+  z-index:2;
+
+  background:#ffffff;
+
+  border:1px solid #dce5df;
+
+  border-radius:22px;
+
+  padding:35px;
+
+  box-shadow:
+    0 25px 55px
+    rgba(0,0,0,.10);
 }
 
-.hero-notes span:before{
-  content:"✓";
-  color:#269657;
-  font-weight:bold;
-  margin-right:6px;
+.visual-top{
+  width:65px;
+  height:65px;
+
+  border-radius:18px;
+
+  background:#eef6f0;
+
+  display:grid;
+  place-items:center;
+
+  font-size:30px;
+
+  margin-bottom:20px;
+}
+
+.about-visual h3{
+  margin:0 0 12px;
+
+  font-size:25px;
+
+  letter-spacing:-.5px;
+}
+
+.about-visual p{
+  margin:0;
+
+  color:#66706d;
+}
+
+.visual-points{
+  display:flex;
+  flex-direction:column;
+
+  gap:13px;
+
+  margin-top:25px;
+}
+
+.visual-point{
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  padding:13px;
+
+  background:#f6f9f6;
+
+  border-radius:10px;
+
+  font-size:14px;
+  font-weight:700;
+}
+
+.visual-check{
+  width:28px;
+  height:28px;
+
+  border-radius:50%;
+
+  background:#dff2e4;
+
+  color:#14733b;
+
+  display:grid;
+  place-items:center;
+}
+
+
+/* ========================================
+   SECTION
+======================================== */
+
+.section{
+  padding:85px 0;
+}
+
+.section-soft{
+  background:#f6f8f6;
+}
+
+.section-label{
+  color:#35714e;
+
+  font-size:12px;
+  font-weight:800;
+
+  letter-spacing:1.8px;
+
+  text-transform:uppercase;
+
+  margin-bottom:10px;
+}
+
+.section-title{
+  font-size:38px;
+
+  line-height:1.15;
+
+  letter-spacing:-1.2px;
+
+  margin:0 0 18px;
+}
+
+.section-text{
+  color:#66706d;
+
+  font-size:16px;
+
+  max-width:720px;
+}
+
+
+/* ========================================
+   OUR STORY
+======================================== */
+
+.story-grid{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:80px;
+
+  align-items:center;
+}
+
+.story-content p{
+  color:#66706d;
+
+  font-size:16px;
+
+  margin:0 0 18px;
+}
+
+.story-card{
+  background:var(--dark);
+
+  color:#fff;
+
+  border-radius:22px;
+
+  padding:42px;
+
+  min-height:360px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.story-card-icon{
+  width:65px;
+  height:65px;
+
+  background:#173d29;
+
+  border-radius:18px;
+
+  display:grid;
+  place-items:center;
+
+  font-size:30px;
+
+  margin-bottom:25px;
+}
+
+.story-card h3{
+  font-size:28px;
+
+  line-height:1.2;
+
+  margin:0 0 16px;
+}
+
+.story-card p{
+  color:#b5c1ba;
+
+  margin:0;
+}
+
+
+/* ========================================
+   MISSION
+======================================== */
+
+.mission-box{
+  background:
+    linear-gradient(
+      135deg,
+      #0d6b36,
+      #084a25
+    );
+
+  color:#fff;
+
+  border-radius:24px;
+
+  padding:60px;
+
+  text-align:center;
+}
+
+.mission-icon{
+  width:70px;
+  height:70px;
+
+  margin:0 auto 22px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.12);
+
+  display:grid;
+  place-items:center;
+
+  font-size:32px;
+}
+
+.mission-box h2{
+  font-size:38px;
+
+  margin:0 0 18px;
+
+  letter-spacing:-1px;
+}
+
+.mission-box p{
+  max-width:760px;
+
+  margin:auto;
+
+  color:#d7eadc;
+
+  font-size:18px;
+}
+
+
+/* ========================================
+   VALUES
+======================================== */
+
+.values-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:24px;
+
+  margin-top:45px;
+}
+
+.value-card{
+  background:#fff;
+
+  border:1px solid #dce4df;
+
+  border-radius:18px;
+
+  padding:30px;
+
+  transition:.2s ease;
+}
+
+.value-card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+    0 18px 35px
+    rgba(0,0,0,.08);
+}
+
+.value-icon{
+  width:55px;
+  height:55px;
+
+  border-radius:16px;
+
+  background:#edf5ef;
+
+  display:grid;
+  place-items:center;
+
+  font-size:26px;
+
+  margin-bottom:18px;
+}
+
+.value-card h3{
+  margin:0 0 10px;
+
+  font-size:20px;
+}
+
+.value-card p{
+  margin:0;
+
+  color:#69716e;
+
+  font-size:14px;
+}
+
+
+/* ========================================
+   WHAT WE'RE BUILDING
+======================================== */
+
+.build-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:25px;
+
+  margin-top:40px;
+}
+
+.build-card{
+  border:1px solid #d8e1dc;
+
+  border-radius:18px;
+
+  padding:32px;
+
+  background:#fff;
+}
+
+.build-number{
+  color:var(--green);
+
+  font-size:13px;
+
+  font-weight:800;
+
+  letter-spacing:1px;
+}
+
+.build-card h3{
+  margin:12px 0 10px;
+
+  font-size:22px;
+}
+
+.build-card p{
+  margin:0;
+
+  color:#69716e;
+
+  font-size:14px;
+}
+
+
+/* ========================================
+   LOCATION
+======================================== */
+
+.location-section{
+  text-align:center;
 }
 
 .location-pill{
   display:inline-flex;
   align-items:center;
 
-  margin-top:27px;
+  margin-top:15px;
 
   background:#edf3ee;
+
   border-radius:24px;
 
-  padding:9px 15px;
+  padding:10px 18px;
 
-  font-size:12px;
+  font-size:13px;
   font-weight:700;
+
   color:#45604f;
 }
 
-/* ================= FORM ================= */
 
-.lead-card{
-  align-self:center;
+/* ========================================
+   CTA
+======================================== */
 
-  background:rgba(255,255,255,.97);
-
-  border-radius:17px;
-  overflow:hidden;
-
-  box-shadow:
-    0 25px 55px
-    rgba(0,0,0,.22);
-
-  max-width:440px;
-  justify-self:end;
+.cta-section{
+  padding:80px 0;
 }
 
-.lead-head{
-  padding:23px 25px 18px;
+.cta-box{
+  border:1px solid #d8e2dc;
 
-  background:
-    linear-gradient(
-      135deg,
-      #0d3c25,
-      #123e29
-    );
+  border-radius:24px;
+
+  padding:55px;
+
+  text-align:center;
+
+  background:#f8faf8;
+}
+
+.cta-box h2{
+  font-size:38px;
+
+  letter-spacing:-1px;
+
+  margin:0 0 15px;
+}
+
+.cta-box p{
+  color:#69716e;
+
+  max-width:650px;
+
+  margin:0 auto 28px;
+}
+
+.cta-buttons{
+  display:flex;
+
+  justify-content:center;
+
+  gap:14px;
+}
+
+
+/* ========================================
+   WHATSAPP FLOATING BUTTON
+======================================== */
+
+.whatsapp{
+  position:fixed;
+
+  right:22px;
+  bottom:22px;
+
+  width:60px;
+  height:60px;
+
+  border-radius:50%;
+
+  background:#25D366;
 
   color:#fff;
-}
-
-.lead-head h2{
-  font-size:21px;
-  margin:0 0 3px;
-}
-
-.lead-head p{
-  margin:0;
-  color:#e8d16e;
-  font-size:13px;
-  font-weight:700;
-}
-
-.form{
-  padding:15px 16px 18px;
-}
-
-.field{
-  width:100%;
-  height:55px;
-
-  border:1px solid #d9dfdc;
-  border-radius:8px;
-
-  margin-bottom:11px;
 
   display:flex;
   align-items:center;
+  justify-content:center;
 
-  padding:0 15px;
-  gap:12px;
+  font-size:27px;
+
+  z-index:900;
+
+  box-shadow:
+    0 10px 25px
+    rgba(0,0,0,.2);
 }
 
-.field input,
-.field select{
-  width:100%;
-  height:100%;
 
-  border:0;
-  outline:0;
-
-  background:transparent;
-
-  font:inherit;
-}
-
-.field.select{
-  justify-content:space-between;
-}
-
-.error-msg{
-  display:none;
-
-  color:#d64545;
-
-  font-size:11px;
-  margin:-6px 0 10px;
-}
-
-.error-msg.show{
-  display:block;
-}
-
-.field.error{
-  border-color:#d64545;
-}
-
-.form .submit{
-  width:100%;
-}
-
-.toast{
-  display:none;
-
-  margin-top:12px;
-
-  background:#eaf6ee;
-
-  border:1px solid #b7ddc3;
-
-  color:#1b6b3a;
-
-  border-radius:8px;
-
-  padding:10px;
-
-  text-align:center;
-
-  font-size:12px;
-}
-
-.toast.show{
-  display:block;
-}
-
-.secure{
-  text-align:center;
-
-  font-size:11px;
-
-  color:#69716e;
-
-  margin-top:12px;
-}
-
-/* ================= BENEFITS ================= */
-
-.section{
-  padding:40px 0;
-}
-
-.benefit-bar{
-  display:grid;
-
-  grid-template-columns:repeat(4,1fr);
-
-  gap:15px;
-
-  border:1px solid #e1e7e3;
-
-  border-radius:20px;
-
-  padding:25px;
-}
-
-.benefit{
-  display:grid;
-
-  grid-template-columns:45px 1fr;
-
-  gap:10px;
-}
-
-.benefit-icon{
-  width:42px;
-  height:42px;
-
-  border-radius:50%;
-
-  background:#f0f6f1;
-
-  display:grid;
-  place-items:center;
-
-  color:#14733b;
-
-  font-size:22px;
-}
-
-.benefit h3{
-  margin:0;
-  font-size:15px;
-}
-
-.benefit p{
-  margin:5px 0;
-
-  font-size:12px;
-
-  color:#66706c;
-}
-
-/* ================= HOW IT WORKS ================= */
-
-.how{
-  padding:30px 0 60px;
-  text-align:center;
-}
-
-.section-title{
-  font-size:30px;
-  margin-bottom:30px;
-}
-
-.steps{
-  display:grid;
-
-  grid-template-columns:
-    1fr auto
-    1fr auto
-    1fr;
-
-  align-items:center;
-
-  gap:20px;
-}
-
-.step{
-  border:1px solid #d8e0dc;
-
-  border-radius:18px;
-
-  padding:30px 20px;
-
-  background:#fff;
-}
-
-.step-icon{
-  width:64px;
-  height:64px;
-
-  border-radius:50%;
-
-  margin:auto;
-  margin-bottom:15px;
-
-  background:#eef5ef;
-
-  display:grid;
-  place-items:center;
-
-  font-size:30px;
-}
-
-.arrow{
-  font-size:30px;
-  color:#78a085;
-}
-
-.property-cta{
-  display:grid;
-
-  grid-template-columns:
-    145px
-    1fr
-    auto;
-
-  align-items:center;
-
-  gap:22px;
-
-  margin:35px 0;
-
-  border:1px solid #d9e3dc;
-
-  border-radius:18px;
-
-  overflow:hidden;
-
-  background:#f8faf7;
-}
-
-.building{
-  height:116px;
-
-  display:grid;
-  place-items:center;
-
-  font-size:65px;
-
-  background:#eff6ef;
-}
-
-.property-copy h3{
-  margin:0;
-}
-
-.property-copy p{
-  color:#68716e;
-}
-
-.owner-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,1fr);
-
-  gap:25px;
-}
-
-.owner-icon{
-  font-size:30px;
-  color:#176f3b;
-}
-
-.owner-grid h4{
-  margin:8px 0 5px;
-}
-
-.owner-grid p{
-  margin:0;
-  color:#69716e;
-  font-size:13px;
-}
-
-/* ================= FOOTER ================= */
+/* ========================================
+   FOOTER
+======================================== */
 
 .footer{
   background:#030506;
+
   color:#fff;
 
   padding:60px 0 0;
@@ -639,17 +1077,12 @@ h1 span{
   display:grid;
 
   grid-template-columns:
-    2fr
-    1fr
-    1fr
-    1.4fr;
+    2fr 1fr 1fr 1.4fr;
 
   gap:45px;
 
   padding-bottom:45px;
 }
-
-/* FOOTER LOGO */
 
 .footer-logo{
   width:220px;
@@ -697,44 +1130,36 @@ h1 span{
   color:#fff;
 }
 
-/* ================= SOCIAL MEDIA ================= */
-
 .social-links{
   display:flex;
 
   gap:10px;
-
-  flex-wrap:wrap;
 }
 
 .social-links a{
-  width:42px;
-  height:42px;
+  width:44px;
+  height:44px;
 
   border:1px solid #2b3831;
 
   border-radius:50%;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   color:#fff;
 
-  font-weight:bold;
+  font-weight:700;
 
   transition:.2s;
 }
 
 .social-links a:hover{
-  background:#0d6b36;
+  background:var(--green);
 
-  border-color:#0d6b36;
+  border-color:var(--green);
 }
-
-/* ================= FOOTER BOTTOM ================= */
 
 .footer-bottom{
   border-top:1px solid #1d2923;
@@ -754,36 +1179,10 @@ h1 span{
   gap:20px;
 }
 
-/* ================= WHATSAPP BUTTON ================= */
 
-.whatsapp{
-  position:fixed;
-
-  right:25px;
-  bottom:25px;
-
-  width:58px;
-  height:58px;
-
-  border-radius:50%;
-
-  background:#25D366;
-
-  color:#fff;
-
-  display:grid;
-  place-items:center;
-
-  font-size:28px;
-
-  z-index:900;
-
-  box-shadow:
-    0 10px 25px
-    rgba(0,0,0,.2);
-}
-
-/* ================= RESPONSIVE ================= */
+/* ========================================
+   TABLET
+======================================== */
 
 @media(max-width:800px){
 
@@ -792,11 +1191,7 @@ h1 span{
   }
 
   .nav{
-    height:82px;
-  }
-
-  .mobile-menu{
-    top:82px;
+    height:78px;
   }
 
   .brand-logo{
@@ -804,95 +1199,147 @@ h1 span{
     max-height:58px;
   }
 
-  .hero-inner{
+  .about-hero-inner{
     grid-template-columns:1fr;
 
-    padding:48px 0;
+    gap:45px;
+
+    padding:60px 0;
   }
 
   h1{
-    font-size:43px;
+    font-size:46px;
   }
 
-  .lead-card{
-    justify-self:center;
-
-    width:100%;
+  .about-visual{
+    max-width:550px;
   }
 
-  .benefit-bar{
-    grid-template-columns:
-      repeat(2,1fr);
-  }
-
-  .steps{
-    grid-template-columns:1fr;
-  }
-
-  .arrow{
-    transform:rotate(90deg);
-  }
-
-  .property-cta{
+  .story-grid{
     grid-template-columns:1fr;
 
-    text-align:center;
-
-    padding-bottom:20px;
+    gap:40px;
   }
 
-  .building{
-    height:100px;
+  .values-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
-  .owner-grid{
-    grid-template-columns:
-      repeat(2,1fr);
+  .build-grid{
+    grid-template-columns:1fr;
   }
 
   .footer-grid{
-    grid-template-columns:
-      repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
     gap:35px;
   }
 
 }
 
+
+/* ========================================
+   MOBILE
+======================================== */
+
 @media(max-width:500px){
+
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  .nav{
+    height:74px;
+  }
 
   .contact{
     display:none;
   }
 
   .brand-logo{
-    width:175px;
+    width:170px;
 
-    max-height:55px;
+    max-height:52px;
   }
 
-  .menu-btn{
-    font-size:30px;
+  .mobile-menu{
+    width:100%;
+
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .mobile-menu-logo{
+    width:165px;
+  }
+
+  .about-hero{
+    min-height:auto;
   }
 
   h1{
     font-size:38px;
   }
 
+  .about-hero-copy{
+    font-size:16px;
+  }
+
   .hero-buttons{
     flex-direction:column;
   }
 
-  .btn{
+  .hero-buttons .btn{
     width:100%;
   }
 
-  .benefit-bar{
+  .section{
+    padding:65px 0;
+  }
+
+  .section-title{
+    font-size:31px;
+  }
+
+  .about-visual{
+    padding:25px;
+  }
+
+  .story-card{
+    padding:30px;
+    min-height:auto;
+  }
+
+  .mission-box{
+    padding:40px 22px;
+  }
+
+  .mission-box h2{
+    font-size:30px;
+  }
+
+  .mission-box p{
+    font-size:16px;
+  }
+
+  .values-grid{
     grid-template-columns:1fr;
   }
 
-  .owner-grid{
-    grid-template-columns:1fr;
+  .cta-box{
+    padding:38px 22px;
+  }
+
+  .cta-box h2{
+    font-size:30px;
+  }
+
+  .cta-buttons{
+    flex-direction:column;
+  }
+
+  .cta-buttons .btn{
+    width:100%;
   }
 
   .footer-grid{
@@ -906,18 +1353,24 @@ h1 span{
   }
 
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+
+<!-- ========================================
+     NAVBAR
+======================================== -->
 
 <nav class="nav">
 
   <div class="container nav-inner">
 
-    <a href="#home" class="brand">
+    <a href="index.html" class="brand">
 
       <img
         src="./assets/Hopebed_logo.PNG"
@@ -927,15 +1380,18 @@ h1 span{
 
     </a>
 
+
     <div class="nav-actions">
 
-      <a href="#contact" class="contact">
+      <a href="contact.html" class="contact">
         Contact Us
       </a>
+
 
       <button
         class="menu-btn"
         id="menuBtn"
+        type="button"
         aria-label="Open menu"
         aria-expanded="false"
       >
@@ -948,976 +1404,981 @@ h1 span{
 
 </nav>
 
-<!-- ================= MOBILE MENU ================= -->
 
-<div class="mobile-menu" id="mobileMenu">
+<!-- ========================================
+     MOBILE MENU OVERLAY
+======================================== -->
 
-  <div class="container">
+<div
+  class="mobile-menu-overlay"
+  id="menuOverlay"
+></div>
 
-    <a href="#home" class="menu-link">Home</a>
 
-    <a href="#how" class="menu-link">How It Works</a>
+<!-- ========================================
+     MOBILE MENU
+======================================== -->
 
-    <a href="#list" class="menu-link">List Your Property</a>
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
 
-    <a href="#about" class="menu-link">About Hopebed</a>
 
-    <a href="#contact" class="menu-link">Contact Us</a>
+  <div class="mobile-menu-header">
+
+    <a
+      href="index.html"
+      class="mobile-menu-brand"
+    >
+
+      <img
+        src="./assets/Hopebed_logo.PNG"
+        alt="Hopebed"
+        class="mobile-menu-logo"
+      >
+
+    </a>
+
+
+    <button
+      type="button"
+      class="mobile-menu-close"
+      id="menuClose"
+      aria-label="Close menu"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+
+  <nav
+    class="mobile-menu-nav"
+    aria-label="Mobile navigation"
+  >
+
+    <a href="index.html" class="menu-link">
+      Home
+    </a>
+
+
+    <a href="index.html#how" class="menu-link">
+      Find a Stay
+    </a>
+
+
+    <a
+      href="index.html#list"
+      class="menu-link menu-list-property"
+    >
+
+      <span>
+        List Your Property
+      </span>
+
+      <span class="menu-arrow">
+        →
+      </span>
+
+    </a>
+
+
+    <a href="index.html#how" class="menu-link">
+      How It Works
+    </a>
+
+
+    <a
+      href="about.html"
+      class="menu-link active-link"
+    >
+      About Hopebed
+    </a>
+
+
+    <a href="contact.html" class="menu-link">
+      Contact
+    </a>
+
+  </nav>
+
+
+
+  <div class="mobile-menu-actions">
+
+    <a
+      href="https://wa.me/918291025730?text=Hi%20Hopebed%2C%20I%27d%20like%20to%20know%20more."
+      target="_blank"
+      rel="noopener"
+      class="menu-whatsapp"
+    >
+
+      Chat on WhatsApp
+
+    </a>
 
   </div>
 
 </div>
 
-<main id="home">
 
-<!-- ================= HERO ================= -->
+<!-- ========================================
+     MAIN
+======================================== -->
 
-<section class="hero">
+<main>
 
-<div class="container hero-inner">
 
-<div>
+<!-- ========================================
+     ABOUT HERO
+======================================== -->
 
-<div class="eyebrow">
-WE'RE BUILDING HOPEBED
-</div>
+<section class="about-hero">
 
-<h1>
-Find, Book & Verify<br>
-<span>
-Verified Stays<br>
-in India.
-</span>
-</h1>
+  <div class="container about-hero-inner">
 
-<p class="hero-copy">
 
-Hopebed is an upcoming stay platform designed to
-<b>Find, Book & Verify</b>
-stays in India — including hotels, PGs, hostels, rooms & homes.
+    <div>
 
-</p>
+      <div class="eyebrow">
+        ABOUT HOPEBED
+      </div>
 
-<div class="hero-buttons">
 
-<a class="btn btn-primary" href="#list">
-⌂ &nbsp; List Your Property Free &nbsp; →
-</a>
+      <h1>
 
-<a class="btn btn-outline" href="#how">
-⌕ &nbsp; Find a Stay
-</a>
+        We're Building a Smarter Way to
 
-</div>
+        <span>
+          Find, Book & Verify Stays.
+        </span>
 
-<div class="hero-notes">
+      </h1>
 
-<span>Free to list</span>
 
-<span>No commission until your first booking</span>
+      <p class="about-hero-copy">
 
-<span>Verified tenants</span>
+        Hopebed is building a trusted stay platform designed to
+        make finding accommodation simpler, safer and more
+        transparent for everyone.
 
-</div>
+      </p>
 
-<div class="location-pill">
 
-📍 &nbsp;
-Launching in Taloja & Kharghar, Navi Mumbai
+      <div class="hero-buttons">
 
-</div>
+        <a
+          href="index.html#list"
+          class="btn btn-primary"
+        >
+          List Your Property →
+        </a>
 
-</div>
 
-<!-- ================= PROPERTY FORM ================= -->
+        <a
+          href="contact.html"
+          class="btn btn-outline"
+        >
+          Get in Touch
+        </a>
 
-<div class="lead-card" id="list">
+      </div>
 
-<div class="lead-head">
+    </div>
 
-<h2>
-List Your Property on Hopebed
-</h2>
 
-<p>
-Join our early property partner network.
-</p>
 
-</div>
+    <div class="about-visual">
 
-<form class="form" id="leadForm" novalidate>
+      <div class="visual-top">
+        🏠
+      </div>
 
-<div class="field">
 
-👤
+      <h3>
+        Stay Smart. Stay Verified.
+      </h3>
 
-<input
-type="text"
-id="fName"
-placeholder="Your Name"
->
 
-</div>
+      <p>
 
-<div class="error-msg" id="err-fName">
-Please enter your name.
-</div>
+        We're creating a better experience for people looking
+        for stays and for property owners looking to grow.
 
-<div class="field">
+      </p>
 
-📱
 
-<input
-type="tel"
-id="fPhone"
-placeholder="WhatsApp Number"
-inputmode="numeric"
->
+      <div class="visual-points">
 
-</div>
 
-<div class="error-msg" id="err-fPhone">
-Please enter a valid 10-digit number.
-</div>
+        <div class="visual-point">
 
-<div class="field select">
+          <div class="visual-check">
+            ✓
+          </div>
 
-<select id="fRole">
+          Verified Properties
 
-<option value="">
-I am a...
-</option>
+        </div>
 
-<option value="Property Owner">
-Property Owner
-</option>
 
-<option value="Tenant / Guest">
-Tenant / Guest
-</option>
+        <div class="visual-point">
 
-<option value="Broker / Agent">
-Broker / Agent
-</option>
+          <div class="visual-check">
+            ✓
+          </div>
 
-</select>
+          Transparent Information
 
-</div>
+        </div>
 
-<div class="error-msg" id="err-fRole">
-Please select an option.
-</div>
 
-<div class="field">
+        <div class="visual-point">
 
-📍
+          <div class="visual-check">
+            ✓
+          </div>
 
-<input
-type="text"
-id="fLocation"
-placeholder="Property Location / Area (Optional)"
->
+          Simple Digital Experience
 
-</div>
+        </div>
 
-<button
-type="submit"
-class="btn btn-primary submit"
->
 
-Get Started Free →
+      </div>
 
-</button>
+    </div>
 
-<div
-class="toast"
-id="formToast"
->
 
-Thanks! Opening WhatsApp...
-
-</div>
-
-<div class="secure">
-
-🔒 Your details are safe with us.
-
-</div>
-
-</form>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
-<!-- ================= BENEFITS ================= -->
+
+
+<!-- ========================================
+     OUR STORY
+======================================== -->
 
 <section class="section">
 
-<div class="container">
+  <div class="container story-grid">
 
-<div class="benefit-bar">
 
-<div class="benefit">
+    <div class="story-content">
 
-<div class="benefit-icon">✓</div>
+      <div class="section-label">
+        OUR STORY
+      </div>
 
-<div>
 
-<h3>
-100% Verified Properties
-</h3>
+      <h2 class="section-title">
+        Why We're Building Hopebed
+      </h2>
 
-<p>
-Every property is verified for your safety and peace of mind.
-</p>
 
-</div>
+      <p>
 
-</div>
+        Finding a place to stay should be simple. But too often,
+        people face unclear information, uncertainty and difficulty
+        finding a stay they can trust.
 
-<div class="benefit">
+      </p>
 
-<div class="benefit-icon">₹</div>
 
-<div>
+      <p>
 
-<h3>
-Transparent Information
-</h3>
+        Hopebed was created with a simple idea — build a smarter
+        and more transparent platform where people can discover
+        stays and property owners can connect with genuine guests
+        and tenants.
 
-<p>
-Clear details and pricing. No hidden surprises.
-</p>
+      </p>
 
-</div>
 
-</div>
+      <p>
 
-<div class="benefit">
+        From hotels and hostels to PGs, rooms and other
+        accommodation options, Hopebed aims to make the journey
+        of finding a stay easier from start to finish.
 
-<div class="benefit-icon">♡</div>
+      </p>
 
-<div>
+    </div>
 
-<h3>
-Dedicated Support
-</h3>
 
-<p>
-We're here to help you at every step.
-</p>
 
-</div>
+    <div class="story-card">
 
-</div>
+      <div class="story-card-icon">
+        💡
+      </div>
 
-<div class="benefit">
 
-<div class="benefit-icon">★</div>
+      <h3>
+        A better stay experience starts with trust.
+      </h3>
 
-<div>
 
-<h3>
-Better for Everyone
-</h3>
+      <p>
 
-<p>
-Great experience for owners and tenants alike.
-</p>
+        We believe technology can make the process of finding,
+        booking and managing stays more transparent and convenient
+        for everyone involved.
 
-</div>
+      </p>
 
-</div>
+    </div>
 
-</div>
 
-</div>
+  </div>
 
 </section>
 
-<!-- ================= HOW IT WORKS ================= -->
 
-<section
-class="how"
-id="how"
->
 
-<div class="container">
+<!-- ========================================
+     MISSION
+======================================== -->
 
-<h2 class="section-title">
-How Hopebed Works
-</h2>
+<section class="section section-soft">
 
-<div class="steps">
+  <div class="container">
 
-<article class="step">
+    <div class="mission-box">
 
-<div class="step-icon">
-🔍
-</div>
+      <div class="mission-icon">
+        🎯
+      </div>
 
-<h3>
-Find
-</h3>
 
-<p>
-Verified properties that fit your needs.
-</p>
+      <h2>
+        Our Mission
+      </h2>
 
-</article>
 
-<div class="arrow">
-→
-</div>
+      <p>
 
-<article class="step">
+        To build a trusted and accessible platform that helps
+        people find, book and verify stays with greater confidence,
+        while helping property owners reach the right guests and
+        tenants.
 
-<div class="step-icon">
-📅
-</div>
+      </p>
 
-<h3>
-Book
-</h3>
+    </div>
 
-<p>
-Hassle-free booking in simple steps.
-</p>
-
-</article>
-
-<div class="arrow">
-→
-</div>
-
-<article class="step">
-
-<div class="step-icon">
-✓
-</div>
-
-<h3>
-Verify
-</h3>
-
-<p>
-Digital verification for your safety.
-</p>
-
-</article>
-
-</div>
-
-<!-- ================= PROPERTY CTA ================= -->
-
-<div class="property-cta">
-
-<div class="building">
-🏢
-</div>
-
-<div class="property-copy">
-
-<h3>
-Have a property to list?
-</h3>
-
-<p>
-Reach students and professionals looking for verified stays.
-</p>
-
-</div>
-
-<a
-class="btn btn-primary"
-href="#list"
->
-
-List Your Property Free →
-
-</a>
-
-</div>
-
-<!-- ================= OWNER BENEFITS ================= -->
-
-<div class="owner-grid">
-
-<div>
-
-<div class="owner-icon">
-📈
-</div>
-
-<h4>
-More Visibility
-</h4>
-
-<p>
-Get your property seen by verified tenants.
-</p>
-
-</div>
-
-<div>
-
-<div class="owner-icon">
-👥
-</div>
-
-<h4>
-Quality Tenants
-</h4>
-
-<p>
-Attract genuine tenants for long-term stays.
-</p>
-
-</div>
-
-<div>
-
-<div class="owner-icon">
-⚙️
-</div>
-
-<h4>
-Simple Management
-</h4>
-
-<p>
-Easy listing and inquiries in one place.
-</p>
-
-</div>
-
-<div>
-
-<div class="owner-icon">
-🚀
-</div>
-
-<h4>
-Grow Your Business
-</h4>
-
-<p>
-Increase occupancy and maximise earnings.
-</p>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
-<!-- ================= ABOUT ================= -->
 
-<section
-class="section"
-id="about"
->
 
-<div
-class="container"
-style="text-align:center;max-width:800px;"
->
+<!-- ========================================
+     VALUES
+======================================== -->
 
-<h2 class="section-title">
-About Hopebed
-</h2>
+<section class="section">
 
-<p
-style="
-color:#66706d;
-font-size:16px;
-"
->
+  <div class="container">
 
-Hopebed is building a smarter and more trusted way to find,
-book and verify stays in India. Our mission is to make stays
-safer, simpler and more transparent for everyone.
+    <div class="section-label">
+      WHAT WE BELIEVE
+    </div>
 
-</p>
 
-</div>
+    <h2 class="section-title">
+      The Principles Behind Hopebed
+    </h2>
+
+
+    <p class="section-text">
+
+      Everything we're building is guided by a simple goal:
+      create a better and more trusted experience for everyone.
+
+    </p>
+
+
+    <div class="values-grid">
+
+
+      <article class="value-card">
+
+        <div class="value-icon">
+          ✓
+        </div>
+
+
+        <h3>
+          Trust
+        </h3>
+
+
+        <p>
+
+          We believe people should have greater confidence in
+          the information and stays they discover.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="value-card">
+
+        <div class="value-icon">
+          🔍
+        </div>
+
+
+        <h3>
+          Transparency
+        </h3>
+
+
+        <p>
+
+          Clear information helps people make better decisions
+          when choosing where to stay.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="value-card">
+
+        <div class="value-icon">
+          ⚡
+        </div>
+
+
+        <h3>
+          Simplicity
+        </h3>
+
+
+        <p>
+
+          Finding and managing stays shouldn't be complicated.
+          We're building for a simpler experience.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
 
 </section>
+
+
+
+<!-- ========================================
+     WHAT WE ARE BUILDING
+======================================== -->
+
+<section class="section section-soft">
+
+  <div class="container">
+
+    <div class="section-label">
+      THE HOPEBED EXPERIENCE
+    </div>
+
+
+    <h2 class="section-title">
+      What We're Building
+    </h2>
+
+
+    <p class="section-text">
+
+      Hopebed is focused on creating a connected experience
+      around the complete stay journey.
+
+    </p>
+
+
+    <div class="build-grid">
+
+
+      <article class="build-card">
+
+        <div class="build-number">
+          01 — FIND
+        </div>
+
+
+        <h3>
+          Discover Stays
+        </h3>
+
+
+        <p>
+
+          Explore accommodation options and find stays that
+          match your location and requirements.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="build-card">
+
+        <div class="build-number">
+          02 — BOOK
+        </div>
+
+
+        <h3>
+          Connect & Book
+        </h3>
+
+
+        <p>
+
+          Make the process of connecting with properties and
+          booking your stay simpler.
+
+        </p>
+
+      </article>
+
+
+
+      <article class="build-card">
+
+        <div class="build-number">
+          03 — VERIFY
+        </div>
+
+
+        <h3>
+          Stay With Confidence
+        </h3>
+
+
+        <p>
+
+          We're building systems designed to support a more
+          trusted and transparent stay experience.
+
+        </p>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     LAUNCHING
+======================================== -->
+
+<section class="section location-section">
+
+  <div class="container">
+
+    <div class="section-label">
+      WHERE WE'RE STARTING
+    </div>
+
+
+    <h2 class="section-title">
+      Starting Local. Thinking Bigger.
+    </h2>
+
+
+    <p class="section-text" style="margin:auto;">
+
+      Hopebed is starting its journey by building relationships
+      with property owners and stay providers in Navi Mumbai.
+
+    </p>
+
+
+    <div class="location-pill">
+
+      📍 Launching in Taloja & Kharghar, Navi Mumbai
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     CTA
+======================================== -->
+
+<section class="cta-section">
+
+  <div class="container">
+
+    <div class="cta-box">
+
+      <h2>
+        Be Part of the Hopebed Journey
+      </h2>
+
+
+      <p>
+
+        Whether you're a property owner looking to reach more
+        people or someone looking for a better stay experience,
+        we'd love to connect.
+
+      </p>
+
+
+      <div class="cta-buttons">
+
+        <a
+          href="index.html#list"
+          class="btn btn-primary"
+        >
+          List Your Property Free →
+        </a>
+
+
+        <a
+          href="contact.html"
+          class="btn btn-outline"
+        >
+          Contact Hopebed
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 </main>
 
-<!-- ================= FLOATING WHATSAPP ================= -->
+
+
+<!-- ========================================
+     FLOATING WHATSAPP
+======================================== -->
 
 <a
-class="whatsapp"
-href="https://wa.me/918291025730?text=Hi%20Hopebed%2C%20I%27d%20like%20to%20know%20more%20about%20Hopebed."
-target="_blank"
-rel="noopener"
-aria-label="Chat with Hopebed on WhatsApp"
+  href="https://wa.me/918291025730?text=Hi%20Hopebed%2C%20I%27d%20like%20to%20know%20more."
+  class="whatsapp"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat on WhatsApp"
 >
-
-💬
-
+  💬
 </a>
 
-<!-- ================= FOOTER ================= -->
 
-<footer
-class="footer"
-id="contact"
->
 
-<div class="container footer-grid">
+<!-- ========================================
+     FOOTER
+======================================== -->
 
-<!-- BRAND -->
+<footer class="footer">
 
-<div class="footer-brand">
 
-<img
-src="./assets/Hopebed_logo.PNG"
-alt="Hopebed - Stay Smart. Stay Verified."
-class="footer-logo"
->
+  <div class="container footer-grid">
 
-<p>
-<strong>
-Stay Smart. Stay Verified.
-</strong>
-</p>
 
-<p>
+    <!-- BRAND -->
 
-Hopebed is building a trusted platform for finding,
-booking and verifying stays across India.
+    <div class="footer-brand">
 
-</p>
+      <img
+        src="./assets/Hopebed_logo.PNG"
+        alt="Hopebed"
+        class="footer-logo"
+      >
 
-</div>
 
-<!-- QUICK LINKS -->
+      <p>
 
-<div>
+        <strong>
+          Stay Smart. Stay Verified.
+        </strong>
 
-<h3>
-Quick Links
-</h3>
+      </p>
 
-<div class="footer-links">
 
-<a href="#home">
-Home
-</a>
+      <p>
 
-<a href="#how">
-How It Works
-</a>
+        Hopebed is building a trusted platform for finding,
+        booking and verifying stays across India.
 
-<a href="#list">
-List Your Property
-</a>
+      </p>
 
-<a href="#about">
-About Us
-</a>
+    </div>
 
-</div>
 
-</div>
 
-<!-- CONTACT -->
+    <!-- QUICK LINKS -->
 
-<div>
+    <div>
 
-<h3>
-Contact
-</h3>
+      <h3>
+        Quick Links
+      </h3>
 
-<div class="footer-links">
 
-<a href="mailto:hello@hopebed.in">
-hello@hopebed.in
-</a>
+      <div class="footer-links">
 
-<a
-href="https://wa.me/918291025730"
-target="_blank"
-rel="noopener"
->
+        <a href="index.html">
+          Home
+        </a>
 
-WhatsApp Us
 
-</a>
+        <a href="index.html#how">
+          How It Works
+        </a>
 
-<a href="#list">
-Become a Property Partner
-</a>
 
-<a href="#home">
-Navi Mumbai, India
-</a>
+        <a href="index.html#list">
+          List Your Property
+        </a>
 
-</div>
 
-</div>
+        <a href="about.html">
+          About Us
+        </a>
 
-<!-- SOCIAL MEDIA -->
+      </div>
 
-<div>
+    </div>
 
-<h3>
-Follow Hopebed
-</h3>
 
-<p
-style="
-color:#aeb9b3;
-font-size:14px;
-"
->
 
-Follow our journey as we build the future
-of verified stays.
+    <!-- CONTACT -->
 
-</p>
+    <div>
 
-<div class="social-links">
+      <h3>
+        Contact
+      </h3>
 
-<!-- Replace # with your real social media links -->
 
-<a
-href="#"
-target="_blank"
-aria-label="Hopebed LinkedIn"
->
-in
-</a>
+      <div class="footer-links">
 
-<a
-href="#"
-target="_blank"
-aria-label="Hopebed Instagram"
->
-◎
-</a>
+        <a href="mailto:hello@hopebed.in">
+          hello@hopebed.in
+        </a>
 
-<a
-href="#"
-target="_blank"
-aria-label="Hopebed Facebook"
->
-f
-</a>
 
-<a
-href="#"
-target="_blank"
-aria-label="Hopebed X"
->
-𝕏
-</a>
+        <a
+          href="https://wa.me/918291025730"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp Us
+        </a>
 
-</div>
 
-</div>
+        <a href="index.html#list">
+          Become a Property Partner
+        </a>
 
-</div>
+      </div>
 
-<!-- FOOTER BOTTOM -->
+    </div>
 
-<div class="footer-bottom">
 
-<div class="container footer-bottom-inner">
 
-<div>
-© 2026 Hopebed. All rights reserved.
-</div>
+    <!-- SOCIAL -->
 
-<div>
-Stay Smart. Stay Verified.
-</div>
+    <div>
 
-</div>
+      <h3>
+        Follow Hopebed
+      </h3>
 
-</div>
+
+      <p style="color:#aeb9b3;font-size:14px;">
+
+        Follow our journey as we build the future
+        of verified stays.
+
+      </p>
+
+
+      <div class="social-links">
+
+        <a href="#" aria-label="LinkedIn">
+          in
+        </a>
+
+
+        <a href="#" aria-label="Instagram">
+          ◎
+        </a>
+
+
+        <a href="#" aria-label="Facebook">
+          f
+        </a>
+
+
+        <a href="#" aria-label="X">
+          𝕏
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- FOOTER BOTTOM -->
+
+  <div class="footer-bottom">
+
+    <div class="container footer-bottom-inner">
+
+      <div>
+        © 2026 Hopebed. All rights reserved.
+      </div>
+
+
+      <div>
+        Stay Smart. Stay Verified.
+      </div>
+
+    </div>
+
+  </div>
+
 
 </footer>
 
-<!-- ================= JAVASCRIPT ================= -->
+
+
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
 
 <script>
 
-/* ================= MOBILE MENU ================= */
+document.addEventListener("DOMContentLoaded", function(){
 
-const menuBtn =
-document.getElementById("menuBtn");
+  const menuBtn =
+    document.getElementById("menuBtn");
 
-const mobileMenu =
-document.getElementById("mobileMenu");
+  const mobileMenu =
+    document.getElementById("mobileMenu");
 
+  const menuClose =
+    document.getElementById("menuClose");
 
-menuBtn.addEventListener(
-"click",
-function(){
+  const menuOverlay =
+    document.getElementById("menuOverlay");
 
-  mobileMenu.classList.toggle("active");
-
-  const isOpen =
-  mobileMenu.classList.contains("active");
-
-
-  menuBtn.setAttribute(
-    "aria-expanded",
-    isOpen
-  );
+  const menuLinks =
+    document.querySelectorAll(
+      ".mobile-menu .menu-link"
+    );
 
 
-  menuBtn.innerHTML =
-  isOpen ? "✕" : "☰";
+  function openMenu(){
 
-}
-);
+    mobileMenu.classList.add("active");
 
+    menuOverlay.classList.add("active");
 
-/* ================= CLOSE MENU ================= */
+    document.body.classList.add("menu-open");
 
-document
-.querySelectorAll(".menu-link")
-.forEach(function(link){
+    menuBtn.setAttribute(
+      "aria-expanded",
+      "true"
+    );
 
-  link.addEventListener(
-  "click",
-  function(){
-
-    mobileMenu
-    .classList
-    .remove("active");
+  }
 
 
-    menuBtn.innerHTML =
-    "☰";
+  function closeMenu(){
 
+    mobileMenu.classList.remove("active");
+
+    menuOverlay.classList.remove("active");
+
+    document.body.classList.remove("menu-open");
 
     menuBtn.setAttribute(
       "aria-expanded",
       "false"
     );
 
+  }
+
+
+  menuBtn.addEventListener(
+    "click",
+    openMenu
+  );
+
+
+  menuClose.addEventListener(
+    "click",
+    closeMenu
+  );
+
+
+  menuOverlay.addEventListener(
+    "click",
+    closeMenu
+  );
+
+
+  menuLinks.forEach(function(link){
+
+    link.addEventListener(
+      "click",
+      closeMenu
+    );
+
   });
+
+
+  document.addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Escape"){
+
+        closeMenu();
+
+      }
+
+    }
+  );
 
 });
 
-
-/* ================= WHATSAPP NUMBER ================= */
-
-/*
-IMPORTANT:
-
-Use country code + phone number
-WITHOUT the + symbol.
-
-Your Hopebed WhatsApp:
-+91 82910 25730
-
-Correct format:
-918291025730
-*/
-
-const WHATSAPP_NUMBER = "918291025730";
-
-
-/* ================= PROPERTY FORM ================= */
-
-const form =
-document.getElementById("leadForm");
-
-
-const toast =
-document.getElementById("formToast");
-
-
-function showError(
-field,
-error,
-show
-){
-
-  field.classList.toggle(
-    "error",
-    show
-  );
-
-  error.classList.toggle(
-    "show",
-    show
-  );
-
-}
-
-
-/* ================= FORM SUBMIT ================= */
-
-form.addEventListener(
-"submit",
-function(e){
-
-  e.preventDefault();
-
-
-  const name =
-  document.getElementById("fName");
-
-
-  const phone =
-  document.getElementById("fPhone");
-
-
-  const role =
-  document.getElementById("fRole");
-
-
-  const location =
-  document.getElementById("fLocation");
-
-
-  const nameOk =
-  name.value.trim().length > 1;
-
-
-  const phoneDigits =
-  phone.value.replace(/\D/g,"");
-
-
-  const phoneOk =
-  phoneDigits.length === 10;
-
-
-  const roleOk =
-  role.value !== "";
-
-
-  showError(
-
-    name.parentElement,
-
-    document.getElementById(
-      "err-fName"
-    ),
-
-    !nameOk
-
-  );
-
-
-  showError(
-
-    phone.parentElement,
-
-    document.getElementById(
-      "err-fPhone"
-    ),
-
-    !phoneOk
-
-  );
-
-
-  showError(
-
-    role.parentElement,
-
-    document.getElementById(
-      "err-fRole"
-    ),
-
-    !roleOk
-
-  );
-
-
-  if(
-    !nameOk ||
-    !phoneOk ||
-    !roleOk
-  ){
-
-    toast.classList.remove("show");
-
-    return;
-
-  }
-
-
-  /* ================= WHATSAPP MESSAGE ================= */
-
-  let message =
-    "Hi Hopebed! 👋\n\n" +
-
-    "I would like to get started with Hopebed.\n\n" +
-
-    "Name: " +
-    name.value.trim() +
-
-    "\n" +
-
-    "WhatsApp: " +
-    phone.value.trim() +
-
-    "\n" +
-
-    "I am a: " +
-    role.value;
-
-
-  if(
-    location.value.trim()
-  ){
-
-    message +=
-      "\nProperty Area: " +
-      location.value.trim();
-
-  }
-
-
-  message +=
-    "\n\nLooking forward to connecting with the Hopebed team!";
-
-
-  toast.classList.add("show");
-
-
-  const whatsappURL =
-
-    "https://wa.me/" +
-
-    WHATSAPP_NUMBER +
-
-    "?text=" +
-
-    encodeURIComponent(message);
-
-
-  /* OPEN WHATSAPP */
-
-  window.open(
-
-    whatsappURL,
-
-    "_blank"
-
-  );
-
-
-}
-
-);
-
 </script>
+
 
 </body>
 </html>
