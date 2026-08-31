@@ -2,1079 +2,1924 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Contact Hopebed — Stay Smart. Stay Verified."
-    >
-
-    <title>Contact Us — Hopebed</title>
-
-     <link
-        rel="icon"
-        type="image/png"
-        href="./assets/favicon.PNG"
-    >
-
-    <!-- Google Fonts -->
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- Main stylesheet -->
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-    <style>
-
-        .contact-page {
-            min-height: calc(100vh - 88px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 70px 20px;
-        }
-
-        .contact-wrapper {
-            width: min(1050px, 100%);
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .contact-intro {
-            max-width: 480px;
-        }
-
-        .contact-eyebrow {
-            margin: 0 0 16px;
-            color: var(--green-dark);
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: .12em;
-        }
-
-        .contact-intro h1 {
-            margin: 0 0 20px;
-            font-size: clamp(48px, 5vw, 68px);
-            line-height: 1.05;
-            letter-spacing: -.04em;
-        }
-
-        .contact-intro h1 span {
-            color: var(--green);
-        }
-
-        .contact-intro p {
-            margin: 0;
-            color: var(--text);
-            font-size: 18px;
-            line-height: 1.65;
-        }
-
-        .contact-card {
-            padding: 36px;
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(20, 50, 30, .08);
-        }
-
-        .contact-card h2 {
-            margin: 0 0 8px;
-            font-size: 28px;
-        }
-
-        .contact-card-subtitle {
-            margin: 0 0 26px;
-            color: var(--text);
-            line-height: 1.5;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 17px;
-        }
-
-        .form-group {
-            display: grid;
-            gap: 7px;
-        }
-
-        .form-group label {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 15px;
-            border: 1px solid #ccd9d0;
-            border-radius: 10px;
-            background: #fbfdfb;
-            color: var(--ink);
-            font: inherit;
-            outline: none;
-            transition: .2s ease;
-            box-sizing: border-box;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--green);
-            box-shadow: 0 0 0 3px rgba(22, 131, 58, .10);
-        }
-
-        .form-group textarea {
-            min-height: 135px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            min-height: 48px;
-            border: 0;
-            border-radius: 10px;
-            background: var(--green);
-            color: #ffffff;
-            font: inherit;
-            font-weight: 700;
-            cursor: pointer;
-            transition: .2s ease;
-        }
-
-        .submit-button:hover {
-            background: var(--green-dark);
-            transform: translateY(-1px);
-        }
-
-        .submit-button:disabled {
-            opacity: .65;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-status {
-            display: none;
-            margin-top: 4px;
-            padding: 12px 14px;
-            border-radius: 10px;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .form-status.success {
-            display: block;
-            background: #edf9f0;
-            color: #166534;
-            border: 1px solid #bbebc7;
-        }
-
-        .form-status.error {
-            display: block;
-            background: #fff1f1;
-            color: #b42318;
-            border: 1px solid #f3c1c1;
-        }
-
-        .direct-contact {
-            margin-top: 24px;
-            padding-top: 22px;
-            border-top: 1px solid var(--border);
-        }
-
-        .direct-contact p {
-            margin: 0 0 8px;
-            font-size: 14px;
-            color: var(--text);
-        }
-
-        .direct-contact a {
-            color: var(--green-dark);
-            font-weight: 700;
-        }
-
-        .back-home {
-            display: inline-flex;
-            margin-top: 28px;
-            color: var(--green-dark);
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        @media (max-width: 800px) {
-
-            .contact-page {
-                min-height: auto;
-                padding: 45px 16px 55px;
-            }
-
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .contact-intro {
-                max-width: 650px;
-                text-align: center;
-                margin: 0 auto;
-            }
-
-            .contact-intro h1 {
-                font-size: clamp(42px, 10vw, 58px);
-            }
-
-            .contact-card {
-                padding: 25px 20px;
-            }
-        }
-
-        @media (max-width: 430px) {
-
-            .contact-page {
-                padding-top: 35px;
-            }
-
-            .contact-card {
-                padding: 22px 16px;
-                border-radius: 16px;
-            }
-
-            .contact-card h2 {
-                font-size: 24px;
-            }
-        }
-
-        .site-footer {
-            margin-top: 40px;
-            background: #000;
-            color: #f5f8f5;
-            border-top: 1px solid rgba(143, 209, 79, .18);
-        }
-
-        .footer-container {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 52px 0 42px;
-            display: flex;
-            justify-content: space-between;
-            gap: 60px;
-        }
-
-        .footer-brand {
-            max-width: 420px;
-        }
-
-        .footer-logo {
-            display: inline-block;
-            color: #ffffff;
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: -.04em;
-            text-decoration: none;
-        }
-
-        .footer-brand > p {
-            margin: 6px 0 0;
-            color: #9bcf74;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .footer-brand .footer-description {
-            margin-top: 16px;
-            max-width: 360px;
-            color: #b7c0ba;
-            font-size: 14px;
-            line-height: 1.65;
-            font-weight: 400;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 32px;
-        }
-
-        .footer-links > div {
-            display: flex;
-            flex-direction: column;
-            gap: 11px;
-            min-width: 130px;
-        }
-
-        .footer-links h2 {
-            margin: 0 0 5px;
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 800;
-        }
-
-        .footer-links a {
-            color: #b7c0ba;
-            font-size: 14px;
-            text-decoration: none;
-            transition: color .18s ease;
-        }
-
-        .footer-links a:hover,
-        .footer-links a:focus-visible {
-            color: #9bcf74;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        .footer-bottom {
-            width: min(1120px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 18px 0 22px;
-            border-top: 1px solid rgba(255,255,255,.10);
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            color: #7f8b83;
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 700px) {
-
-            .footer-container {
-                width: min(100% - 32px, 1120px);
-                padding: 42px 0 32px;
-                flex-direction: column;
-                gap: 34px;
-            }
-
-            .footer-links {
-                gap: 42px;
-            }
-
-            .footer-bottom {
-                width: min(100% - 32px, 1120px);
-                flex-direction: column;
-                gap: 6px;
-            }
-
-        }
-
-    </style>
-    <link rel="canonical" href="https://hopebed.in/contact">
-    <!-- Open Graph / Social -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hopebed.in/contact">
-    <meta property="og:title" content="Contact Us — Hopebed">
-    <meta property="og:description" content="Contact Hopebed — Stay Smart. Stay Verified.">
-    <meta property="og:site_name" content="Hopebed">
-    <meta property="og:image" content="https://hopebed.in/assets/Hopebed_logo.PNG">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Contact Us — Hopebed">
-    <meta name="twitter:description" content="Contact Hopebed — Stay Smart. Stay Verified.">
-    <meta name="twitter:image" content="https://hopebed.in/assets/Hopebed_logo.PNG">
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+  name="description"
+  content="Contact Hopebed — Stay Smart. Stay Verified."
+>
+
+<title>Contact Us — Hopebed</title>
+
+<link
+  rel="icon"
+  type="image/png"
+  href="./assets/favicon.PNG"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
+<link
+  rel="canonical"
+  href="https://hopebed.in/contact.html"
+>
+
+
+<style>
+
+/* ========================================
+   ROOT & RESET
+======================================== */
+
+:root{
+  --green:#0d6b36;
+  --green-dark:#084a25;
+  --green-light:#159447;
+  --dark:#030506;
+  --text:#171b1d;
+  --muted:#66706d;
+  --line:#dce3df;
+  --soft:#f4f7f4;
+  --white:#ffffff;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,
+  BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+
+  color:var(--text);
+  background:#fff;
+  line-height:1.55;
+}
+
+body.menu-open{
+  overflow:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+textarea{
+  font:inherit;
+}
+
+.container{
+  width:min(1180px,calc(100% - 40px));
+  margin:auto;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.nav{
+  height:84px;
+  background:var(--dark);
+  color:#fff;
+
+  display:flex;
+  align-items:center;
+
+  position:sticky;
+  top:0;
+
+  z-index:1000;
+}
+
+.nav-inner{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  height:70px;
+}
+
+.brand-logo{
+  width:210px;
+  max-height:65px;
+  height:auto;
+
+  object-fit:contain;
+  display:block;
+}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.contact{
+  min-height:46px;
+
+  display:flex;
+  align-items:center;
+
+  border:1px solid #2f8b57;
+  border-radius:10px;
+
+  padding:0 20px;
+
+  font-size:14px;
+  font-weight:700;
+
+  transition:.2s ease;
+}
+
+.contact:hover{
+  background:var(--green);
+}
+
+
+/* ========================================
+   HAMBURGER
+======================================== */
+
+.menu-btn{
+  width:48px;
+  height:48px;
+
+  border:0;
+  background:transparent;
+
+  color:#fff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+
+  font-size:30px;
+}
+
+
+/* ========================================
+   MOBILE MENU OVERLAY
+======================================== */
+
+.mobile-menu-overlay{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,.45);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:
+    opacity .3s ease,
+    visibility .3s ease;
+
+  z-index:1998;
+}
+
+.mobile-menu-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobile-menu{
+  position:fixed;
+
+  top:0;
+  right:0;
+
+  width:min(420px,100%);
+  height:100vh;
+
+  background:#ffffff;
+
+  z-index:2000;
+
+  display:flex;
+  flex-direction:column;
+
+  padding:0 24px 24px;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateX(45px);
+
+  transition:
+    transform .35s cubic-bezier(.22,.61,.36,1),
+    opacity .25s ease,
+    visibility .35s ease;
+
+  box-shadow:
+    -20px 0 50px rgba(0,0,0,.18);
+}
+
+.mobile-menu.active{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(0);
+}
+
+
+/* ========================================
+   MENU HEADER
+======================================== */
+
+.mobile-menu-header{
+  min-height:84px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  border-bottom:1px solid #e7ece8;
+}
+
+.mobile-menu-brand{
+  display:flex;
+  align-items:center;
+}
+
+.mobile-menu-logo{
+  width:180px;
+  max-height:58px;
+
+  object-fit:contain;
+}
+
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.mobile-menu-close{
+  width:48px;
+  height:48px;
+
+  border:none;
+
+  background:#f3f6f4;
+
+  border-radius:50%;
+
+  color:#171b1d;
+
+  font-size:30px;
+
+  cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* ========================================
+   MENU LINKS
+======================================== */
+
+.mobile-menu-nav{
+  display:flex;
+  flex-direction:column;
+
+  padding:28px 0;
+
+  gap:6px;
+}
+
+.menu-link{
+  min-height:52px;
+
+  display:flex;
+  align-items:center;
+
+  padding:14px 16px;
+
+  border-radius:10px;
+
+  color:var(--text);
+
+  font-size:17px;
+  font-weight:600;
+}
+
+.menu-link:hover{
+  background:#f3f7f4;
+  color:var(--green);
+}
+
+.menu-list-property{
+  min-height:58px;
+
+  margin:12px 0;
+
+  padding:16px 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #168342,
+      #0c602f
+    );
+
+  color:#fff;
+
+  border-radius:10px;
+
+  font-weight:800;
+
+  display:flex;
+  justify-content:space-between;
+}
+
+.menu-arrow{
+  font-size:22px;
+}
+
+
+/* ========================================
+   MENU BOTTOM
+======================================== */
+
+.mobile-menu-actions{
+  margin-top:auto;
+
+  padding-top:20px;
+
+  border-top:1px solid #e7ece8;
+}
+
+.menu-whatsapp{
+  min-height:54px;
+
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #d9e3dc;
+
+  border-radius:10px;
+
+  font-weight:700;
+}
+
+
+/* ========================================
+   CONTACT HERO
+======================================== */
+
+.contact-page{
+  min-height:calc(100vh - 84px);
+
+  background:
+    linear-gradient(
+      90deg,
+      #f8faf8 0%,
+      #f7f8f5 58%,
+      #ddd9cf 100%
+    );
+
+  position:relative;
+  overflow:hidden;
+
+  padding:80px 0;
+}
+
+.contact-page:after{
+  content:"";
+
+  position:absolute;
+
+  right:-4%;
+  top:0;
+
+  width:44%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.25),
+      rgba(20,55,32,.1)
+    ),
+    linear-gradient(
+      90deg,
+      #b8aa98,
+      #e8e0d4 35%,
+      #8c7764
+    );
+
+  opacity:.45;
+}
+
+.contact-wrapper{
+  position:relative;
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:1fr .95fr;
+
+  gap:70px;
+
+  align-items:center;
+}
+
+
+/* ========================================
+   CONTACT INTRO
+======================================== */
+
+.contact-intro{
+  max-width:620px;
+}
+
+.contact-eyebrow{
+  font-size:12px;
+  font-weight:800;
+
+  letter-spacing:2px;
+
+  color:#35714e;
+
+  margin:0 0 14px;
+}
+
+.contact-intro h1{
+  font-size:56px;
+
+  line-height:1.08;
+
+  letter-spacing:-2.5px;
+
+  margin:0 0 20px;
+}
+
+.contact-intro h1 span{
+  color:var(--green);
+}
+
+.contact-intro p{
+  font-size:17px;
+
+  color:#4d5554;
+
+  max-width:560px;
+
+  margin:0;
+}
+
+.contact-notes{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:18px;
+
+  margin-top:28px;
+
+  font-size:13px;
+
+  color:#59615e;
+}
+
+.contact-notes span:before{
+  content:"✓";
+
+  color:#269657;
+
+  font-weight:bold;
+
+  margin-right:6px;
+}
+
+.back-home{
+  display:inline-flex;
+
+  margin-top:28px;
+
+  min-height:52px;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:0 22px;
+
+  border-radius:8px;
+
+  border:1px solid #68716d;
+
+  background:#fff;
+
+  font-weight:800;
+
+  font-size:15px;
+
+  transition:.2s ease;
+}
+
+.back-home:hover{
+  transform:translateY(-2px);
+}
+
+
+/* ========================================
+   CONTACT CARD
+======================================== */
+
+.contact-card{
+  background:rgba(255,255,255,.97);
+
+  border-radius:17px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 25px 55px
+    rgba(0,0,0,.22);
+
+  max-width:500px;
+
+  justify-self:end;
+
+  width:100%;
+}
+
+.contact-card-head{
+  padding:23px 25px 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0d3c25,
+      #123e29
+    );
+
+  color:#fff;
+}
+
+.contact-card-head h2{
+  font-size:22px;
+  margin:0 0 4px;
+}
+
+.contact-card-head p{
+  margin:0;
+
+  color:#e8d16e;
+
+  font-size:13px;
+
+  font-weight:700;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.contact-form{
+  padding:22px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:14px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+
+  gap:7px;
+}
+
+.form-group label{
+  font-size:13px;
+
+  font-weight:700;
+
+  color:#3d4743;
+}
+
+.form-group input,
+.form-group textarea{
+  width:100%;
+
+  border:1px solid #d9dfdc;
+
+  border-radius:8px;
+
+  padding:14px 15px;
+
+  background:#fff;
+
+  color:var(--text);
+
+  outline:none;
+
+  transition:.2s ease;
+}
+
+.form-group input{
+  height:54px;
+}
+
+.form-group textarea{
+  min-height:135px;
+
+  resize:vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+  border-color:var(--green);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(13,107,54,.10);
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.submit-button{
+  width:100%;
+
+  min-height:56px;
+
+  border-radius:8px;
+
+  border:0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #168342,
+      #0c602f
+    );
+
+  color:#fff;
+
+  font-size:15px;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  transition:.2s ease;
+
+  box-shadow:
+    0 8px 22px
+    rgba(17,102,50,.2);
+}
+
+.submit-button:hover{
+  transform:translateY(-2px);
+}
+
+.submit-button:disabled{
+  opacity:.65;
+
+  cursor:not-allowed;
+}
+
+
+/* ========================================
+   FORM STATUS
+======================================== */
+
+.form-status{
+  display:none;
+
+  padding:11px 13px;
+
+  border-radius:8px;
+
+  font-size:13px;
+}
+
+.form-status.success{
+  display:block;
+
+  background:#eaf6ee;
+
+  border:1px solid #b7ddc3;
+
+  color:#1b6b3a;
+}
+
+.form-status.error{
+  display:block;
+
+  background:#fff1f1;
+
+  border:1px solid #f0c4c4;
+
+  color:#b42318;
+}
+
+
+/* ========================================
+   DIRECT CONTACT
+======================================== */
+
+.direct-contact{
+  margin:0 22px 22px;
+
+  padding-top:18px;
+
+  border-top:1px solid #e4e9e6;
+
+  text-align:center;
+}
+
+.direct-contact p{
+  margin:0 0 5px;
+
+  font-size:12px;
+
+  color:#69716e;
+}
+
+.direct-contact a{
+  color:var(--green);
+
+  font-size:14px;
+
+  font-weight:800;
+}
+
+
+/* ========================================
+   WHATSAPP
+======================================== */
+
+.whatsapp{
+  position:fixed;
+
+  right:22px;
+  bottom:22px;
+
+  width:60px;
+  height:60px;
+
+  border-radius:50%;
+
+  background:#25D366;
+
+  color:#fff;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:27px;
+
+  z-index:900;
+
+  box-shadow:
+    0 10px 25px
+    rgba(0,0,0,.2);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer{
+  background:#030506;
+
+  color:#fff;
+
+  padding:60px 0 0;
+}
+
+.footer-grid{
+  display:grid;
+
+  grid-template-columns:
+    2fr 1fr 1fr 1.4fr;
+
+  gap:45px;
+
+  padding-bottom:45px;
+}
+
+.footer-logo{
+  width:220px;
+
+  max-width:100%;
+
+  height:auto;
+
+  object-fit:contain;
+
+  margin-bottom:18px;
+}
+
+.footer-brand p{
+  color:#aeb9b3;
+
+  max-width:330px;
+
+  font-size:14px;
+}
+
+.footer h3{
+  font-size:16px;
+
+  margin:8px 0 18px;
+}
+
+.footer-links{
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+}
+
+.footer-links a{
+  color:#aeb9b3;
+
+  font-size:14px;
+
+  transition:.2s;
+}
+
+.footer-links a:hover{
+  color:#fff;
+}
+
+.social-links{
+  display:flex;
+
+  gap:10px;
+}
+
+.social-links a{
+  width:44px;
+  height:44px;
+
+  border:1px solid #2b3831;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+
+  font-weight:700;
+
+  transition:.2s;
+}
+
+.social-links a:hover{
+  background:var(--green);
+
+  border-color:var(--green);
+}
+
+.footer-bottom{
+  border-top:1px solid #1d2923;
+
+  padding:20px 0;
+
+  color:#849088;
+
+  font-size:13px;
+}
+
+.footer-bottom-inner{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media(max-width:800px){
+
+  .container{
+    width:min(100% - 28px,700px);
+  }
+
+  .nav{
+    height:78px;
+  }
+
+  .brand-logo{
+    width:185px;
+    max-height:58px;
+  }
+
+  .contact-page{
+    padding:60px 0;
+  }
+
+  .contact-wrapper{
+    grid-template-columns:1fr;
+
+    gap:40px;
+  }
+
+  .contact-intro{
+    text-align:center;
+
+    margin:auto;
+  }
+
+  .contact-intro p{
+    margin:auto;
+  }
+
+  .contact-notes{
+    justify-content:center;
+  }
+
+  .contact-card{
+    max-width:560px;
+
+    justify-self:center;
+  }
+
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:500px){
+
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  .nav{
+    height:74px;
+  }
+
+  .contact{
+    display:none;
+  }
+
+  .brand-logo{
+    width:170px;
+
+    max-height:52px;
+  }
+
+  .mobile-menu{
+    width:100%;
+
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .mobile-menu-logo{
+    width:165px;
+  }
+
+  .contact-page{
+    padding:45px 0;
+  }
+
+  .contact-intro h1{
+    font-size:42px;
+  }
+
+  .contact-card-head{
+    padding:21px 20px 17px;
+  }
+
+  .contact-form{
+    padding:18px;
+  }
+
+  .direct-contact{
+    margin:0 18px 18px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+
+    gap:28px;
+  }
+
+  .footer-bottom-inner{
+    flex-direction:column;
+  }
+
+}
+
+</style>
 
 </head>
 
 
-<body><a href="https://hopebed.in/cdn-cgi/content?id=V2AUWBHWZ_iTqsI2mYoY8pLkuAbFj7ZlNVQWV3.V.Xw-1788002511.0550408-1.2.1.1-2nqqLLVeSHWOMRLznx.2iThsUxEg6Uj9V_L4G20oJeYColsiYs2sg23mv.OGqLeC" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<body>
 
 
-<header class="site-header">
+<!-- ========================================
+     NAVBAR
+======================================== -->
 
-    <div class="header-container">
+<nav class="nav">
 
-        <a
-            class="brand"
-            href="index.html"
-            aria-label="Hopebed home"
-        >
+  <div class="container nav-inner">
 
-            <img
-                class="hopebed-logo"
-                src="./assets/Hopebed_logo.PNG"
-                alt="Hopebed — Stay Smart. Stay Verified." width="180" height="auto"
-            >
+    <a href="index.html" class="brand">
 
-        </a>
+      <img
+        src="./assets/Hopebed_logo.PNG"
+        alt="Hopebed - Stay Smart. Stay Verified."
+        class="brand-logo"
+      >
+
+    </a>
 
 
-        <a
-            class="contact-button"
-            href="index.html"
-        >
-            ← Back
-        </a>
+    <div class="nav-actions">
+
+      <a href="contact.html" class="contact">
+        Contact Us
+      </a>
+
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
     </div>
 
-</header>
+  </div>
+
+</nav>
 
 
+<!-- ========================================
+     MOBILE MENU OVERLAY
+======================================== -->
+
+<div
+  class="mobile-menu-overlay"
+  id="menuOverlay"
+></div>
+
+
+<!-- ========================================
+     MOBILE MENU
+======================================== -->
+
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
+
+  <div class="mobile-menu-header">
+
+    <a
+      href="index.html"
+      class="mobile-menu-brand"
+    >
+
+      <img
+        src="./assets/Hopebed_logo.PNG"
+        alt="Hopebed"
+        class="mobile-menu-logo"
+      >
+
+    </a>
+
+
+    <button
+      type="button"
+      class="mobile-menu-close"
+      id="menuClose"
+      aria-label="Close menu"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <nav
+    class="mobile-menu-nav"
+    aria-label="Mobile navigation"
+  >
+
+    <a href="index.html" class="menu-link">
+      Home
+    </a>
+
+
+    <a href="index.html#how" class="menu-link">
+      Find a Stay
+    </a>
+
+
+    <a
+      href="index.html#list"
+      class="menu-link menu-list-property"
+    >
+
+      <span>
+        List Your Property
+      </span>
+
+      <span class="menu-arrow">
+        →
+      </span>
+
+    </a>
+
+
+    <a href="index.html#how" class="menu-link">
+      How It Works
+    </a>
+
+
+    <a href="about.html" class="menu-link">
+      About Hopebed
+    </a>
+
+
+    <a href="contact.html" class="menu-link">
+      Contact
+    </a>
+
+  </nav>
+
+
+  <div class="mobile-menu-actions">
+
+    <a
+      href="https://wa.me/918291025730?text=Hi%20Hopebed%2C%20I%27d%20like%20to%20know%20more."
+      target="_blank"
+      rel="noopener"
+      class="menu-whatsapp"
+    >
+
+      Chat on WhatsApp
+
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- ========================================
+     CONTACT PAGE
+======================================== -->
 
 <main class="contact-page">
 
-    <div class="contact-wrapper">
+  <div class="container contact-wrapper">
 
 
-        <!-- LEFT SIDE -->
+    <!-- LEFT -->
 
-        <section class="contact-intro">
+    <section class="contact-intro">
 
-            <p class="contact-eyebrow">
-                GET IN TOUCH
-            </p>
+      <div class="contact-eyebrow">
+        GET IN TOUCH WITH HOPEBED
+      </div>
 
 
-            <h1>
-                Let's talk<br>
-                <span>Hopebed.</span>
-            </h1>
+      <h1>
 
+        Let's build better
 
-            <p>
-                Have a question, suggestion, partnership idea,
-                or simply want to know what we're building?
-                We'd love to hear from you.
-            </p>
+        <br>
 
+        <span>
+          stays together.
+        </span>
 
-            <a
-                href="index.html"
-                class="back-home"
-            >
-                ← Back to Hopebed
-            </a>
+      </h1>
 
-        </section>
 
+      <p>
 
+        Have a question, suggestion, partnership idea,
+        or simply want to know what we're building?
 
-        <!-- RIGHT SIDE -->
+        We'd love to hear from you.
 
-        <section class="contact-card">
+      </p>
 
-            <h2>
-                Contact Us
-            </h2>
 
+      <div class="contact-notes">
 
-            <p class="contact-card-subtitle">
-                Send us a message and we'll get back to you.
-            </p>
+        <span>Questions & Support</span>
 
+        <span>Partnership Opportunities</span>
 
+        <span>Property Listings</span>
 
-            <!-- CONTACT FORM -->
+      </div>
 
-            <form
-                class="contact-form"
-                id="contactForm"
-                novalidate
-            >
 
+      <a
+        href="index.html"
+        class="back-home"
+      >
 
-                <!-- NAME -->
+        ← Back to Hopebed
 
-                <div class="form-group">
+      </a>
 
-                    <label for="name">
-                        Name
-                    </label>
+    </section>
 
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Your name"
-                        autocomplete="name"
-                        maxlength="100"
-                        required
-                    >
 
-                </div>
+    <!-- RIGHT -->
 
+    <section class="contact-card">
 
 
-                <!-- EMAIL -->
+      <div class="contact-card-head">
 
-                <div class="form-group">
+        <h2>
+          Contact Us
+        </h2>
 
-                    <label for="email">
-                        Email
-                    </label>
+        <p>
+          Send us a message. We'll get back to you.
+        </p>
 
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="you@example.com"
-                        autocomplete="email"
-                        maxlength="150"
-                        required
-                    >
+      </div>
 
-                </div>
 
+      <form
+        class="contact-form"
+        id="contactForm"
+        novalidate
+      >
 
 
-                <!-- MESSAGE -->
+        <div class="form-group">
 
-                <div class="form-group">
+          <label for="name">
+            Your Name
+          </label>
 
-                    <label for="message">
-                        Message
-                    </label>
-
-                    <textarea
-                        id="message"
-                        name="message"
-                        placeholder="Tell us how we can help..."
-                        maxlength="2000"
-                        required
-                    ></textarea>
-
-                </div>
-
-
-
-                <!-- STATUS -->
-
-                <div
-                    id="formStatus"
-                    class="form-status"
-                    role="status"
-                    aria-live="polite"
-                ></div>
-
-
-
-                <!-- SUBMIT -->
-
-                <button
-                    type="submit"
-                    class="submit-button"
-                    id="submitButton"
-                >
-                    Send Message
-                </button>
-
-
-            </form>
-
-
-
-            <!-- DIRECT EMAIL -->
-
-            <div class="direct-contact">
-
-                <p>
-                    Prefer email?
-                </p>
-
-                <a href="mailto:hello@hopebed.in">
-                    hello@hopebed.in
-                </a>
-
-            </div>
-
-
-        </section>
-
-    </div>
-
-</main>
-
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer class="site-footer">
-
-    <div class="footer-container">
-
-
-        <!-- Hopebed Brand -->
-
-        <div class="footer-brand">
-
-
-            <a
-                href="index.html"
-                class="footer-logo"
-                aria-label="Hopebed home"
-            >
-                Hopebed
-            </a>
-
-
-            <p>
-                Stay Smart. Stay Verified.
-            </p>
-
-
-            <p class="footer-description">
-                A smarter way to discover, book and verify stays in India.
-            </p>
-
-
-            <!-- Social Media Icons -->
-
-            <div class="footer-social">
-
-
-                <!-- Instagram -->
-
-                <a
-                    href="https://www.instagram.com/hopebed.in"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Follow Hopebed on Instagram"
-                    title="Instagram"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-
-                        <rect
-                            x="3"
-                            y="3"
-                            width="18"
-                            height="18"
-                            rx="5"
-                        ></rect>
-
-                        <circle
-                            cx="12"
-                            cy="12"
-                            r="4"
-                        ></circle>
-
-                        <circle
-                            cx="17.5"
-                            cy="6.5"
-                            r=".8"
-                            fill="currentColor"
-                            stroke="none"
-                        ></circle>
-
-                    </svg>
-
-                </a>
-
-
-
-                <!-- Facebook -->
-
-                <a
-                    href="https://www.facebook.com/share/1EjBmgsgFB/?mibextid=wwXIfr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Follow Hopebed on Facebook"
-                    title="Facebook"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-
-                        <path
-                            d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1Z"
-                        ></path>
-
-                    </svg>
-
-                </a>
-
-
-
-                <!-- LinkedIn -->
-
-                <a
-                    href="https://www.linkedin.com/company/hopabed/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Follow Hopebed on LinkedIn"
-                    title="LinkedIn"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-
-                        <rect
-                            x="4"
-                            y="4"
-                            width="16"
-                            height="16"
-                            rx="2"
-                        ></rect>
-
-                        <path d="M8 10v6"></path>
-
-                        <path d="M8 7.5v.1"></path>
-
-                        <path
-                            d="M12 16v-3.2c0-1.8 1-2.8 2.5-2.8s2.5 1 2.5 2.8V16"
-                        ></path>
-
-                        <path d="M12 10v6"></path>
-
-                    </svg>
-
-                </a>
-
-
-            </div>
-
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            autocomplete="name"
+            maxlength="100"
+            required
+          >
 
         </div>
 
 
+        <div class="form-group">
 
-        <!-- Footer Links -->
+          <label for="email">
+            Email Address
+          </label>
 
-        <nav
-            class="footer-links"
-            aria-label="Footer navigation"
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            maxlength="150"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="message">
+            Your Message
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Tell us how we can help..."
+            maxlength="2000"
+            required
+          ></textarea>
+
+        </div>
+
+
+        <div
+          id="formStatus"
+          class="form-status"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+
+        <button
+          type="submit"
+          class="submit-button"
+          id="submitButton"
         >
 
+          Send Message →
 
-            <!-- Explore -->
-
-            <div>
-
-                <h2>
-                    Explore
-                </h2>
-
-                <a href="./index.html">
-                    Home
-                </a>
-
-                <a href="./vision.html">
-                    Our Vision
-                </a>
-
-                <a href="./about.html">
-                    About Hopebed
-                </a>
-
-            </div>
+        </button>
 
 
-
-            <!-- Support -->
-
-            <div>
-
-                <h2>
-                    Support
-                </h2>
-
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
-            </div>
+      </form>
 
 
-        </nav>
+      <div class="direct-contact">
 
+        <p>
+          Prefer email?
+        </p>
+
+        <a href="mailto:hello@hopebed.in">
+          hello@hopebed.in
+        </a>
+
+      </div>
+
+
+    </section>
+
+
+  </div>
+
+</main>
+
+
+<!-- ========================================
+     FLOATING WHATSAPP
+======================================== -->
+
+<a
+  href="https://wa.me/918291025730?text=Hi%20Hopebed%2C%20I%27d%20like%20to%20know%20more."
+  class="whatsapp"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat on WhatsApp"
+>
+
+  💬
+
+</a>
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+
+    <!-- BRAND -->
+
+    <div class="footer-brand">
+
+      <img
+        src="./assets/Hopebed_logo.PNG"
+        alt="Hopebed"
+        class="footer-logo"
+      >
+
+      <p>
+        <strong>
+          Stay Smart. Stay Verified.
+        </strong>
+      </p>
+
+      <p>
+        Hopebed is building a trusted platform for finding,
+        booking and verifying stays across India.
+      </p>
 
     </div>
 
 
+    <!-- QUICK LINKS -->
 
-    <!-- Footer Bottom -->
+    <div>
 
-    <div class="footer-bottom">
+      <h3>
+        Quick Links
+      </h3>
 
-        <p>
-            © 2026 Hopebed. All rights reserved.
-        </p>
+      <div class="footer-links">
 
-        <p>
-            Built for smarter, more confident stays in India.
-        </p>
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="index.html#how">
+          How It Works
+        </a>
+
+        <a href="index.html#list">
+          List Your Property
+        </a>
+
+        <a href="about.html">
+          About Us
+        </a>
+
+      </div>
 
     </div>
 
+
+    <!-- CONTACT -->
+
+    <div>
+
+      <h3>
+        Contact
+      </h3>
+
+      <div class="footer-links">
+
+        <a href="mailto:hello@hopebed.in">
+          hello@hopebed.in
+        </a>
+
+        <a
+          href="https://wa.me/918291025730"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp Us
+        </a>
+
+        <a href="index.html#list">
+          Become a Property Partner
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- SOCIAL -->
+
+    <div>
+
+      <h3>
+        Follow Hopebed
+      </h3>
+
+      <p style="color:#aeb9b3;font-size:14px;">
+
+        Follow our journey as we build the future
+        of verified stays.
+
+      </p>
+
+
+      <div class="social-links">
+
+        <a
+          href="https://www.linkedin.com/company/hopabed/"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+        >
+          in
+        </a>
+
+        <a
+          href="https://www.instagram.com/hopebed.in"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+        >
+          ◎
+        </a>
+
+        <a
+          href="https://www.facebook.com/share/1EjBmgsgFB/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener"
+          aria-label="Facebook"
+        >
+          f
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <div class="container footer-bottom-inner">
+
+      <div>
+        © 2026 Hopebed. All rights reserved.
+      </div>
+
+      <div>
+        Stay Smart. Stay Verified.
+      </div>
+
+    </div>
+
+  </div>
 
 </footer>
 
 
-
-
-<!-- ============================================
-     CONTACT FORM JAVASCRIPT
-     ============================================ -->
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
 
 <script>
 
-    const contactForm =
-        document.getElementById("contactForm");
+document.addEventListener("DOMContentLoaded", function(){
 
-    const submitButton =
-        document.getElementById("submitButton");
 
-    const formStatus =
-        document.getElementById("formStatus");
+  /* =====================================
+     MOBILE MENU
+  ===================================== */
 
+  const menuBtn =
+    document.getElementById("menuBtn");
 
-    contactForm.addEventListener(
-        "submit",
-        async function (event) {
+  const mobileMenu =
+    document.getElementById("mobileMenu");
 
-            event.preventDefault();
+  const menuClose =
+    document.getElementById("menuClose");
 
+  const menuOverlay =
+    document.getElementById("menuOverlay");
 
-            // Clear previous status
-
-            formStatus.className =
-                "form-status";
-
-            formStatus.textContent =
-                "";
-
-
-            // Get values
-
-            const name =
-                document
-                    .getElementById("name")
-                    .value
-                    .trim();
-
-            const email =
-                document
-                    .getElementById("email")
-                    .value
-                    .trim();
-
-            const message =
-                document
-                    .getElementById("message")
-                    .value
-                    .trim();
-
-
-            // Basic validation
-
-            if (!name) {
-
-                showError(
-                    "Please enter your name."
-                );
-
-                document
-                    .getElementById("name")
-                    .focus();
-
-                return;
-            }
-
-
-            if (!email) {
-
-                showError(
-                    "Please enter your email address."
-                );
-
-                document
-                    .getElementById("email")
-                    .focus();
-
-                return;
-            }
-
-
-            const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-            if (!emailPattern.test(email)) {
-
-                showError(
-                    "Please enter a valid email address."
-                );
-
-                document
-                    .getElementById("email")
-                    .focus();
-
-                return;
-            }
-
-
-            if (!message) {
-
-                showError(
-                    "Please enter your message."
-                );
-
-                document
-                    .getElementById("message")
-                    .focus();
-
-                return;
-            }
-
-
-
-            // Disable button
-
-            submitButton.disabled = true;
-
-            submitButton.textContent =
-                "Sending...";
-
-
-            try {
-
-                /*
-                 * Send the form to the Cloudflare Worker.
-                 *
-                 * The Worker handles the connection
-                 * to Google Apps Script / Google Sheet.
-                 */
-
-                const response =
-                    await fetch(
-                        "/api/submit",
-                        {
-                            method: "POST",
-
-                            headers: {
-                                "Content-Type":
-                                    "application/json"
-                            },
-
-                            body:
-                                JSON.stringify({
-                                    name: name,
-                                    email: email,
-                                    message: message
-                                })
-                        }
-                    );
-
-
-                let result;
-
-                try {
-
-                    result =
-                        await response.json();
-
-                } catch (jsonError) {
-
-                    throw new Error(
-                        "Invalid server response."
-                    );
-                }
-
-
-
-                // Check server response
-
-                if (
-                    !response.ok ||
-                    !result.success
-                ) {
-
-                    throw new Error(
-                        result.error ||
-                        "Unable to send your message."
-                    );
-                }
-
-
-
-                // SUCCESS
-
-                formStatus.className =
-                    "form-status success";
-
-                formStatus.textContent =
-                    "✓ Message sent successfully. Thank you for contacting Hopebed!";
-
-
-                // Clear form
-
-                contactForm.reset();
-
-
-            } catch (error) {
-
-                console.error(
-                    "Hopebed contact form error:",
-                    error
-                );
-
-
-                // ERROR
-
-                showError(
-                    "Sorry, we couldn't send your message right now. Please try again."
-                );
-
-
-            } finally {
-
-                submitButton.disabled = false;
-
-                submitButton.textContent =
-                    "Send Message";
-
-            }
-
-        }
+  const menuLinks =
+    document.querySelectorAll(
+      ".mobile-menu .menu-link"
     );
 
 
+  function openMenu(){
 
-    // ============================================
-    // ERROR HELPER
-    // ============================================
+    mobileMenu.classList.add("active");
 
-    function showError(message) {
+    menuOverlay.classList.add("active");
 
-        formStatus.className =
-            "form-status error";
+    document.body.classList.add("menu-open");
 
-        formStatus.textContent =
-            "✕ " + message;
+    menuBtn.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+  }
+
+
+  function closeMenu(){
+
+    mobileMenu.classList.remove("active");
+
+    menuOverlay.classList.remove("active");
+
+    document.body.classList.remove("menu-open");
+
+    menuBtn.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+
+  menuBtn.addEventListener(
+    "click",
+    openMenu
+  );
+
+
+  menuClose.addEventListener(
+    "click",
+    closeMenu
+  );
+
+
+  menuOverlay.addEventListener(
+    "click",
+    closeMenu
+  );
+
+
+  menuLinks.forEach(function(link){
+
+    link.addEventListener(
+      "click",
+      closeMenu
+    );
+
+  });
+
+
+  document.addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Escape"){
+
+        closeMenu();
+
+      }
 
     }
+  );
+
+
+  /* =====================================
+     CONTACT FORM
+  ===================================== */
+
+  const contactForm =
+    document.getElementById("contactForm");
+
+  const submitButton =
+    document.getElementById("submitButton");
+
+  const formStatus =
+    document.getElementById("formStatus");
+
+
+  contactForm.addEventListener(
+    "submit",
+    async function(event){
+
+      event.preventDefault();
+
+
+      formStatus.className =
+        "form-status";
+
+      formStatus.textContent =
+        "";
+
+
+      const name =
+        document
+          .getElementById("name")
+          .value
+          .trim();
+
+
+      const email =
+        document
+          .getElementById("email")
+          .value
+          .trim();
+
+
+      const message =
+        document
+          .getElementById("message")
+          .value
+          .trim();
+
+
+      if(!name){
+
+        showError(
+          "Please enter your name."
+        );
+
+        return;
+
+      }
+
+
+      if(!email){
+
+        showError(
+          "Please enter your email address."
+        );
+
+        return;
+
+      }
+
+
+      const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+      if(!emailPattern.test(email)){
+
+        showError(
+          "Please enter a valid email address."
+        );
+
+        return;
+
+      }
+
+
+      if(!message){
+
+        showError(
+          "Please enter your message."
+        );
+
+        return;
+
+      }
+
+
+      submitButton.disabled = true;
+
+      submitButton.textContent =
+        "Sending...";
+
+
+      try{
+
+        const response =
+          await fetch(
+            "/api/submit",
+            {
+
+              method:"POST",
+
+              headers:{
+                "Content-Type":
+                  "application/json"
+              },
+
+              body:
+                JSON.stringify({
+                  name:name,
+                  email:email,
+                  message:message
+                })
+
+            }
+          );
+
+
+        let result;
+
+
+        try{
+
+          result =
+            await response.json();
+
+        }catch(jsonError){
+
+          throw new Error(
+            "Invalid server response."
+          );
+
+        }
+
+
+        if(
+          !response.ok ||
+          !result.success
+        ){
+
+          throw new Error(
+            result.error ||
+            "Unable to send your message."
+          );
+
+        }
+
+
+        formStatus.className =
+          "form-status success";
+
+
+        formStatus.textContent =
+          "✓ Message sent successfully. Thank you for contacting Hopebed!";
+
+
+        contactForm.reset();
+
+
+      }catch(error){
+
+        console.error(
+          "Hopebed contact form error:",
+          error
+        );
+
+
+        showError(
+          "Sorry, we couldn't send your message right now. Please try again."
+        );
+
+      }finally{
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+          "Send Message →";
+
+      }
+
+    }
+  );
+
+
+  function showError(message){
+
+    formStatus.className =
+      "form-status error";
+
+    formStatus.textContent =
+      "✕ " + message;
+
+  }
+
+
+});
 
 </script>
 
