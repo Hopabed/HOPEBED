@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+  name="description"
+  content="Learn how Hopebed helps you find, book and verify trusted stays in India."
+>
+
+<title>How It Works | Hopebed</title>
+
+<link
+  rel="icon"
+  type="image/png"
+  href="./assets/favicon.PNG"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+:root{
+  --green:#0d6b36;
+  --green-dark:#084a25;
+  --green-light:#159447;
+  --dark:#030506;
+  --text:#171b1d;
+  --muted:#66706d;
+  --line:#dce3df;
+  --soft:#f4f7f4;
+  --white:#ffffff;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  color:var(--text);
+  background:#fff;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1100px,calc(100% - 40px));
+  margin:auto;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav{
+  height:84px;
+  background:var(--dark);
+  display:flex;
+  align-items:center;
+}
+
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+}
+
+.brand-logo{
+  width:200px;
+  max-height:62px;
+  object-fit:contain;
+}
+
+.back-btn{
+  min-height:46px;
+  display:flex;
+  align-items:center;
+  padding:0 20px;
+  border:1px solid #2f8b57;
+  border-radius:10px;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.back-btn:hover{
+  background:var(--green);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:90px 0 80px;
+  text-align:center;
+  background:
+    linear-gradient(
+      135deg,
+      #f5f8f5,
+      #edf4ee
+    );
+}
+
+.eyebrow{
+  color:var(--green);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.hero h1{
+  margin:15px 0 20px;
+  font-size:clamp(42px,6vw,68px);
+  line-height:1.08;
+  letter-spacing:-2px;
+}
+
+.hero h1 span{
+  color:var(--green);
+}
+
+.hero p{
+  max-width:680px;
+  margin:auto;
+  color:var(--muted);
+  font-size:17px;
+}
+
+
+/* =========================
+   HOW STEPS
+========================= */
+
+.how-section{
+  padding:90px 0;
+}
+
+.section-title{
+  text-align:center;
+  font-size:34px;
+  margin:0 0 15px;
+}
+
+.section-subtitle{
+  text-align:center;
+  max-width:650px;
+  margin:0 auto 60px;
+  color:var(--muted);
+}
+
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+
+.step{
+  padding:38px 28px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#fff;
+  position:relative;
+  transition:.25s;
+}
+
+.step:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px rgba(0,0,0,.08);
+}
+
+
+.step-number{
+  width:40px;
+  height:40px;
+
+  display:grid;
+  place-items:center;
+
+  background:var(--green);
+  color:#fff;
+
+  border-radius:50%;
+
+  font-weight:800;
+
+  margin-bottom:25px;
+}
+
+
+.step-icon{
+  font-size:45px;
+  margin-bottom:18px;
+}
+
+
+.step h2{
+  font-size:25px;
+  margin:0 0 12px;
+}
+
+
+.step p{
+  color:var(--muted);
+  margin:0;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.details{
+  background:var(--soft);
+  padding:90px 0;
+}
+
+
+.detail-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+
+.detail-content h2{
+  font-size:36px;
+  margin:0 0 20px;
+}
+
+
+.detail-content p{
+  color:var(--muted);
+}
+
+
+.detail-list{
+  display:grid;
+  gap:16px;
+  margin-top:28px;
+}
+
+
+.detail-item{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+}
+
+
+.check{
+  width:30px;
+  height:30px;
+
+  flex-shrink:0;
+
+  display:grid;
+  place-items:center;
+
+  background:#e1f2e6;
+  color:var(--green);
+
+  border-radius:50%;
+
+  font-weight:800;
+}
+
+
+.detail-card{
+  background:#fff;
+
+  padding:35px;
+
+  border-radius:22px;
+
+  border:1px solid var(--line);
+
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+
+.detail-card h3{
+  margin-top:0;
+  font-size:24px;
+}
+
+
+.detail-card p{
+  color:var(--muted);
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  padding:90px 0;
+  text-align:center;
+  background:#0d6b36;
+  color:#fff;
+}
+
+
+.cta h2{
+  font-size:38px;
+  margin:0 0 15px;
+}
+
+
+.cta p{
+  color:#d8eadc;
+  max-width:600px;
+  margin:0 auto 30px;
+}
+
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:54px;
+
+  padding:0 25px;
+
+  border-radius:9px;
+
+  font-weight:800;
+
+  transition:.2s;
+}
+
+
+.btn-white{
+  background:#fff;
+  color:var(--green-dark);
+}
+
+
+.btn-white:hover{
+  transform:translateY(-2px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  background:#030506;
+  color:#fff;
+  padding:55px 0 0;
+}
+
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:50px;
+  padding-bottom:45px;
+}
+
+
+.footer-logo{
+  width:210px;
+  max-width:100%;
+}
+
+
+.footer p{
+  color:#aeb9b3;
+  font-size:14px;
+  max-width:360px;
+}
+
+
+.footer h3{
+  font-size:16px;
+  margin:8px 0 18px;
+}
+
+
+.footer-links{
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+}
+
+
+.footer-links a{
+  color:#aeb9b3;
+  font-size:14px;
+}
+
+
+.footer-links a:hover{
+  color:#fff;
+}
+
+
+.footer-bottom{
+  border-top:1px solid #1d2923;
+  padding:20px 0;
+  color:#849088;
+  font-size:13px;
+}
+
+
+.footer-bottom-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .detail-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+
+@media(max-width:500px){
+
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  .nav{
+    height:74px;
+  }
+
+  .brand-logo{
+    width:170px;
+  }
+
+  .back-btn{
+    padding:0 14px;
+    font-size:13px;
+  }
+
+  .hero{
+    padding:65px 0;
+  }
+
+  .how-section,
+  .details,
+  .cta{
+    padding:65px 0;
+  }
+
+  .detail-content h2{
+    font-size:30px;
+  }
+
+  .cta h2{
+    font-size:31px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .footer-bottom-inner{
+    flex-direction:column;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<a href="index.html" class="brand">
+
+<img
+src="./assets/Hopebed_logo.PNG"
+alt="Hopebed"
+class="brand-logo"
+>
+
+</a>
+
+
+<a
+href="index.html"
+class="back-btn"
+>
+
+← Back Home
+
+</a>
+
+</div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="eyebrow">
+HOW HOPEBED WORKS
+</div>
+
+
+<h1>
+
+Find. Book. <span>Verify.</span>
+
+</h1>
+
+
+<p>
+
+Hopebed is building a smarter and more trusted way to discover
+stays in India — helping guests find properties and helping
+property partners connect with genuine customers.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- STEPS -->
+
+<section class="how-section">
+
+<div class="container">
+
+
+<h2 class="section-title">
+Three Simple Steps
+</h2>
+
+
+<p class="section-subtitle">
+
+Our goal is to make finding and managing stays simpler,
+safer and more transparent.
+
+</p>
+
+
+<div class="steps">
+
+
+<!-- STEP 1 -->
+
+<article class="step">
+
+<div class="step-number">
+1
+</div>
+
+<div class="step-icon">
+🔍
+</div>
+
+<h2>
+Find
+</h2>
+
+<p>
+
+Discover stays that match your needs — including hotels,
+PGs, hostels, rooms and homes.
+
+</p>
+
+</article>
+
+
+
+<!-- STEP 2 -->
+
+<article class="step">
+
+<div class="step-number">
+2
+</div>
+
+<div class="step-icon">
+📅
+</div>
+
+<h2>
+Book
+</h2>
+
+<p>
+
+Connect with suitable properties and make your stay
+booking experience simple and convenient.
+
+</p>
+
+</article>
+
+
+
+<!-- STEP 3 -->
+
+<article class="step">
+
+<div class="step-number">
+3
+</div>
+
+<div class="step-icon">
+✓
+</div>
+
+<h2>
+Verify
+</h2>
+
+<p>
+
+Hopebed is building a verification-focused experience
+to help create more confidence and transparency.
+
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- WHY HOPEBED -->
+
+<section class="details">
+
+<div class="container detail-grid">
+
+
+<div class="detail-content">
+
+<h2>
+Built for smarter stays.
+</h2>
+
+
+<p>
+
+Finding the right stay can often be confusing. Information
+may be incomplete, pricing may not be clear, and guests may
+not always know what to expect.
+
+</p>
+
+
+<div class="detail-list">
+
+
+<div class="detail-item">
+
+<div class="check">✓</div>
+
+<div>
+
+<strong>
+Verified-focused experience
+</strong>
+
+<p>
+Helping create more confidence when choosing a stay.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="detail-item">
+
+<div class="check">✓</div>
+
+<div>
+
+<strong>
+Clear information
+</strong>
+
+<p>
+Better details to help guests make informed decisions.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="detail-item">
+
+<div class="check">✓</div>
+
+<div>
+
+<strong>
+For guests and property partners
+</strong>
+
+<p>
+Designed to create value for both people looking for stays
+and people managing properties.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div class="detail-card">
+
+<h3>
+🏠 For Guests
+</h3>
+
+<p>
+
+Discover and explore stay options that suit your location
+and requirements.
+
+</p>
+
+
+<h3>
+🏢 For Property Partners
+</h3>
+
+<p>
+
+List your property and connect with potential guests
+looking for accommodation.
+
+</p>
+
+
+<h3>
+📱 Digital Experience
+</h3>
+
+<p>
+
+Hopebed is building toward a simpler digital experience
+for discovering, booking and verifying stays.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+Ready to join Hopebed?
+</h2>
+
+<p>
+
+Whether you're looking for a stay or have a property
+to list, Hopebed is building for you.
+
+</p>
+
+
+<a
+href="index.html#list"
+class="btn btn-white"
+>
+
+List Your Property Free →
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container footer-grid">
+
+
+<div>
+
+<img
+src="./assets/Hopebed_logo.PNG"
+alt="Hopebed"
+class="footer-logo"
+>
+
+<p>
+
+<strong>
+Stay Smart. Stay Verified.
+</strong>
+
+</p>
+
+<p>
+
+Hopebed is building a smarter and more trusted
+way to find, book and verify stays in India.
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<div class="footer-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="how-it-works.html">
+How It Works
+</a>
+
+<a href="about.html">
+About Hopebed
+</a>
+
+<a href="contact.html">
+Contact Us
+</a>
+
+</div>
+
+</div>
+
+
+
+<div>
+
+<h3>
+Get Started
+</h3>
+
+<div class="footer-links">
+
+<a href="index.html#list">
+List Your Property
+</a>
+
+<a href="mailto:hello@hopebed.in">
+hello@hopebed.in
+</a>
+
+<a
+href="https://wa.me/918291025730"
+target="_blank"
+rel="noopener"
+>
+WhatsApp Us
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+<div class="container footer-bottom-inner">
+
+<div>
+© 2026 Hopebed. All rights reserved.
+</div>
+
+<div>
+Stay Smart. Stay Verified.
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+</body>
+
+</html>
