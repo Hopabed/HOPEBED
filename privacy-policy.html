@@ -1,0 +1,2316 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0a5c2e">
+
+    <title>Privacy Policy | Hopebed</title>
+
+    <meta name="description"
+        content="Read Hopebed's Privacy Policy and learn how we collect, use and protect your personal information.">
+
+    <meta name="author" content="Hopebed">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://hopebed.in/privacy-policy.html">
+
+    <link rel="icon" type="image/png" href="./assets/favicon.PNG">
+    <link rel="apple-touch-icon" href="./assets/favicon.PNG">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           ROOT
+        ===================================================== */
+
+        :root {
+            --green: #0d6b36;
+            --green-dark: #063d20;
+            --green-light: #168447;
+            --green-pale: #eaf4ed;
+            --green-mist: #f4faf6;
+
+            --dark: #080d0a;
+            --dark-soft: #0e1511;
+
+            --text: #121a15;
+            --muted: #5c6b63;
+
+            --line: #e2e8e4;
+            --soft: #f6f9f7;
+
+            --white: #ffffff;
+
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, .05);
+            --shadow-md: 0 12px 32px rgba(0, 0, 0, .08);
+            --shadow-lg: 0 24px 56px rgba(0, 0, 0, .12);
+
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+
+            --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+            --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+            --transition: .25s cubic-bezier(.25, .46, .45, .94);
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-display);
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 64px));
+            margin-inline: auto;
+        }
+
+
+        /* =====================================================
+           ICON
+        ===================================================== */
+
+        .icon {
+            width: 1em;
+            height: 1em;
+
+            stroke: currentColor;
+            fill: none;
+
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+
+            flex-shrink: 0;
+            display: block;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        .nav {
+            height: 80px;
+
+            background: rgba(8, 13, 10, 0.96);
+            backdrop-filter: blur(12px);
+
+            color: white;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .nav-inner {
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+
+            flex-shrink: 0;
+
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 180px;
+            height: 52px;
+
+            object-fit: contain;
+            object-position: center;
+
+            filter: brightness(1.1);
+        }
+
+        .brand-tagline {
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: .1em;
+            text-transform: uppercase;
+
+            color: #9fb0a7;
+
+            padding-left: 14px;
+
+            border-left: 1px solid rgba(255, 255, 255, .15);
+        }
+
+
+        /* Desktop Navigation */
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+
+            gap: 32px;
+
+            margin-left: auto;
+        }
+
+        .desktop-nav a {
+            color: #b5c0ba;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            transition: var(--transition);
+
+            position: relative;
+
+            padding: 6px 0;
+        }
+
+        .desktop-nav a::after {
+            content: '';
+
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            height: 2px;
+
+            background: var(--green-light);
+
+            border-radius: 2px;
+
+            transform: scaleX(0);
+
+            transition: transform var(--transition);
+        }
+
+        .desktop-nav a:hover,
+        .desktop-nav a.active {
+            color: white;
+        }
+
+        .desktop-nav a:hover::after,
+        .desktop-nav a.active::after {
+            transform: scaleX(1);
+        }
+
+
+        /* Navigation Action */
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+
+            gap: 14px;
+        }
+
+        .contact-btn {
+            min-height: 44px;
+
+            padding: 0 22px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(60, 200, 110, .5);
+
+            border-radius: var(--radius-sm);
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: white;
+
+            transition: var(--transition);
+        }
+
+        .contact-btn:hover {
+            background: var(--green);
+
+            border-color: var(--green);
+
+            box-shadow: 0 6px 20px rgba(13, 107, 54, .4);
+        }
+
+
+        /* Mobile Button */
+
+        .menu-btn {
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: white;
+
+            cursor: pointer;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: var(--radius-sm);
+        }
+
+        .menu-btn .icon {
+            width: 23px;
+            height: 23px;
+        }
+
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        .mobile-menu-overlay {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0, 0, 0, .65);
+
+            backdrop-filter: blur(6px);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition: var(--transition);
+
+            z-index: 1998;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu {
+            position: fixed;
+
+            top: 0;
+            right: 0;
+
+            width: min(400px, 90%);
+            height: 100dvh;
+
+            background: var(--dark);
+
+            color: white;
+
+            z-index: 2000;
+
+            padding: 0 24px 24px;
+
+            transform: translateX(100%);
+
+            transition: .35s cubic-bezier(.22, .61, .36, 1);
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-header {
+            min-height: 76px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border-bottom: 1px solid #1e2b23;
+        }
+
+        .mobile-menu-logo {
+            width: 160px;
+            height: 46px;
+
+            object-fit: contain;
+
+            filter: brightness(1.1);
+        }
+
+        .mobile-menu-close {
+            width: 40px;
+            height: 40px;
+
+            border: 0;
+            border-radius: 50%;
+
+            background: #18231d;
+
+            color: white;
+
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-nav {
+            display: flex;
+            flex-direction: column;
+
+            gap: 4px;
+
+            padding: 20px 0;
+        }
+
+        .menu-link {
+            min-height: 52px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 12px 16px;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .menu-link:hover {
+            background: #131f18;
+        }
+
+        .mobile-menu-actions {
+            margin-top: auto;
+
+            padding-top: 18px;
+
+            border-top: 1px solid #1e2b23;
+        }
+
+        .menu-whatsapp {
+            min-height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            border: 1px solid #3a4d42;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           PRIVACY HERO
+        ===================================================== */
+
+        .privacy-hero {
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #f9fcf9 0%,
+                    #f1f6f2 35%,
+                    #e7efe9 100%
+                );
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .privacy-hero::before {
+            content: '';
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            right: -180px;
+            top: -250px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(13, 107, 54, .11),
+                    transparent 68%
+                );
+        }
+
+        .privacy-grid {
+            position: absolute;
+
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(13, 107, 54, .035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(13, 107, 54, .035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 42px 42px;
+
+            pointer-events: none;
+        }
+
+        .privacy-hero-inner {
+            position: relative;
+
+            z-index: 2;
+
+            padding: 80px 0 85px;
+
+            max-width: 760px;
+        }
+
+        .policy-label {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 16px;
+
+            background: var(--green-pale);
+
+            border: 1px solid #d4e8db;
+
+            border-radius: 30px;
+
+            color: #2c533d;
+
+            font-size: 12.5px;
+            font-weight: 600;
+        }
+
+        .policy-label .icon {
+            color: var(--green);
+
+            width: 15px;
+            height: 15px;
+        }
+
+        .privacy-hero h1 {
+            margin: 22px 0 18px;
+
+            font-size: clamp(42px, 6vw, 64px);
+
+            line-height: 1.08;
+
+            font-weight: 600;
+
+            color: var(--text);
+        }
+
+        .privacy-hero h1 span {
+            color: var(--green);
+        }
+
+        .privacy-hero p {
+            max-width: 650px;
+
+            font-size: 17px;
+
+            line-height: 1.75;
+
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           POLICY CONTENT
+        ===================================================== */
+
+        .policy-page {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .policy-layout {
+            display: grid;
+
+            grid-template-columns: 230px 1fr;
+
+            gap: 70px;
+
+            align-items: start;
+        }
+
+
+        /* Sidebar */
+
+        .policy-sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .sidebar-title {
+            font-family: var(--font-display);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+
+            color: var(--muted);
+
+            margin-bottom: 14px;
+        }
+
+        .policy-sidebar nav {
+            display: flex;
+            flex-direction: column;
+
+            border-left: 1px solid var(--line);
+        }
+
+        .policy-sidebar a {
+            padding: 9px 0 9px 18px;
+
+            font-size: 13px;
+
+            color: var(--muted);
+
+            border-left: 2px solid transparent;
+
+            margin-left: -1px;
+
+            transition: var(--transition);
+        }
+
+        .policy-sidebar a:hover {
+            color: var(--green);
+
+            border-left-color: var(--green);
+        }
+
+
+        /* Main Content */
+
+        .policy-content {
+            max-width: 760px;
+        }
+
+        .policy-updated {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 32px;
+
+            padding: 10px 15px;
+
+            background: var(--soft);
+
+            border: 1px solid var(--line);
+
+            border-radius: 10px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .policy-intro {
+            font-size: 16px;
+
+            color: #3f4c45;
+
+            line-height: 1.8;
+        }
+
+        .policy-intro p {
+            margin-bottom: 18px;
+        }
+
+
+        /* Notice */
+
+        .policy-notice {
+            margin: 28px 0 10px;
+
+            padding: 22px 24px;
+
+            background: var(--green-mist);
+
+            border: 1px solid #dcebe1;
+
+            border-left: 4px solid var(--green);
+
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+
+            color: #385244;
+
+            font-size: 14.5px;
+
+            line-height: 1.75;
+        }
+
+        .policy-notice strong {
+            color: var(--green-dark);
+        }
+
+
+        /* Policy Sections */
+
+        .policy-section {
+            padding-top: 48px;
+
+            margin-top: 48px;
+
+            border-top: 1px solid var(--line);
+
+            scroll-margin-top: 110px;
+        }
+
+        .policy-section h2 {
+            font-size: clamp(25px, 3vw, 31px);
+
+            font-weight: 600;
+
+            color: var(--text);
+
+            line-height: 1.25;
+
+            margin-bottom: 20px;
+        }
+
+        .policy-section h3 {
+            font-size: 17px;
+
+            font-weight: 600;
+
+            color: var(--text);
+
+            margin: 28px 0 12px;
+        }
+
+        .policy-section p {
+            color: #4f5d55;
+
+            margin-bottom: 18px;
+
+            font-size: 15.5px;
+
+            line-height: 1.8;
+        }
+
+
+        /* Lists */
+
+        .policy-section ul {
+            list-style: none;
+
+            margin: 18px 0 24px;
+        }
+
+        .policy-section li {
+            position: relative;
+
+            padding-left: 28px;
+
+            margin-bottom: 11px;
+
+            color: #4f5d55;
+
+            font-size: 15px;
+        }
+
+        .policy-section li::before {
+            content: "✓";
+
+            position: absolute;
+
+            left: 0;
+            top: 3px;
+
+            width: 18px;
+            height: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--green-pale);
+
+            color: var(--green);
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+
+        /* Contact Card */
+
+        .contact-card {
+            margin-top: 25px;
+
+            padding: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f4faf6,
+                    #ffffff
+                );
+
+            border: 1px solid #dce8e0;
+
+            border-radius: var(--radius-md);
+        }
+
+        .contact-card h3 {
+            margin-top: 0;
+
+            font-size: 21px;
+        }
+
+        .contact-row {
+            display: flex;
+
+            gap: 10px;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .contact-row:last-child {
+            border-bottom: none;
+        }
+
+        .contact-row strong {
+            min-width: 90px;
+
+            color: var(--text);
+        }
+
+        .contact-row a {
+            color: var(--green);
+
+            font-weight: 600;
+        }
+
+        .contact-row a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           WHATSAPP FLOATING BUTTON
+        ===================================================== */
+
+        .whatsapp {
+            position: fixed;
+
+            right: 24px;
+            bottom: 24px;
+
+            width: 56px;
+            height: 56px;
+
+            border-radius: 50%;
+
+            background: #0d6b36;
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow:
+                0 10px 30px rgba(13, 107, 54, .35);
+
+            z-index: 500;
+
+            transition: var(--transition);
+        }
+
+        .whatsapp:hover {
+            transform: translateY(-3px);
+
+            background: #168447;
+        }
+
+        .whatsapp .icon {
+            width: 25px;
+            height: 25px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+            background: var(--dark);
+
+            color: white;
+
+            padding-top: 70px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 55px;
+        }
+
+        .footer-logo {
+            width: 180px;
+
+            margin-bottom: 20px;
+
+            filter: brightness(1.1);
+        }
+
+        .footer-brand p {
+            color: #9fb0a7;
+
+            font-size: 13px;
+
+            max-width: 320px;
+
+            margin-bottom: 12px;
+
+            line-height: 1.7;
+        }
+
+        .footer-brand strong {
+            color: white;
+        }
+
+        .footer h3 {
+            font-size: 15px;
+
+            margin-bottom: 18px;
+
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+
+            gap: 11px;
+        }
+
+        .footer-links a {
+            color: #9fb0a7;
+
+            font-size: 13px;
+
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-text {
+            color: #9fb0a7;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 16px;
+        }
+
+        .social-links {
+            display: flex;
+
+            gap: 10px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #18231d;
+
+            color: #d4ddd7;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--green);
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1b2820;
+
+            padding: 20px 0;
+        }
+
+        .footer-bottom-inner {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #728078;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1050px) {
+
+            .brand-tagline {
+                display: none;
+            }
+
+            .desktop-nav {
+                gap: 20px;
+            }
+
+            .policy-layout {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .policy-sidebar {
+                display: none;
+            }
+
+            .policy-content {
+                max-width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1.4fr 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 820px) {
+
+            .nav {
+                height: 70px;
+            }
+
+            .desktop-nav,
+            .contact-btn {
+                display: none;
+            }
+
+            .menu-btn {
+                display: flex;
+            }
+
+            .brand-logo {
+                width: 150px;
+                height: 45px;
+            }
+
+            .privacy-hero-inner {
+                padding: 65px 0 70px;
+            }
+
+            .privacy-hero h1 {
+                font-size: 46px;
+            }
+
+            .policy-page {
+                padding: 55px 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: min(100% - 36px, 1160px);
+            }
+
+            .privacy-hero-inner {
+                padding: 52px 0 58px;
+            }
+
+            .privacy-hero h1 {
+                font-size: 38px;
+            }
+
+            .privacy-hero p {
+                font-size: 15px;
+            }
+
+            .policy-page {
+                padding: 42px 0 55px;
+            }
+
+            .policy-section {
+                padding-top: 35px;
+                margin-top: 35px;
+            }
+
+            .policy-section h2 {
+                font-size: 24px;
+            }
+
+            .policy-section p,
+            .policy-intro {
+                font-size: 14.5px;
+            }
+
+            .policy-section li {
+                font-size: 14px;
+            }
+
+            .policy-notice {
+                padding: 18px;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+
+            .contact-row {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .footer {
+                padding-top: 50px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-bottom-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .whatsapp {
+                width: 52px;
+                height: 52px;
+
+                right: 18px;
+                bottom: 18px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SVG ICONS
+    ===================================================== -->
+
+    <svg width="0" height="0" style="position:absolute">
+
+        <symbol id="i-menu" viewBox="0 0 24 24">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+        </symbol>
+
+        <symbol id="i-close" viewBox="0 0 24 24">
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+        </symbol>
+
+        <symbol id="i-shield" viewBox="0 0 24 24">
+            <path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+        </symbol>
+
+        <symbol id="i-calendar" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="17" rx="2"></rect>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+        </symbol>
+
+        <symbol id="i-chat" viewBox="0 0 24 24">
+            <path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.5 9.5 0 0 1-4.3-1L3 20l1.2-4.2A8 8 0 0 1 3 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"></path>
+        </symbol>
+
+    </svg>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <header class="nav">
+
+        <div class="container nav-inner">
+
+            <a href="index.html" class="brand">
+
+                <img
+                    src="./assets/Logo_with_background.PNG"
+                    alt="Hopebed - Stay Smart. Stay Verified."
+                    class="brand-logo"
+                >
+
+                <span class="brand-tagline">
+                    Stay Smart. Stay Verified.
+                </span>
+
+            </a>
+
+
+            <nav class="desktop-nav">
+
+                <a href="index.html">Home</a>
+
+                <a href="find-stay.html">Find a stay</a>
+
+                <a href="index.html#how">How it works</a>
+
+                <a href="index.html#list">List your property</a>
+
+                <a href="index.html#about">About Hopebed</a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a href="contact.html" class="contact-btn">
+                    Contact
+                </a>
+
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+
+                    <svg class="icon">
+                        <use href="#i-menu"></use>
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MOBILE MENU
+    ===================================================== -->
+
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+
+    <aside class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-header">
+
+            <img
+                src="./assets/Logo_with_background.PNG"
+                alt="Hopebed"
+                class="mobile-menu-logo"
+            >
+
+
+            <button
+                class="mobile-menu-close"
+                id="menuClose"
+                aria-label="Close menu"
+            >
+
+                <svg class="icon">
+                    <use href="#i-close"></use>
+                </svg>
+
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-menu-nav">
+
+            <a href="index.html" class="menu-link">
+                Home
+            </a>
+
+            <a href="find-stay.html" class="menu-link">
+                Find a stay
+            </a>
+
+            <a href="index.html#list" class="menu-link">
+                List your property
+            </a>
+
+            <a href="index.html#how" class="menu-link">
+                How it works
+            </a>
+
+            <a href="index.html#about" class="menu-link">
+                About Hopebed
+            </a>
+
+            <a href="contact.html" class="menu-link">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="mobile-menu-actions">
+
+            <a
+                href="https://wa.me/918879892250?text=Hi%20Hopebed%2C%20I'd%20like%20to%20know%20more."
+                target="_blank"
+                rel="noopener"
+                class="menu-whatsapp"
+            >
+
+                <svg class="icon">
+                    <use href="#i-chat"></use>
+                </svg>
+
+                Chat on WhatsApp
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         PRIVACY HERO
+    ===================================================== -->
+
+    <section class="privacy-hero">
+
+        <div class="privacy-grid"></div>
+
+        <div class="container privacy-hero-inner">
+
+            <div class="policy-label">
+
+                <svg class="icon">
+                    <use href="#i-shield"></use>
+                </svg>
+
+                YOUR PRIVACY MATTERS
+
+            </div>
+
+
+            <h1>
+                Privacy <span>Policy</span>
+            </h1>
+
+
+            <p>
+                Learn how Hopebed collects, uses, shares and protects
+                your personal information while you use our platform
+                and services.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRIVACY POLICY
+    ===================================================== -->
+
+    <main class="policy-page">
+
+        <div class="container policy-layout">
+
+
+            <!-- Sidebar -->
+
+            <aside class="policy-sidebar">
+
+                <div class="sidebar-title">
+                    Privacy Policy
+                </div>
+
+
+                <nav>
+
+                    <a href="#information">
+                        1. Information We Collect
+                    </a>
+
+                    <a href="#use">
+                        2. How We Use Information
+                    </a>
+
+                    <a href="#sharing">
+                        3. How We Share Information
+                    </a>
+
+                    <a href="#communication">
+                        4. Communication Channels
+                    </a>
+
+                    <a href="#retention">
+                        5. Data Retention
+                    </a>
+
+                    <a href="#rights">
+                        6. Your Rights
+                    </a>
+
+                    <a href="#security">
+                        7. Data Security
+                    </a>
+
+                    <a href="#children">
+                        8. Children's Privacy
+                    </a>
+
+                    <a href="#contact">
+                        9. Contact Us
+                    </a>
+
+                    <a href="#changes">
+                        10. Changes to This Policy
+                    </a>
+
+                </nav>
+
+            </aside>
+
+
+
+            <!-- Main Content -->
+
+            <article class="policy-content">
+
+
+                <div class="policy-updated">
+
+                    <svg class="icon">
+                        <use href="#i-calendar"></use>
+                    </svg>
+
+                    Last updated: September 1, 2026
+
+                </div>
+
+
+
+                <!-- Introduction -->
+
+                <div class="policy-intro">
+
+                    <p>
+                        <strong>Hopebed</strong> ("Hopebed," "we," "us," or "our")
+                        operates <strong>hopebed.in</strong> (the "Site"), a platform
+                        designed to help users discover verified PG and hostel
+                        accommodation listings, currently focused on Navi Mumbai.
+                    </p>
+
+
+                    <p>
+                        This Privacy Policy explains what information we collect,
+                        how we use it, how we may share it, and the choices available
+                        to you regarding your personal information.
+                    </p>
+
+
+                    <div class="policy-notice">
+
+                        <strong>Pre-launch and validation phase:</strong>
+
+                        Hopebed is currently in a pre-launch and validation phase.
+                        Our services are evolving, and we may update this Privacy
+                        Policy as our platform grows and new features become available.
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 1 -->
+
+                <section class="policy-section" id="information">
+
+                    <h2>1. Information We Collect</h2>
+
+                    <p>
+                        At this stage, we collect information in limited ways.
+                    </p>
+
+
+                    <h3>a) Information You Provide Directly</h3>
+
+                    <p>We may collect:</p>
+
+                    <ul>
+                        <li>Your name</li>
+                        <li>Email address</li>
+                        <li>Phone number</li>
+                        <li>Accommodation requirements and preferences</li>
+                        <li>Messages or information you provide when contacting us</li>
+                    </ul>
+
+
+                    <p>
+                        This information may be collected when you sign up for
+                        updates, contact us directly, submit an enquiry, or
+                        communicate with us through WhatsApp, email, LinkedIn,
+                        or other communication channels.
+                    </p>
+
+
+
+                    <h3>b) Information from Property Owners and Operators</h3>
+
+                    <p>
+                        If you are a PG, hostel, or accommodation owner/operator,
+                        we may collect:
+                    </p>
+
+                    <ul>
+                        <li>Your name</li>
+                        <li>Business or property name</li>
+                        <li>Property location</li>
+                        <li>Contact details</li>
+                        <li>Property details and accommodation information</li>
+                        <li>
+                            Other information voluntarily shared for listing
+                            or verification purposes
+                        </li>
+                    </ul>
+
+
+
+                    <h3>c) Automatically Collected Information</h3>
+
+                    <p>
+                        When you visit our Site, limited technical information
+                        may be collected through standard hosting or analytics
+                        tools, including:
+                    </p>
+
+                    <ul>
+                        <li>Browser type</li>
+                        <li>Device type</li>
+                        <li>General usage information</li>
+                        <li>Basic technical information related to your visit</li>
+                    </ul>
+
+
+                    <div class="policy-notice">
+
+                        <strong>Important:</strong>
+
+                        We do not currently collect payment information or
+                        government identity documents through the Site. If this
+                        changes in the future, we will update this Privacy Policy
+                        and take appropriate steps required under applicable law.
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- 2 -->
+
+                <section class="policy-section" id="use">
+
+                    <h2>2. How We Use Your Information</h2>
+
+                    <p>We may use your information to:</p>
+
+                    <ul>
+                        <li>
+                            Notify you about Hopebed's launch or relevant listings
+                        </li>
+
+                        <li>
+                            Respond to your enquiries and requests
+                        </li>
+
+                        <li>
+                            Understand accommodation demand and user preferences
+                        </li>
+
+                        <li>
+                            Improve Hopebed and its services
+                        </li>
+
+                        <li>
+                            Facilitate introductions between tenants and property owners
+                        </li>
+
+                        <li>
+                            Communicate with property owners regarding listing opportunities
+                        </li>
+
+                        <li>
+                            Verify and manage property-related information
+                        </li>
+
+                        <li>
+                            Provide updates related to Hopebed's services
+                        </li>
+                    </ul>
+
+
+                    <p>
+                        At the current stage, some matching and communication may
+                        be handled manually, including through WhatsApp or other
+                        direct communication channels.
+                    </p>
+
+
+                    <div class="policy-notice">
+
+                        <strong>Your privacy matters:</strong>
+
+                        We do not sell your personal information to third parties.
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- 3 -->
+
+                <section class="policy-section" id="sharing">
+
+                    <h2>3. How We Share Your Information</h2>
+
+                    <p>
+                        We may share limited information when necessary to
+                        provide or support our services.
+                    </p>
+
+                    <p>This may include sharing information with:</p>
+
+
+                    <ul>
+
+                        <li>
+                            <strong>Property owners or operators</strong>,
+                            when you express interest in a property and agree
+                            to an introduction
+                        </li>
+
+                        <li>
+                            <strong>Prospective tenants</strong>,
+                            when you are a property owner and wish to receive
+                            relevant enquiries
+                        </li>
+
+                        <li>
+                            <strong>Service providers</strong>,
+                            such as website hosting, domain, communication,
+                            or technology providers, where necessary to
+                            operate our services
+                        </li>
+
+                        <li>
+                            <strong>Government authorities or legal bodies</strong>,
+                            when required by applicable law
+                        </li>
+
+                    </ul>
+
+
+                    <p>
+                        We do <strong>not share personal information with
+                        advertisers or data brokers for their independent
+                        marketing purposes</strong>.
+                    </p>
+
+                </section>
+
+
+
+                <!-- 4 -->
+
+                <section class="policy-section" id="communication">
+
+                    <h2>4. Communication Channels</h2>
+
+                    <p>
+                        Hopebed may communicate with you through:
+                    </p>
+
+                    <ul>
+                        <li>WhatsApp</li>
+                        <li>Email</li>
+                        <li>Phone calls</li>
+                        <li>LinkedIn</li>
+                        <li>Other communication channels you use to contact us</li>
+                    </ul>
+
+
+                    <p>
+                        We may use these channels to respond to your enquiries,
+                        facilitate introductions, provide relevant updates, or
+                        communicate about Hopebed's services.
+                    </p>
+
+
+                    <p>
+                        You may opt out of non-essential communications at any
+                        time by contacting us directly.
+                    </p>
+
+                </section>
+
+
+
+                <!-- 5 -->
+
+                <section class="policy-section" id="retention">
+
+                    <h2>5. Data Retention</h2>
+
+                    <p>
+                        We retain personal information only for as long as
+                        reasonably necessary for the purposes described in this
+                        Privacy Policy, unless a longer retention period is
+                        required by law.
+                    </p>
+
+
+                    <p>
+                        During our current validation stage, some information may
+                        be managed using standard business tools such as email,
+                        communication platforms, and internal records. We take
+                        reasonable care when handling this information.
+                    </p>
+
+
+                    <p>
+                        You may request deletion of your personal information,
+                        subject to any legal or legitimate business requirements
+                        that may require us to retain certain information.
+                    </p>
+
+                </section>
+
+
+
+                <!-- 6 -->
+
+                <section class="policy-section" id="rights">
+
+                    <h2>6. Your Rights and Choices</h2>
+
+                    <p>
+                        Subject to applicable law, you may request to:
+                    </p>
+
+                    <ul>
+                        <li>
+                            Know what personal information we hold about you
+                        </li>
+
+                        <li>
+                            Correct inaccurate or incomplete information
+                        </li>
+
+                        <li>
+                            Request deletion of your personal information
+                        </li>
+
+                        <li>
+                            Withdraw consent where applicable
+                        </li>
+
+                        <li>
+                            Opt out of future non-essential communications
+                        </li>
+                    </ul>
+
+
+                    <p>
+                        To make a request regarding your personal information,
+                        please contact us using the details provided below.
+                    </p>
+
+                </section>
+
+
+
+                <!-- 7 -->
+
+                <section class="policy-section" id="security">
+
+                    <h2>7. Data Security</h2>
+
+                    <p>
+                        We take reasonable measures to protect your personal
+                        information against unauthorized access, misuse, loss,
+                        or disclosure.
+                    </p>
+
+
+                    <p>
+                        However, no method of transmitting or storing information
+                        online is completely secure. While we take reasonable
+                        steps to protect your information, we cannot guarantee
+                        absolute security.
+                    </p>
+
+                </section>
+
+
+
+                <!-- 8 -->
+
+                <section class="policy-section" id="children">
+
+                    <h2>8. Children's Privacy</h2>
+
+                    <p>
+                        Hopebed is not intended for individuals under the age
+                        of 18.
+                    </p>
+
+
+                    <p>
+                        We do not knowingly collect personal information from
+                        minors. If we become aware that we have collected personal
+                        information from a minor without appropriate authorization,
+                        we will take reasonable steps to delete it.
+                    </p>
+
+                </section>
+
+
+
+                <!-- 9 -->
+
+                <section class="policy-section" id="contact">
+
+                    <h2>9. Contact Us</h2>
+
+                    <p>
+                        If you have questions, concerns, or requests regarding
+                        this Privacy Policy or your personal information,
+                        please contact us:
+                    </p>
+
+
+                    <div class="contact-card">
+
+                        <h3>Hopebed</h3>
+
+
+                        <div class="contact-row">
+
+                            <strong>Email:</strong>
+
+                            <a href="mailto:hello@hopebed.in">
+                                hello@hopebed.in
+                            </a>
+
+                        </div>
+
+
+                        <div class="contact-row">
+
+                            <strong>WhatsApp:</strong>
+
+                            <a
+                                href="https://wa.me/918879892250"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                +91 88798 92250
+                            </a>
+
+                        </div>
+
+
+                        <div class="contact-row">
+
+                            <strong>Website:</strong>
+
+                            <a href="https://hopebed.in">
+                                hopebed.in
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- 10 -->
+
+                <section class="policy-section" id="changes">
+
+                    <h2>10. Changes to This Privacy Policy</h2>
+
+                    <p>
+                        Hopebed may update this Privacy Policy from time to time
+                        as our services, features, and business operations evolve.
+                    </p>
+
+
+                    <p>
+                        For example, we may update this policy when we introduce:
+                    </p>
+
+                    <ul>
+                        <li>Online bookings</li>
+                        <li>Payment functionality</li>
+                        <li>User accounts</li>
+                        <li>Identity or property verification</li>
+                        <li>Additional locations or services</li>
+                    </ul>
+
+
+                    <p>
+                        Any updated version will be published on this page with
+                        a revised <strong>"Last updated"</strong> date.
+                    </p>
+
+
+                    <p>
+                        We will handle personal information in accordance with
+                        applicable laws and regulations, including relevant data
+                        protection requirements in India.
+                    </p>
+
+                </section>
+
+
+            </article>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FLOATING WHATSAPP
+    ===================================================== -->
+
+    <a
+        href="https://wa.me/918879892250?text=Hi%20Hopebed%2C%20I%20have%20a%20question%20about%20your%20Privacy%20Policy."
+        class="whatsapp"
+        target="_blank"
+        rel="noopener"
+        aria-label="Chat with Hopebed on WhatsApp"
+    >
+
+        <svg class="icon">
+            <use href="#i-chat"></use>
+        </svg>
+
+    </a>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <!-- Brand -->
+
+            <div class="footer-brand">
+
+                <img
+                    src="./assets/Logo_with_background.PNG"
+                    alt="Hopebed"
+                    class="footer-logo"
+                >
+
+
+                <p>
+                    <strong>Stay smart. Stay verified.</strong>
+                </p>
+
+
+                <p>
+                    Hopebed is building a trusted platform for finding,
+                    booking and verifying stays across India.
+                </p>
+
+            </div>
+
+
+
+            <!-- Quick Links -->
+
+            <div>
+
+                <h3>Quick links</h3>
+
+                <div class="footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="find-stay.html">
+                        Find a stay
+                    </a>
+
+                    <a href="index.html#how">
+                        How it works
+                    </a>
+
+                    <a href="index.html#list">
+                        List your property
+                    </a>
+
+                    <a href="index.html#about">
+                        About us
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Contact -->
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <div class="footer-links">
+
+                    <a href="mailto:hello@hopebed.in">
+                        hello@hopebed.in
+                    </a>
+
+                    <a
+                        href="https://wa.me/918879892250"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        WhatsApp us
+                    </a>
+
+                    <a href="contact.html">
+                        Contact Hopebed
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Social -->
+
+            <div>
+
+                <h3>Follow Hopebed</h3>
+
+                <p class="social-text">
+                    Follow our journey as we build the future of verified stays.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a
+                        href="https://www.linkedin.com/company/hopabed"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="LinkedIn"
+                    >
+                        in
+                    </a>
+
+
+                    <a
+                        href="https://www.instagram.com/hopebed.in"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Instagram"
+                    >
+                        IG
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        f
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Footer Bottom -->
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-inner">
+
+                <div>
+                    © 2026 Hopebed. All rights reserved.
+                </div>
+
+
+                <div>
+                    Stay smart. Stay verified.
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const menuBtn =
+                document.getElementById("menuBtn");
+
+            const mobileMenu =
+                document.getElementById("mobileMenu");
+
+            const menuClose =
+                document.getElementById("menuClose");
+
+            const menuOverlay =
+                document.getElementById("menuOverlay");
+
+
+            function openMenu() {
+
+                mobileMenu.classList.add("active");
+
+                menuOverlay.classList.add("active");
+
+                document.body.classList.add("menu-open");
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+            }
+
+
+            function closeMenu() {
+
+                mobileMenu.classList.remove("active");
+
+                menuOverlay.classList.remove("active");
+
+                document.body.classList.remove("menu-open");
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+
+            menuBtn.addEventListener(
+                "click",
+                openMenu
+            );
+
+
+            menuClose.addEventListener(
+                "click",
+                closeMenu
+            );
+
+
+            menuOverlay.addEventListener(
+                "click",
+                closeMenu
+            );
+
+
+            document
+                .querySelectorAll(".menu-link")
+                .forEach(function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        closeMenu
+                    );
+
+                });
+
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Escape" &&
+                        mobileMenu.classList.contains("active")
+                    ) {
+                        closeMenu();
+                    }
+
+                }
+            );
+
+        });
+
+    </script>
+
+
+</body>
+</html>
